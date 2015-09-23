@@ -4,6 +4,10 @@
         Title="AddTeamWindow" Height="335" Width="565" Loaded="Window_Loaded">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="..\Resources\BGImage.jpg"/>
+        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>

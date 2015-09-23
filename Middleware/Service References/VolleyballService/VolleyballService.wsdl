@@ -74,6 +74,12 @@
   <wsdl:message name="IVolleyballService_ReadPlaeyrs_Game_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReadPlaeyrs_GameResponse" />
   </wsdl:message>
+  <wsdl:message name="IVolleyballService_ValidatePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidatePlayer" />
+  </wsdl:message>
+  <wsdl:message name="IVolleyballService_ValidatePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidatePlayerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IVolleyballService">
     <wsdl:operation name="Insert">
       <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/Insert" message="tns:IVolleyballService_Insert_InputMessage" />
@@ -118,6 +124,10 @@
     <wsdl:operation name="ReadPlaeyrs_Game">
       <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlaeyrs_Game" message="tns:IVolleyballService_ReadPlaeyrs_Game_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlaeyrs_GameResponse" message="tns:IVolleyballService_ReadPlaeyrs_Game_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/ValidatePlayer" message="tns:IVolleyballService_ValidatePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/ValidatePlayerResponse" message="tns:IVolleyballService_ValidatePlayer_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IVolleyballService" type="tns:IVolleyballService">
@@ -214,6 +224,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReadPlaeyrs_Game">
       <soap:operation soapAction="http://tempuri.org/IVolleyballService/ReadPlaeyrs_Game" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePlayer">
+      <soap:operation soapAction="http://tempuri.org/IVolleyballService/ValidatePlayer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

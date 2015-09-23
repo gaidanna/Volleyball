@@ -214,50 +214,5 @@ namespace Volleyball.ApplicationWindows
             saveBtn.Visibility = Visibility.Collapsed;
             updateBtn.Visibility = Visibility.Visible;
         }
-
-        private void saveButton2_Click(object sender, RoutedEventArgs e)
-        {
-            //Player player;
-            //bool isCaptain;
-            //string name;
-            //string amplua;
-            //int number;
-            //bool validated;
-            //string stringNumber;
-
-            //client = new VolleyballServiceClient();
-            //name = txboxPlayerName.Text.Trim();
-            //amplua = comboboxAmplua.Text;
-            //stringNumber = txboxPlayerNumb.Text.Trim();
-            //isCaptain = checkboxCaptain.IsChecked.Value;
-            //var list = AddPlayer.AllTeamsList;
-
-            //validated = ValidatePlayer(name, stringNumber, amplua, isCaptain);
-
-            //if (validated)
-            //{
-            //    Int32.TryParse(stringNumber, out number);
-            //    var otherplayer = AddTeamWindow.playersList.Find(pl => pl.Number == number);
-            //    if (otherplayer == null)
-            //    {
-            //        player = new Player(name, number, amplua, isCaptain);
-
-            //        var playerDict = player.ConvertInstanceToDictionary();
-            //        client.Insert(playerDict, TablesNames.Players);
-            //        AddTeamWindow.playersList.Add(player);
-            //        //playerInTeam = new PlayerInTeam(new Team, new Player(name, number));
-            //        //playerInTeam.Save();
-            //        AddTeamWindow.RefreshListBox();
-            //        //AddTeamWindow.listBox.ItemsSource = null;
-            //        //AddTeamWindow.listBox.ItemsSource = AddTeamWindow.playersList;
-            //        ClearInputInfo();
-            //        parentWindow.Visibility = Visibility.Hidden;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Player with this number already exists.");
-            //    }
-            //}
-        }
     }
 }

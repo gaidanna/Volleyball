@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="AddPlayerPreciseTeam" Height="300" Width="300">
     <Grid Name="AddControl">
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="..\Resources\BGImage.jpg"/>
+        </Grid.Background>
     </Grid>
 </Window>

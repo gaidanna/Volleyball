@@ -177,6 +177,32 @@ namespace MiddlewareHost
 
             return resultedList;
         }
+
+        public bool ValidatePlayer(int number, Guid teamId, bool captain)
+        {
+            var result = ReadPlayers_Team(teamId);
+            //var isInTable = result.Select(x => x.Values).Where(x => x == number.ToString());
+
+            foreach (var item in result)
+            {
+                if (!captain)
+                {
+                    if (item["Number"] == number.ToString())
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (item["Number"] == number.ToString() || item["Captain"] == "true")
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
         #endregion
 
         #region

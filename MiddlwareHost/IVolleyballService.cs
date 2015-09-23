@@ -46,5 +46,8 @@ namespace MiddlewareHost
         [OperationContract]
         List<Dictionary<string, string>> ReadPlaeyrs_Game(Guid gameId);
 
+        [OperationContract]
+        bool ValidatePlayer(int number, Guid teamId, bool captain);
+
     }    
 }

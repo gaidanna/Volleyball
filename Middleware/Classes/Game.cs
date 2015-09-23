@@ -36,6 +36,7 @@ namespace Middleware
         protected static string table;
         [DataMember]
         private string score;
+
         private static VolleyballServiceClient client = new VolleyballServiceClient();
 
         //public static Dictionary<Guid, Game> Items = new Dictionary<Guid, Game>();
@@ -171,10 +172,10 @@ namespace Middleware
             get
             {
                 var teams = new List<Team>();
-                var teamsList = client.ReadTeams_Game( Id );
-                foreach ( var team in teamsList )
+                var teamsList = client.ReadTeams_Game(Id);
+                foreach (var team in teamsList)
                 {
-                    teams.Add( new Team( team ) );
+                    teams.Add(new Team(team));
                 }
                 return teams.ToArray();
             }
@@ -185,10 +186,10 @@ namespace Middleware
             get
             {
                 players = new List<Player>();
-                var playersList = client.ReadPlaeyrs_Game( Id );
-                foreach ( var pl in playersList )
+                var playersList = client.ReadPlaeyrs_Game(Id);
+                foreach (var pl in playersList)
                 {
-                    players.Add( new Player( pl ) );
+                    players.Add(new Player(pl));
                 }
                 return players;
             }

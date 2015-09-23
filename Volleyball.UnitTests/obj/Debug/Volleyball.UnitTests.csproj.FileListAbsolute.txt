@@ -24,6 +24,5 @@ D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTe
 D:\Projects\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.dll
 D:\Projects\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.pdb
 D:\Projects\Volleyball\Volleyball.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-D:\Projects\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache
 D:\Projects\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
 D:\Projects\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb

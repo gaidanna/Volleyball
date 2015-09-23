@@ -3,19 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="AddPlayer" Height="300" Width="300" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="..\Resources\BGImage.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Width="60" Margin="4 20 4 4" Text="Team: "></TextBlock>
+        <ComboBox Grid.Row="0" Name="teamsCombobox" Grid.Column="1" ItemsSource="{Binding Path=listOfTeams}" DisplayMemberPath="Name" Margin="4 20 4 4" Height="25" Width="200" HorizontalAlignment="Left" />
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Width="60" Margin="4" Text="Team: "></TextBlock>
-        <ComboBox Grid.Row="0" Name="teamsCombobox" Grid.Column="1" ItemsSource="{Binding Path=listOfTeams}" DisplayMemberPath="Name" Margin="4" Height="25" Width="200" HorizontalAlignment="Left" />
-        <Grid Grid.Row="1" Name="AddControl" Grid.ColumnSpan="2">
-        </Grid>
+        <TextBlock Grid.Row="1" Width="60" Grid.Column="0" Margin="4" Text="Name: "></TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="playerName" Margin="4" Width="200" HorizontalAlignment="Left"></TextBox>
+
+            <TextBlock Grid.Row="2" Width="60" Grid.Column="0" Margin="4" Text="Number: "></TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="playerNumber" Margin="4" Width="200" HorizontalAlignment="Left"></TextBox>
+
+            <TextBlock Grid.Row="3" Width="60" Grid.Column="0" Margin="4" Text="Position: "/>
+            <ComboBox Grid.Row="3" Grid.Column="1" Name="amplua" Margin="4" Width="200" HorizontalAlignment="Left"/>
+            <!--<TextBox Grid.Row="2" Grid.Column="1" Name="amplua" Margin="4" Width="200" HorizontalAlignment="Left"/>-->
+
+            <TextBlock Grid.Row="4" Width="60" Grid.Column="0" Margin="4" Text="Captain" />
+            <CheckBox Grid.Row="4" Grid.Column="1" Margin="4" Name="captainSign" HorizontalAlignment="Left"/>
+
+            <WrapPanel Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right">
+                <Button Content="Save" Name="saveButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10" Click="SaveButton_Click"  Height="38"></Button>
+                <Button Content="Update" Name="updateButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10" Click="UpdateButton_Click" Height="38" Visibility="Collapsed"></Button>
+                <Button Content="Cancel" Name="cancelButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10"  Click="CancelButton_Click" Height="38"></Button>
+            </WrapPanel>
+
+        <!--<Grid Grid.Row="1" Name="AddControl" Grid.ColumnSpan="2">
+        </Grid>-->
     </Grid>
 </Window>

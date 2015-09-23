@@ -33,7 +33,6 @@
 
         <WrapPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right">
             <Button Content="Save" Name="saveButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10" Click="Save_Click"  Height="38"></Button>
-            <Button Content="Save" Name="saveButton2" Width="80" Padding="4 8 4 8" Margin="4 50 4 10" Click="saveButton2_Click" Height="38"  Visibility="Collapsed"></Button>
             <Button Content="Update" Name="updateButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10" Click="Update_Click" Height="38" Visibility="Collapsed"></Button>
             <Button Content="Cancel" Name="cancelButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10"  Click="Cancel_Click" Height="38"></Button>
         </WrapPanel>
