@@ -47,3 +47,12 @@ D:\Sources\GAG\trunk\Volleyball\Middleware\obj\Debug\Middleware.csprojResolveAss
 D:\Sources\GAG\trunk\Volleyball\Middleware\obj\Debug\Middleware.dll
 D:\Sources\GAG\trunk\Volleyball\Middleware\obj\Debug\Middleware.pdb
 D:\Sources\GAG\trunk\Volleyball\Middleware\bin\Debug\app.config
+D:\Projects\Volleyball\Middleware\bin\Debug\app.config
+D:\Projects\Volleyball\Middleware\bin\Debug\Middleware.dll.config
+D:\Projects\Volleyball\Middleware\bin\Debug\Middleware.dll
+D:\Projects\Volleyball\Middleware\bin\Debug\Middleware.pdb
+D:\Projects\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.dll
+D:\Projects\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.pdb
+D:\Projects\Volleyball\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+D:\Projects\Volleyball\Middleware\obj\Debug\Middleware.dll
+D:\Projects\Volleyball\Middleware\obj\Debug\Middleware.pdb

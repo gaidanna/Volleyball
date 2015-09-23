@@ -79,9 +79,6 @@
     <Compile Include="ApplicationWindows\AddTeamWindow.xaml.cs">
       <DependentUpon>AddTeamWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationWindows\Register_LoginControl.xaml.cs">
-      <DependentUpon>Register_LoginControl.xaml</DependentUpon>
-    </Compile>
     <Page Include="ApplicationWindows\AddGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,10 +115,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ApplicationWindows\Register_LoginControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

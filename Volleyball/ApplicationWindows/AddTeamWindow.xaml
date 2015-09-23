@@ -100,12 +100,6 @@
             <Grid Grid.Row="1">
 
                 <ListBox HorizontalAlignment="Center" SelectionChanged="ListBox_SelectionChanged" Name="listBoxPlayers" Margin="4 4 15 4" Width="280" Height="200" SelectionMode="Single">
-                    <!--<ListBox.ItemContainerStyle>
-                        <Style TargetType="ListBoxItem">
-                            <EventSetter Event="Selected" Handler="ListBoxItem_Selected"/>
-                            <EventSetter Event="Unselected" Handler="ListBoxItem_Unselected"/>
-                        </Style>
-                    </ListBox.ItemContainerStyle>-->
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
