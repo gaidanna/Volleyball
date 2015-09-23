@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using Volleyball.ServiceReference1;
+using Middleware.VolleyballService;
 
 namespace Volleyball.ApplicationWindows
 {
@@ -100,7 +100,7 @@ namespace Volleyball.ApplicationWindows
 
             pl = (Player)listBox.SelectedItem;
             playerDict = pl.ConvertInstanceToDictionary();
-            client.Delete(playerDict, TablesNames.Players);
+            client.Delete( playerDict , Middleware.VolleyballService.TablesNames.Players );
 
             identifiedplayer = playersList.Find(player => player.Id == pl.Id);
             playersList.Remove(identifiedplayer);
@@ -135,13 +135,13 @@ namespace Volleyball.ApplicationWindows
             {
                 team = new Team(league, teamName, managerName, phoneName, emailName);
                 teamDict = team.ConvertInstanceToDictionary();
-                client.Insert(teamDict, TablesNames.Teams);
+                client.Insert( teamDict , Middleware.VolleyballService.TablesNames.Teams );
 
                 foreach (var player in playersList)
                 { 
                     plInTeam = new PlayerInTeam(team, player);
                     plInTeamDict = plInTeam.ConvertInstanceToDictionary();
-                    client.Insert(plInTeamDict, TablesNames.PlayerInTeams);
+                    client.Insert( plInTeamDict , Middleware.VolleyballService.TablesNames.PlayerInTeams );
                 }
                 this.Visibility = Visibility.Hidden;
             }
@@ -162,7 +162,7 @@ namespace Volleyball.ApplicationWindows
             Dictionary<string, string> result;
 
             pl = (Player)listBox.SelectedItem;
-            result = client.Read(pl.Id, TablesNames.Players);
+            result = client.Read( pl.Id , Middleware.VolleyballService.TablesNames.Players );
 
             addPlayerWindow.SetPlayerInfo(result);
             bool? res = addPlayerWindow.ShowDialog();

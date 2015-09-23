@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Volleyball.ServiceReference1;
+using Middleware.VolleyballService;
 
 namespace Volleyball.ApplicationWindows
 {
@@ -79,7 +79,7 @@ namespace Volleyball.ApplicationWindows
                     player = new Player(name, number, amplua, isCaptain);
 
                     var playerDict = player.ConvertInstanceToDictionary();
-                    client.Insert(playerDict, TablesNames.Players);
+                    client.Insert( playerDict , Middleware.VolleyballService.TablesNames.Players );
                     AddTeamWindow.playersList.Add(player);
                     //playerInTeam = new PlayerInTeam(new Team, new Player(name, number));
                     //playerInTeam.Save();
@@ -174,7 +174,7 @@ namespace Volleyball.ApplicationWindows
                 playerInfo["Number"] = stringNumber;
                 playerInfo["Amplua"] = amplua;
                 playerInfo["Captain"] = isCaptain.ToString();
-                client.Update(playerInfo, TablesNames.Players);
+                client.Update( playerInfo , Middleware.VolleyballService.TablesNames.Players );
 
                 var player = AddTeamWindow.playersList.Find(pl => pl.Id.ToString() == playerInfo["Id"]);
                 Int32.TryParse(stringNumber, out number);

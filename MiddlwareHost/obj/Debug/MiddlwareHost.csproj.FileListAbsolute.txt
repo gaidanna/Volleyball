@@ -1,0 +1,11 @@
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\MiddlwareHost.dll.config
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\MiddlwareHost.dll
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\MiddlwareHost.pdb
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\Middleware.dll
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\Volleyball.Attributes.dll
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\Middleware.pdb
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\Volleyball.Attributes.pdb
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.dll
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.pdb
+D:\Sources\GAG\trunk\Volleyball\MiddlwareHost\bin\app.config

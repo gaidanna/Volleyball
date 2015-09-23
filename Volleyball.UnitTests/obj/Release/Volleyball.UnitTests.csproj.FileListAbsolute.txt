@@ -1,0 +1,4 @@
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\bin\Release\Volleyball.UnitTests.dll
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\bin\Release\Volleyball.UnitTests.pdb
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\obj\Release\Volleyball.UnitTests.dll
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\obj\Release\Volleyball.UnitTests.pdb

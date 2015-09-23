@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Volleyball.ApplicationWindows;
-using Volleyball.ServiceReference1;
+using Middleware.VolleyballService;
 
 namespace Volleyball
 {
@@ -22,10 +22,10 @@ namespace Volleyball
         private Team firstTeam;
         private Team secondTeam;
         private ComboBox teamsCmbbox;
-        private string[] comboboxArray = new string[2];
+        private string[] comboboxArray = new string[ 2 ];
         private static List<TextBox> playerInfo = new List<TextBox>();
         private AddPlayerControl playerControl;
-        private static List<Dictionary<string, string>> allTeamsList;
+        private static List<Dictionary<string , string>> allTeamsList;
         VolleyballServiceClient client;
         List<Team> listOfTeams;
 
@@ -34,30 +34,30 @@ namespace Volleyball
             InitializeComponent();
             AddControl.Children.Clear();
 
-            if (playerControl == null)
+            if ( playerControl == null )
             {
                 playerControl = new AddPlayerControl();
             }
-            AddControl.Children.Add(playerControl);
+            AddControl.Children.Add( playerControl );
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing( object sender , System.ComponentModel.CancelEventArgs e )
         {
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded( object sender , RoutedEventArgs e )
         {
-            allTeamsList = new List<Dictionary<string, string>>();
+            allTeamsList = new List<Dictionary<string , string>>();
             client = new VolleyballServiceClient();
             listOfTeams = new List<Team>();
-            if (allTeamsList.Count == 0)
+            if ( allTeamsList.Count == 0 )
             {
-                allTeamsList = client.ReadAll(TablesNames.Teams, Gender.NotSpecified);
-                foreach (var item in allTeamsList)
+                allTeamsList = new List<Dictionary<string , string>>( client.ReadAll( Middleware.VolleyballService.TablesNames.Teams , Middleware.VolleyballService.Gender.NotSpecified ) );
+                foreach ( var item in allTeamsList )
                 {
-                    listOfTeams.Add(new Team(item));
+                    listOfTeams.Add( new Team( item ) );
                 }
 
             }
@@ -69,14 +69,14 @@ namespace Volleyball
         }
 
 
-       
 
-        public static List<Dictionary<string, string>> AllTeamsList
+
+        public static List<Dictionary<string , string>> AllTeamsList
         {
             get { return allTeamsList; }
         }
 
-       
+
         //private void SetTeamsToCombobox(List<Dictionary<string, string>> selectedList)
         //{
         //    List<string> teamNames;

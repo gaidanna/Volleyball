@@ -17,3 +17,7 @@ C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\bin\Debug\Volle
 C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
 C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.dll
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.pdb
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
+D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb

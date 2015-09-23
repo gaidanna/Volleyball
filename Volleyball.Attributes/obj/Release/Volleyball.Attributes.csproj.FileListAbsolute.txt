@@ -1,0 +1,4 @@
+D:\Sources\GAG\trunk\Volleyball\Volleyball.Attributes\bin\Release\Volleyball.Attributes.dll
+D:\Sources\GAG\trunk\Volleyball\Volleyball.Attributes\bin\Release\Volleyball.Attributes.pdb
+D:\Sources\GAG\trunk\Volleyball\Volleyball.Attributes\obj\Release\Volleyball.Attributes.dll
+D:\Sources\GAG\trunk\Volleyball\Volleyball.Attributes\obj\Release\Volleyball.Attributes.pdb

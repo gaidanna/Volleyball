@@ -9,7 +9,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using VolleyballMvc.Filters;
 using VolleyballMvc.Models;
-using Volleyball;
+using Middleware;
 
 namespace VolleyballMvc.Controllers
 {
