@@ -4,15 +4,15 @@
     ViewBag.Title = "Games";
 }
 
-<hgroup class="title">    
-</hgroup>
+<hgroup class="title"></hgroup>
 
 @section css{
     <link href="@Url.Content("../Content/Styles/Games.css")" rel="stylesheet" />
+    <link href="@Url.Content("../Content/Styles/GameSchedule.css")" rel="stylesheet" />
 }
 
 <article>
-    <div id="main">       
+    <div id="main">
         <h1 class="pageTitle">Games </h1>
         <div id="content">
             <div id="calendar">
@@ -55,13 +55,13 @@
 </article>
 
 @*<aside>
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-    <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-    </ul>
-</aside>*@
+        <h3>Aside Title</h3>
+        <p>
+            Use this area to provide additional information.
+        </p>
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        </ul>
+    </aside>*@

@@ -234,6 +234,7 @@
     <Content Include="Content\Images\orderedList8.png" />
     <Content Include="Content\Images\orderedList9.png" />
     <Content Include="Content\Images\thisisv.png" />
+    <Content Include="Content\Styles\GameSchedule.css" />
     <Content Include="Content\Styles\Home.css" />
     <Content Include="Content\Styles\Common.css" />
     <Content Include="Content\Styles\Games.css" />

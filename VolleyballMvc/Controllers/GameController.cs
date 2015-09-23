@@ -23,9 +23,9 @@ namespace VolleyballMvc.Controllers
 
             VolleyballServiceClient client = new VolleyballServiceClient();
 
-            List<Dictionary<string , string>> resultedList = new List<Dictionary<string , string>>( client.ReadAll( TablesNames.Games , Gender.NotSpecified ) );            
+            List<Dictionary<string , string>> resultedList = new List<Dictionary<string , string>>( client.ReadAll( TablesNames.Games , Gender.NotSpecified ) );
 
-            return View( new GameScheduleModel() { Date = DateTime.Now , Games = new List<string>( new string[] { "Game1" , "Game2" , "Game3" } ) } );
+            return View( new GameScheduleModel( resultedList ) );
         }
 
         //public ActionResult About()

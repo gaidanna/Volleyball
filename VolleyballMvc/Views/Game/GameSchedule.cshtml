@@ -3,16 +3,26 @@
 
 @if ( Model != null )
 {
-    <h1>@Model.Date.ToString()</h1>
-    <table cellspacing="0" width="100px">
+    <div class="GameSchedule">
         @foreach ( var game in Model.Games )
         {
-            <tr>
-                <td align="left">
-                    @game
-                </td>
-            </tr>
+            <div class="GameScheduleSection">
+                <div class="GameDate">
+                    @game.Date.ToString( "dd MMM yyyy" )
+                </div>
+                <div class="GameLocation">
+                    Location: @game.Location
+                </div>
+                <div class="Teams">
+                    <div class="Team1">@game.Teams[ 0 ].Name</div>
+                    <div class="Score">@game.Score</div>
+                    <div class="Team2">@game.Teams[ 1 ].Name</div>
+                </div>
+            </div>
         }
-    </table>
-
+    </div>
+}
+else
+{
+    <h1>There is no upcoming games. Please, check later.</h1>
 }
