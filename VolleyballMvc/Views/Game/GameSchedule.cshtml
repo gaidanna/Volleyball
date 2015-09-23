@@ -1,0 +1,18 @@
+﻿@model VolleyballMvc.Models.GameScheduleModel
+@using VolleyballMvc.Models
+
+@if ( Model != null )
+{
+    <h1>@Model.Date.ToString()</h1>
+    <table cellspacing="0" width="100px">
+        @foreach ( var game in Model.Games )
+        {
+            <tr>
+                <td align="left">
+                    @game
+                </td>
+            </tr>
+        }
+    </table>
+
+}

@@ -1,0 +1,67 @@
+﻿@model VolleyballMvc.Models.GameScheduleModel
+
+@{
+    ViewBag.Title = "Games";
+}
+
+<hgroup class="title">    
+</hgroup>
+
+@section css{
+    <link href="@Url.Content("../Content/Styles/Games.css")" rel="stylesheet" />
+}
+
+<article>
+    <div id="main">       
+        <h1 class="pageTitle">Games </h1>
+        <div id="content">
+            <div id="calendar">
+                <div class="month-picker">
+                    <a href="index.html" class="month-picker-nav" title="Not implemented">&lt;</a>
+                    <fieldset class="month-picker-fieldset">
+                        <input type="radio" name="month" value="jan" id="jan">
+                        <label for="jan" class="month-picker-label">Jan</label>
+                        <input type="radio" name="month" value="feb" id="feb">
+                        <label for="feb" class="month-picker-label">Feb</label>
+                        <input type="radio" name="month" value="mar" id="mar">
+                        <label for="mar" class="month-picker-label">Mar</label>
+                        <input type="radio" name="month" value="apr" id="apr">
+                        <label for="apr" class="month-picker-label">Apr</label>
+                        <input type="radio" name="month" value="may" id="may">
+                        <label for="may" class="month-picker-label">May</label>
+                        <input type="radio" name="month" value="jun" id="jun">
+                        <label for="jun" class="month-picker-label">Jun</label>
+                        <input type="radio" name="month" value="jul" id="jul">
+                        <label for="jul" class="month-picker-label">Jul</label>
+                        <input type="radio" name="month" value="aug" id="aug">
+                        <label for="aug" class="month-picker-label">Aug</label>
+                        <input type="radio" name="month" value="sep" id="sep" checked>
+                        <label for="sep" class="month-picker-label">Sep</label>
+                        <input type="radio" name="month" value="oct" id="oct">
+                        <label for="oct" class="month-picker-label">Oct</label>
+                        <input type="radio" name="month" value="nov" id="nov">
+                        <label for="nov" class="month-picker-label">Nov</label>
+                        <input type="radio" name="month" value="dec" id="dec">
+                        <label for="dec" class="month-picker-label">Dec</label>
+                    </fieldset>
+                    <a href="index.html" class="month-picker-nav" title="Not implemented">&gt;</a>
+                </div>
+            </div>
+            <div id="info">
+                @Html.Partial( "GameSchedule" , Model )
+            </div>
+        </div>
+    </div>
+</article>
+
+@*<aside>
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>*@

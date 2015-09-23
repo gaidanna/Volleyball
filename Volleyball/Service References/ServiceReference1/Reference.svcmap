@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="af368fbe-f864-4713-8b98-941d7bcc19f6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52866/VolleyballService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VolleyballService.wsdl" MetadataType="Wsdl" ID="ea0ac363-327b-4ff1-a4ef-8c6d509f61d9" SourceId="1" SourceUrl="http://localhost:52866/VolleyballService.svc?wsdl" />
+    <MetadataFile FileName="VolleyballService.disco" MetadataType="Disco" ID="e7cc8262-0ab4-43d6-8c8e-14179012121f" SourceId="1" SourceUrl="http://localhost:52866/VolleyballService.svc?disco" />
+    <MetadataFile FileName="VolleyballService.xsd" MetadataType="Schema" ID="a13f85b5-8491-4195-ad42-16d52a6d94c9" SourceId="1" SourceUrl="http://localhost:52866/VolleyballService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VolleyballService1.xsd" MetadataType="Schema" ID="83a5dd9e-3fa9-47ab-ac0d-a1e217c509f2" SourceId="1" SourceUrl="http://localhost:52866/VolleyballService.svc?xsd=xsd0" />
+    <MetadataFile FileName="VolleyballService2.xsd" MetadataType="Schema" ID="eff6a7eb-1036-4f35-a321-93518ed88147" SourceId="1" SourceUrl="http://localhost:52866/VolleyballService.svc?xsd=xsd3" />
+    <MetadataFile FileName="VolleyballService3.xsd" MetadataType="Schema" ID="7be07be1-66ce-46e0-ad20-5f7ee02fd25a" SourceId="1" SourceUrl="http://localhost:52866/VolleyballService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

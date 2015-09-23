@@ -1,0 +1,19 @@
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\UnitTests\bin\Debug\Volleyball.UnitTests.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\UnitTests\bin\Debug\Volleyball.UnitTests.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\UnitTests\obj\Debug\Volleyball.UnitTests.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\UnitTests\obj\Debug\Volleyball.UnitTests.pdb
+D:\Sources\GAG\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.dll
+D:\Sources\GAG\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.pdb
+D:\Sources\GAG\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
+D:\Sources\GAG\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb

@@ -1,0 +1,160 @@
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\bin\Debug\Middleware.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\bin\Debug\Middleware.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddGame.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddPlayer.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddPlayerControl.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddScore.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddTeamWindow.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\MainWindow.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\Register_LoginControl.baml
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddGame.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddPlayer.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddPlayerControl.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddScore.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\AddTeamWindow.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\MainWindow.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\ApplicationWindows\Register_LoginControl.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\App.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball.csproj.GenerateResource.Cache
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\bin\Debug\Volleyball.exe.config
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\bin\Debug\Volleyball.exe
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\bin\Debug\Volleyball.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball_Content.g.cs
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball_MarkupCompile.cache
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball.g.resources
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball.Properties.Resources.resources
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball.exe
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\obj\Debug\Volleyball.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\volleyball_stat\bin\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.baml
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\App.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball_Content.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball_MarkupCompile.cache
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball.g.resources
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball.Properties.Resources.resources
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball.csproj.GenerateResource.Cache
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball.exe
+D:\Sources\GAG\Volleyball\Volleyball\obj\Debug\Volleyball.pdb
+D:\Sources\GAG\Volleyball\Volleyball\bin\Debug\Volleyball.exe.config
+D:\Sources\GAG\Volleyball\Volleyball\bin\Debug\Volleyball.exe
+D:\Sources\GAG\Volleyball\Volleyball\bin\Debug\Volleyball.pdb
+D:\Sources\GAG\Volleyball\Volleyball\bin\Debug\Middleware.dll
+D:\Sources\GAG\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Volleyball\bin\Debug\Middleware.pdb
+D:\Sources\GAG\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.exe.config
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.exe
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.exe
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\bin\Debug\Middleware.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\bin\Debug\Middleware.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.csprojResolveAssemblyReference.cache
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.baml
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\App.g.cs
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball_MarkupCompile.cache
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.g.resources
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.Properties.Resources.resources
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.csproj.GenerateResource.Cache
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.exe.config
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.exe
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.exe
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\bin\Debug\Middleware.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\bin\Debug\Middleware.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.csprojResolveAssemblyReference.cache
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.baml
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\App.g.cs
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball_MarkupCompile.cache
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.g.resources
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.Properties.Resources.resources
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.csproj.GenerateResource.Cache
+C:\Users\Anna\Desktop\dsjkshk\Volleyball\Volleyball\bin\Debug\Volleyball.exe.config
+C:\Users\Anna\Desktop\dsjkshk\Volleyball\Volleyball\obj\Debug\Volleyball.exe
+C:\Users\Anna\Desktop\dsjkshk\Volleyball\Volleyball\obj\Debug\Volleyball.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.exe.config
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.exe
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.exe
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\bin\Debug\Middleware.dll
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\bin\Debug\Middleware.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.baml
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\App.g.cs
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball_MarkupCompile.cache
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.g.resources
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.Properties.Resources.resources
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball\obj\Debug\Volleyball.csproj.GenerateResource.Cache

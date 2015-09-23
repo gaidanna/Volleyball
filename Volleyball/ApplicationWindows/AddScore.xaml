@@ -1,0 +1,15 @@
+﻿<Window x:Class="Volleyball.ApplicationWindows.AddScore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddScore" Height="193.015" Width="300" Loaded="Window_Loaded">
+    <Grid>
+        <TextBox Name="ScoreTeamOne" HorizontalAlignment="Left" Height="23" Margin="15,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ScoreTeamTwo" HorizontalAlignment="Left" Height="23" Margin="150,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock Name="TeamOneName" HorizontalAlignment="Left" Margin="17,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Name="TeamTwoName" HorizontalAlignment="Left" Margin="159,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="141,42,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top"/>
+        <Button Content="Save" Name="saveButton" HorizontalAlignment="Left" Margin="85,110,0,0" VerticalAlignment="Top" Width="90" Height="37" Click="saveButton_Click"/>
+        <Button Content="Cancel" Name="cancelButton" HorizontalAlignment="Left" Margin="180,110,0,0" VerticalAlignment="Top" Width="90" Height="37" Click="cancelButton_Click"/>
+
+    </Grid>
+</Window>

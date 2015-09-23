@@ -1,0 +1,21 @@
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\CustomAttributes\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\CustomAttributes\bin\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\CustomAttributes\obj\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\CustomAttributes\obj\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.pdb

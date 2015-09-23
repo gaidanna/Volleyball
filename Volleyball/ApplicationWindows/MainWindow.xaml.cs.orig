@@ -1,0 +1,119 @@
+﻿using Middleware;
+using System;
+using System.Collections.Generic;
+using System.Windows;
+using volleyball_stat.ApplicationWindows;
+using volleyball_stat.Classes;
+using volleyball_stat.ServiceReference1;
+
+namespace volleyball_stat
+{
+    public partial class MainWindow : Window
+    {
+        private AddGameWindowa addWindow;
+        private ScoreWindow scoreWindow;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            addWindow = new AddGameWindowa();
+            scoreWindow = new ScoreWindow();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReference1.VolleyballServiceClient client = new VolleyballServiceClient();
+            //VolleyballService.VolleyballServiceClient client = new VolleyballService.VolleyballServiceClient();
+            //Base b = new Base();
+            Player p = new Player("zzz", 2);
+            Team t = new Team("z");
+            Game g = new Game("female", "zz", "zz", "dsssaa");
+            PlayerInGame pg = new PlayerInGame(g, p);
+            PlayerInTeam pt = new PlayerInTeam(t, p);
+
+            //var result = pg.ConvertInstanceToDictionary();
+            //var dictrtInstanceToDictionary() = b.Conve;
+            client.Insert(p.ConvertInstanceToDictionary(), TablesNames.Players);
+            client.Insert(t.ConvertInstanceToDictionary(), TablesNames.Teams);
+            client.Insert(g.ConvertInstanceToDictionary(), TablesNames.Games);
+            client.Insert(pg.ConvertInstanceToDictionary(), TablesNames.PlayerInGames);
+            client.Insert(pt.ConvertInstanceToDictionary(), TablesNames.PlayerInTeams);
+            //client.Insert(dict, TablesNames.Bases);
+            p.Name = "xxx";
+            t.Name = "xx";
+
+            client.Update(p.ConvertInstanceToDictionary(), TablesNames.Players);
+            client.Update(t.ConvertInstanceToDictionary(), TablesNames.Teams);
+            //client.Delete(g.ConvertInstanceToDictionary(), TablesNames.Games);
+            //client.Delete(pg.ConvertInstanceToDictionary(), TablesNames.PlayerInGames);
+            //client.Delete(pt.ConvertInstanceToDictionary(), TablesNames.PlayerInTeams);
+            //Player player = new Player("Ann", 7);
+            //client.Insert((Base)player);
+
+            //Supplementary.CreateConnection();
+            bool? res = addWindow.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //TableInform x = new TableInform();
+            //var resut = TableInform.Connection;
+
+            //Player player = new Player("Vasya", 1);
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StatisticsButton_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            AddPlayerWindowa playerWindow = new AddPlayerWindowa();
+            bool? res = playerWindow.ShowDialog();
+        }
+
+        private void AddTeam_Click(object sender, RoutedEventArgs e)
+        {
+            AddTeamWindowa teamWindow = new AddTeamWindowa();
+            bool? res = teamWindow.ShowDialog();
+        }
+
+        private void AddGame_Click(object sender, RoutedEventArgs e)
+        {
+            AddGameWindowa gameWindow = new AddGameWindowa();
+            bool? res = gameWindow.ShowDialog();
+        }
+
+        private void Calendar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Statistics_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Teams_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Referees_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+    }
+}

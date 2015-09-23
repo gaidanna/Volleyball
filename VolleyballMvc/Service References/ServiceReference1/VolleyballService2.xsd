@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Middleware" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Middleware" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TablesNames">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Players" />
+      <xs:enumeration value="Teams" />
+      <xs:enumeration value="Games" />
+      <xs:enumeration value="PlayerInGames" />
+      <xs:enumeration value="PlayerInTeams" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TablesNames" nillable="true" type="tns:TablesNames" />
+  <xs:simpleType name="Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+      <xs:enumeration value="NotSpecified" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Gender" nillable="true" type="tns:Gender" />
+</xs:schema>

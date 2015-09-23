@@ -1,0 +1,64 @@
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll.config
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.pdb
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\CustomAttributes.dll
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\CustomAttributes.pdb
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.dll
+C:\Users\Anna\Desktop\TortoisHG\Volleyball Repository\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll.config
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\CustomAttributes.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\CustomAttributes.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\16 09\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.pdb
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll.config
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.pdb
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\CustomAttributes.dll
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\CustomAttributes.pdb
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.dll
+D:\Sources\GAG\volleyball_stat5_New_1\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll.config
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Middleware.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.pdb
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\volleyball_stat5_New\volleyball_stat5_New\volleyball_stat5\Middleware\bin\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Middleware\bin\Debug\Middleware.dll.config
+D:\Sources\GAG\Volleyball\Middleware\bin\Debug\Middleware.dll
+D:\Sources\GAG\Volleyball\Middleware\bin\Debug\Middleware.pdb
+D:\Sources\GAG\Volleyball\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\Volleyball\Middleware\obj\Debug\Middleware.dll
+D:\Sources\GAG\Volleyball\Middleware\obj\Debug\Middleware.pdb
+D:\Sources\GAG\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.dll.config
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.dll
+C:\Users\g.gaidabas\Desktop\Volleyball\22 09\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.dll.config
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.dll
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.pdb
+C:\Users\Anna\Desktop\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.dll.config
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.dll
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\bin\Debug\Middleware.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.dll
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\bin\Debug\Volleyball.Attributes.pdb
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.csprojResolveAssemblyReference.cache
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.dll
+D:\Sources\GAG\Volleyball\Volleyball\Middleware\obj\Debug\Middleware.pdb
