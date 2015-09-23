@@ -9,7 +9,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using VolleyballMvc.Filters;
 using VolleyballMvc.Models;
-using Middleware;
+using Middleware.VolleyballService;
 
 namespace VolleyballMvc.Controllers
 {
@@ -20,7 +20,10 @@ namespace VolleyballMvc.Controllers
             ViewBag.Message = "Games available.";
 
             TeamsContext dbContext = new TeamsContext();
-            //string[] users = dbContext.Teams.Select(item => item.Name ).ToArray();
+
+            VolleyballServiceClient client = new VolleyballServiceClient();
+
+            List<Dictionary<string , string>> resultedList = new List<Dictionary<string , string>>( client.ReadAll( TablesNames.Games , Gender.NotSpecified ) );            
 
             return View( new GameScheduleModel() { Date = DateTime.Now , Games = new List<string>( new string[] { "Game1" , "Game2" , "Game3" } ) } );
         }
