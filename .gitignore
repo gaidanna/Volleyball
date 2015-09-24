@@ -1,5 +1,5 @@
 **/bin/*
 **/obj/*
-*.dll
-*.pdb
-*.cache
+**/*.dll
+**/*.pdb
+**/*.cache
