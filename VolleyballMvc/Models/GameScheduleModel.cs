@@ -14,8 +14,16 @@ namespace VolleyballMvc.Models
             private set;
         }
 
-        public GameScheduleModel( List<Game> games )
+        public string Month
         {
+            get;
+            private set;
+        }
+
+        public GameScheduleModel( List<Game> games , string month )
+        {
+            this.Month = month;
+
             games.Sort( delegate( Game first , Game next )
             {
                 return next.Date.CompareTo( first.Date );
@@ -31,6 +39,11 @@ namespace VolleyballMvc.Models
                 }
                 this.Games[ game.Date ].Add( game );
             }
+        }
+
+        public string GetMonthClass( string month )
+        {
+            return "month-picker-label" + ( month.Equals( this.Month , StringComparison.InvariantCultureIgnoreCase ) ? " active" : "" );
         }
     }
 }

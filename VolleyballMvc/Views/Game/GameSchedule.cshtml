@@ -1,7 +1,7 @@
 ﻿@model VolleyballMvc.Models.GameScheduleModel
 @using VolleyballMvc.Models
 
-@if ( Model != null )
+@if ( Model.Games.Count > 0 )
 {
     <div class="GameSchedule">
         @foreach ( var gameByDay in Model.Games )
@@ -30,5 +30,5 @@
 }
 else
 {
-    <h1>There is no upcoming games. Please, check later.</h1>
+    <h1 style="text-align:center;">There is no upcoming games. Please, check later.</h1>
 }

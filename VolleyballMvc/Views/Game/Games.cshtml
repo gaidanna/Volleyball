@@ -13,7 +13,7 @@
 
 <article>
     <div id="main">
-        <h1 class="pageTitle">Games </h1>
+        <h1 class="pageTitle">Games</h1>
         <div id="content">
             <div id="calendar">
                 <div class="month-picker">                    
@@ -24,7 +24,7 @@
                             {
                                 <form>
                                     <input type="submit" name="month" value="@month" id="@month" style="display:none">
-                                    <label for="@month" class="month-picker-label" onclick="form.submit();">@month.Substring( 0 , 3 )</label>
+                                    <label for="@month" class="@Model.GetMonthClass( month )" onclick="form.submit();">@month.Substring( 0 , 3 )</label>
                                 </form>
                             }
                         }

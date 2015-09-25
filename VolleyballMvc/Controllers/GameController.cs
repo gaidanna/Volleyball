@@ -27,23 +27,20 @@ namespace VolleyballMvc.Controllers
             resultedList = new List<Dictionary<string , string>>( client.ReadAll( Middleware.VolleyballService.TablesNames.Games , Middleware.VolleyballService.Gender.NotSpecified ) );
 
             games = new List<Game>();
+            if ( string.IsNullOrEmpty( month ) )
+            {
+                month = DateTimeFormatInfo.CurrentInfo.GetMonthName( DateTime.Now.Month );
+            }
             foreach ( var item in resultedList )
             {
                 game = new Game( item );
-                if ( !string.IsNullOrEmpty( month ) )
-                {
-                    if ( month.Equals( DateTimeFormatInfo.CurrentInfo.GetMonthName( game.Date.Month ) , StringComparison.InvariantCultureIgnoreCase ) )
-                    {
-                        games.Add( new Game( item ) );
-                    }
-                }
-                else
+                if ( month.Equals( DateTimeFormatInfo.CurrentInfo.GetMonthName( game.Date.Month ) , StringComparison.InvariantCultureIgnoreCase ) )
                 {
                     games.Add( new Game( item ) );
                 }
             }
 
-            return View( new GameScheduleModel( games ) );
+            return View( new GameScheduleModel( games , month ) );
         }
 
         //public ActionResult About()
