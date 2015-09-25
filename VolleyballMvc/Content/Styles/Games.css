@@ -47,7 +47,7 @@ footer, header, hgroup, menu, nav, section {
     color:white;
     background-color:rgba(0, 10, 41, 0.5);
     width: 1000px;
-    height:500px;
+    height:600px;
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
@@ -177,4 +177,9 @@ input:checked + .month-picker-label:before {
   text-align: center;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.month-picker-fieldset form {
+    width : 40px;
+    float : left;
 }

@@ -8,29 +8,29 @@ namespace VolleyballMvc.Models
 {
     public class GameScheduleModel
     {
-        public Game[] Games
+        public Dictionary<DateTime , List<Game>> Games
         {
             get;
             private set;
         }
 
-        public GameScheduleModel( List<Dictionary<string , string>> data )
+        public GameScheduleModel( List<Game> games )
         {
-            List<Game> games;
-
-            games = new List<Game>();
-
-            foreach ( var item in data )
-            {
-                games.Add( new Game( item ) );
-            }
             games.Sort( delegate( Game first , Game next )
             {
                 return next.Date.CompareTo( first.Date );
             } );
 
-            this.Games = games.ToArray();
-        }
+            this.Games = new Dictionary<DateTime , List<Game>>();
 
+            foreach ( Game game in games )
+            {
+                if ( !this.Games.ContainsKey( game.Date ) )
+                {
+                    this.Games[ game.Date ] = new List<Game>();
+                }
+                this.Games[ game.Date ].Add( game );
+            }
+        }
     }
 }

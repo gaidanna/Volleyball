@@ -175,7 +175,6 @@ D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlaye
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.baml
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.baml
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.baml
-D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.baml
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.g.cs
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.g.cs
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.g.cs
@@ -183,7 +182,6 @@ D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlaye
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.g.cs
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.g.cs
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.g.cs
-D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\ApplicationWindows\Register_LoginControl.g.cs
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\App.g.cs
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\Volleyball_MarkupCompile.cache
 D:\Sources\GAG\trunk\Volleyball\Volleyball\obj\Debug\Volleyball.g.resources

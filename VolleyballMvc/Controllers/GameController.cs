@@ -9,23 +9,41 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using VolleyballMvc.Filters;
 using VolleyballMvc.Models;
-using Middleware.VolleyballService;
+using Middleware;
+using System.Globalization;
 
 namespace VolleyballMvc.Controllers
 {
     public class GameController : Controller
     {
-        public ActionResult Games()
+        public ActionResult Games( string month )
         {
-            ViewBag.Message = "Games available.";
+            Game game;
+            List<Game> games;
+            Middleware.VolleyballService.VolleyballServiceClient client;
+            List<Dictionary<string , string>> resultedList;
 
-            TeamsContext dbContext = new TeamsContext();
+            client = new Middleware.VolleyballService.VolleyballServiceClient();
+            resultedList = new List<Dictionary<string , string>>( client.ReadAll( Middleware.VolleyballService.TablesNames.Games , Middleware.VolleyballService.Gender.NotSpecified ) );
 
-            VolleyballServiceClient client = new VolleyballServiceClient();
+            games = new List<Game>();
+            foreach ( var item in resultedList )
+            {
+                game = new Game( item );
+                if ( !string.IsNullOrEmpty( month ) )
+                {
+                    if ( month.Equals( DateTimeFormatInfo.CurrentInfo.GetMonthName( game.Date.Month ) , StringComparison.InvariantCultureIgnoreCase ) )
+                    {
+                        games.Add( new Game( item ) );
+                    }
+                }
+                else
+                {
+                    games.Add( new Game( item ) );
+                }
+            }
 
-            List<Dictionary<string , string>> resultedList = new List<Dictionary<string , string>>( client.ReadAll( TablesNames.Games , Gender.NotSpecified ) );
-
-            return View( new GameScheduleModel( resultedList ) );
+            return View( new GameScheduleModel( games ) );
         }
 
         //public ActionResult About()

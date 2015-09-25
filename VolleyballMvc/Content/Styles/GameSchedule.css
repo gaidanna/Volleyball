@@ -1,7 +1,6 @@
 ﻿.GameSchedule {
     overflow-y: scroll;
-    height: 470px;
-    position: fixed;
+    height: 580px;    
     width: 1000px;
 }
 
@@ -50,15 +49,19 @@
 
 .Team1 {
     float: left;
-    width: 200px;
-    margin-left: 200px;
+    width: 300px;
+    margin-left: 100px;
+    text-align : center;
 }
 
 
 .Score {
     float: left;
-    width: 280px;
+    width: 170px;
+    margin-left : 20px;
+    margin-right : 20px;
 }
 
 .Team2 {
+    text-align : left;
 }
