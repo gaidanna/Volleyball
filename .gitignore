@@ -1,6 +1,2 @@
-**/bin/*
-**/obj/*
-**/*.dll
-**/*.pdb
-**/*.cache
-*.suo
+*.cache
+*.manifest
