@@ -20,3 +20,14 @@ D:\Projects\Volleyball\MiddlwareHost\bin\Volleyball.Attributes.pdb
 D:\Projects\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.csprojResolveAssemblyReference.cache
 D:\Projects\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.dll
 D:\Projects\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.pdb
+D:\Source\Volleyball\MiddlwareHost\bin\app.config
+D:\Source\Volleyball\MiddlwareHost\bin\MiddlwareHost.dll.config
+D:\Source\Volleyball\MiddlwareHost\bin\MiddlwareHost.dll
+D:\Source\Volleyball\MiddlwareHost\bin\MiddlwareHost.pdb
+D:\Source\Volleyball\MiddlwareHost\bin\Middleware.dll
+D:\Source\Volleyball\MiddlwareHost\bin\Volleyball.Attributes.dll
+D:\Source\Volleyball\MiddlwareHost\bin\Middleware.pdb
+D:\Source\Volleyball\MiddlwareHost\bin\Volleyball.Attributes.pdb
+D:\Source\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.csprojResolveAssemblyReference.cache
+D:\Source\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.dll
+D:\Source\Volleyball\MiddlwareHost\obj\Debug\MiddlwareHost.pdb

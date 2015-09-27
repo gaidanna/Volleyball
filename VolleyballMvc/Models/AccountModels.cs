@@ -18,24 +18,24 @@ namespace VolleyballMvc.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
 
-    public class TeamsContext : DbContext
-    {
-        public TeamsContext()
-            : base("DefaultConnection")
-        {
-        }
+    //public class TeamsContext : DbContext
+    //{
+    //    public TeamsContext()
+    //        : base("DefaultConnection")
+    //    {
+    //    }
 
-        public DbSet<Team> Teams { get; set; }
-    }
+    //    public DbSet<Team> Teams { get; set; }
+    //}
 
-    [Table("Teams")]
-    public class Team
-    {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+    //[Table("Teams")]
+    //public class Team
+    //{
+    //    [Key]
+    //    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+    //}
 
     [Table("UserProfile")]
     public class UserProfile

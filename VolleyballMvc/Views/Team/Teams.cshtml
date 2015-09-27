@@ -1,36 +1,49 @@
 ﻿@model VolleyballMvc.Models.TeamModel
+@using VolleyballMvc.Models
 
 @{
-//ViewBag.Title = "Teams";
+    ViewBag.Title = "Teams";
 }
 
-<hgroup class="title">
-    @*<h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>*@
-</hgroup>
+<hgroup class="title"></hgroup>
+
+@section css{
+    <link href="@Url.Content("~/Content/Styles/Teams.css")" rel="stylesheet" />
+}
 
 <article>
-    @*<p>
-        Use this area to provide additional information.
-    </p>
+    <div id="main">
+        <h1 class="pageTitle">Teams</h1>
+        <div id="content">
+            @if (Model != null)
+            {
+                <div class="Teams">
+                    
+                    @foreach (var team in Model.Teams)
+                    {
+                        <div class="UpperLine">
+                        </div>
 
-    <p>
-        Use this area to provide additional information.
-    </p>
+                        <div class="Team">
+                            <div id="SmallLogo">
+                                <img id="smallImage" src="~/Content/Images/smalLogo5.jpg" width="50" height="50" />
+                            </div>
+                            <div id="TeamName">
+                                @String.Format("{0, -20} >", team.Name)
+                            </div>
 
-    <p>
-        Use this area to provide additional information.
-    </p>*@
+                        </div>
+                        <div class="LowerLine">
+                        </div>
+                        <div class="EmptyLine">
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <h1>There are no teams. Please, check later.</h1>
+            }
+        </div>
+    </div>
 </article>
-
-@*<aside>
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-    <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-    </ul>
-</aside>*@

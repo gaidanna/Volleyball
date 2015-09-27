@@ -20,50 +20,24 @@ namespace VolleyballMvc.Controllers
     {
         public ActionResult Teams()
         {
+            List<Team> teamsList = new List<Team>();
             //ViewBag.Message = "Teams available.";
-           // VolleyballServiceClient client = new VolleyballServiceClient();
-           // List<Dictionary<string, string>> list = client.ReadAll(TablesNames.Teams, Gender.Male);
-
-            //UsersContext dbContext = new UsersContext();
-            //string[] users = dbContext.UserProfiles.Select(item => item.UserName).ToArray();
-
-            //TableInform table;
-            //DbConnection connection;
-            //DataRow[] rows;
-            //List<Dictionary<string, string>> resultedList;
-
-            //connection = TableInform.Connection;
-            //resultedList = new List<Dictionary<string, string>>();
-            //table = new TableInform("Teams"  );
-
-            //if (true)
-            //{
-            //    rows = table.Table.Select();
-            //}
-            ////else
-            ////{
-            ////    string param = String.Format("LEAGUE = '{0}'", gender.ToString());
-            ////    rows = table.Table.Select(param);
-            ////}
-
-            //foreach (var row in rows)
-            //{
-            //    var result = table.ConvertRowToDict(row);
-            //    resultedList.Add(result);
-            //}           
-
-
-            ////IEnumerable<Team> teams = db
-            ////ViewBag
-            return View();// new TeamModel() { Users = users } );
+            Middleware.VolleyballService.VolleyballServiceClient client = new Middleware.VolleyballService.VolleyballServiceClient();
+            List<Dictionary<string, string>> list = new List<Dictionary<string , string>>( client.ReadAll(Middleware.VolleyballService.TablesNames.Teams, Middleware.VolleyballService.Gender.NotSpecified));
+            foreach (var item in list)
+            {
+                teamsList.Add(new Team(item));
+            }
+            
+            return View(new TeamModel(teamsList));// new TeamModel() { Users = users } );
         }
 
-        //public ActionResult About()
-        //{
-        //    //ViewBag.Message = "Your app description page.";
+        public ActionResult TeamInfo()
+        {
+            //ViewBag.Message = "Your app description page.";
 
-        //    return View();
-        //}
+            return View();
+        }
 
         //public ActionResult Contact()
         //{
