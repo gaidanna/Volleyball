@@ -1,34 +1,56 @@
-﻿@{
+﻿@model VolleyballMvc.Models.PlayerModel
+@using VolleyballMvc.Models
+
+@{
     ViewBag.Title = "Players";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
+<hgroup class="title"></hgroup>
+
+@section css{
+    <link href="@Url.Content("~/Content/Styles/Players.css")" rel="stylesheet" />
+}
 
 <article>
-    @*<p>
-        Use this area to provide additional information.
-    </p>
+    <div id="main">
+        <h1 class="pageTitle">Players</h1>
+        <div id="content">
+            @if (Model != null)
+            {
+                <div class="Players">
 
-    <p>
-        Use this area to provide additional information.
-    </p>
+                    @{
+                        Random r = new Random();
+                        foreach (var pl in Model.Players)
+                        {
+                            <div class="UpperLine">
+                            </div>
 
-    <p>
-        Use this area to provide additional information.
-    </p>*@
+                            <div class="Player">
+                                <div id="SmallLogo">
+                                    @{
+                                        int number = r.Next(1, 9);
+                                        string path = "/Content/Images/" + number + ".png";
+                                    }
+                                    <img id="smallImage" src=@path width="50" height="50" />
+                                </div>
+                                <div id="PlayerName">
+                                    @pl.Name
+                                </div>
+
+                            </div>
+                            <div class="LowerLine">
+                            </div>
+                            <div class="EmptyLine">
+                            </div>
+                         }
+                    }
+                </div>
+                }
+                else
+                {
+                    <h1>There are no players. Please, check later.</h1>
+                }                       
+        </div>
+    </div>
 </article>
-
-@*<aside>
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-    <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-    </ul>
-</aside>*@

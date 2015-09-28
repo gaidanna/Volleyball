@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Source\Volleyball\Volleyball\obj\Debug\
+D:\Projects\Volleyball\Volleyball\obj\Debug\
 Volleyball
 none
 false
 DEBUG;TRACE
-D:\Source\Volleyball\Volleyball\App.xaml
+D:\Projects\Volleyball\Volleyball\App.xaml
 71517731852
 
-15-731934641
-22-558106614
+151853795447
+22-968214409
 ApplicationWindows\AddGame.xaml;ApplicationWindows\AddPlayer.xaml;ApplicationWindows\AddPlayerControl.xaml;ApplicationWindows\AddPlayerPreciseTeam.xaml;ApplicationWindows\AddScore.xaml;ApplicationWindows\AddTeamWindow.xaml;ApplicationWindows\MainWindow.xaml;
 
 False

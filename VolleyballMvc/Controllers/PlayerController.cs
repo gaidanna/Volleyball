@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using VolleyballMvc.Filters;
 using VolleyballMvc.Models;
+using Middleware;
 
 namespace VolleyballMvc.Controllers
 {
@@ -17,23 +18,16 @@ namespace VolleyballMvc.Controllers
     {
         public ActionResult Players()
         {
-            ViewBag.Message = "Players available.";
+            List<Player> playersList = new List<Player>();
+            //ViewBag.Message = "Teams available.";
+            Middleware.VolleyballService.VolleyballServiceClient client = new Middleware.VolleyballService.VolleyballServiceClient();
+            List<Dictionary<string, string>> list = new List<Dictionary<string, string>>(client.ReadAll(Middleware.VolleyballService.TablesNames.Players, Middleware.VolleyballService.Gender.NotSpecified));
+            foreach (var item in list)
+            {
+                playersList.Add(new Player(item));
+            }
 
-            return View();
+            return View(new PlayerModel(playersList));// new TeamModel() { Users = users } );
         }
-
-        //public ActionResult About()
-        //{
-        //    //ViewBag.Message = "Your app description page.";
-
-        //    return View();
-        //}
-
-        //public ActionResult Contact()
-        //{
-        //    //ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
     }
 }
