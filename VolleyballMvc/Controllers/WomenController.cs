@@ -13,9 +13,10 @@ using VolleyballMvc.Models;
 
 namespace VolleyballMvc.Controllers
 {
-    public class WomenController : Controller
+    [GenderActionFilter]
+    public class WomenController : BaseController
     {
-        public ActionResult WomenInfo()
+        public ActionResult WomenInfo(string gender)
         {
             ViewBag.Message = "Women league available.";
 

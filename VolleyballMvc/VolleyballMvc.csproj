@@ -203,6 +203,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\GameScheduleModel.cs" />
+    <Compile Include="Models\GenderActionFilter.cs" />
     <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -248,6 +249,8 @@
     <Content Include="Content\Images\smalLogo4.jpg" />
     <Content Include="Content\Images\smalLogo5.jpg" />
     <Content Include="Content\Images\thisisv.png" />
+    <Content Include="Content\Styles\CommonW.css" />
+    <Content Include="Content\Styles\HomeW.css" />
     <Content Include="Content\Styles\Players.css" />
     <Content Include="Content\Styles\Teams.css" />
     <Content Include="Content\Styles\GameSchedule.css" />

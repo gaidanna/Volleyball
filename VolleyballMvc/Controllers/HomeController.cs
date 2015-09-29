@@ -3,14 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VolleyballMvc.Models;
 
 namespace VolleyballMvc.Controllers
 {
-    public class HomeController : Controller
+    public abstract class BaseController : Controller
     {
-        public ActionResult Index()
+        protected string Gender
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            get { return (string)ControllerContext.RouteData.Values["gender"]; }
+        }
+    }
+
+
+    [GenderActionFilter]
+    public class HomeController : BaseController
+    {
+        public ActionResult Index(string gender)
+        {
+            string path;
+            //if (string.IsNullOrEmpty(gender))
+            //{
+            //    return HttpNotFound();
+            //}
+            if (gender == "female")
+            {
+                path = "../Content/Styles/Home.css";
+            }
+            else
+            {
+                path = "../Content/Styles/HomeW.css";
+            }
+            //ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
             return View();
         }
