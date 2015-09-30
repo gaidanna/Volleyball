@@ -16,7 +16,8 @@ namespace VolleyballMvc.Controllers
 {
     public class GameController : Controller
     {
-        public ActionResult Games( string month )
+        [GenderActionFilter]
+        public ActionResult Games( string month, string gender)
         {
             Game game;
             List<Game> games;
@@ -27,6 +28,10 @@ namespace VolleyballMvc.Controllers
             resultedList = new List<Dictionary<string , string>>( client.ReadAll( Middleware.VolleyballService.TablesNames.Games , Middleware.VolleyballService.Gender.NotSpecified ) );
 
             games = new List<Game>();
+            if (!string.IsNullOrEmpty(gender))
+            {
+                ViewBag.gender = gender;
+            }
             if ( string.IsNullOrEmpty( month ) )
             {
                 month = DateTimeFormatInfo.CurrentInfo.GetMonthName( DateTime.Now.Month );
@@ -42,19 +47,5 @@ namespace VolleyballMvc.Controllers
 
             return View( new GameScheduleModel( games , month ) );
         }
-
-        //public ActionResult About()
-        //{
-        //    //ViewBag.Message = "Your app description page.";
-
-        //    return View();
-        //}
-
-        //public ActionResult Contact()
-        //{
-        //    //ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
     }
 }

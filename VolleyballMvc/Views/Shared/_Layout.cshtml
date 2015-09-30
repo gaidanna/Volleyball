@@ -5,7 +5,18 @@
     <title>@ViewBag.Title - VolleyballNet</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Styles.Render( "~/Content/css" )
+    @{
+    if (ViewBag.gender == "female")
+    {
+        <link href="@Url.Content("~/Content/Styles/CommonW.css")" rel="stylesheet" type="text/css" />
+    }
+    else
+    {
+            <link href="@Url.Content("~/Content/Styles/Common.css")" rel="stylesheet" type="text/css" />
+    }
+    }
+
+    @*@Styles.Render( "~/Content/css" )*@
     @Scripts.Render( "~/bundles/modernizr" )
     @RenderSection( "css" , false )
 </head>
@@ -31,8 +42,8 @@
                                     <li>@Html.ActionLink( "teams" , "Teams" , "Team" )</li>
                                     <li>@Html.ActionLink( "players" , "Players" , "Player" )</li>
                                     <li>@Html.ActionLink( "contact" , "Contact" , "Home" )</li>
-                                    <li class="gender" id="active">@Html.ActionLink( "men" , "MenInfo" , "Men" )</li>
-                                    <li class="gender">@Html.ActionLink( "women" , "WomenInfo" , "Women" )</li>
+                                    <li class="gender active">@Html.ActionLink( "men" , "Index", "Home", new { gender = "male" }, null)</li>
+                                    <li class="gender">@Html.ActionLink( "women" , "Index" , "Home", new { gender = "female" }, null)</li>
                                 </ul>
                             </div>
                         </nav>
@@ -59,5 +70,15 @@
 
     @Scripts.Render( "~/bundles/jquery" )
     @RenderSection( "scripts" , required: false )
+
+    <script type="text/javascript">
+        //var selector = '.gender';
+
+        //$(selector).on('click', function () {
+        //    $(selector).removeClass('active');
+        //    $(this).addClass('active');
+        //});
+
+    </script>
 </body>
 </html>

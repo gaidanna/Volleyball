@@ -2,6 +2,18 @@
     ViewBag.Title = "Contact";
 }
 
+@section css{
+    @if (ViewBag.gender == "female")
+    {
+        <link href="@Url.Content("~/Content/Styles/ContacteW.css")" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="@Url.Content("~/Content/Styles/Contact.css")" rel="stylesheet" />
+    }
+
+}
+
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
     <h2>@ViewBag.Message</h2>

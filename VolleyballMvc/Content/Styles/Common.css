@@ -57,12 +57,12 @@ html {
     text-shadow: 3px 2px 3px #333333;
 }
 
-    .menu ul {
+.menu ul {
         height: auto;
         list-style-type: none;
         padding: 10px;
         overflow: hidden;
-    }
+}
 
     .menu li {
         display: inline;
@@ -94,7 +94,7 @@ html {
     color: #80ccff;
 }
 
-#active a {
+.active a {
     background-color: #2548c0;
     color: #FFFFFF;
 }

@@ -17,16 +17,16 @@ namespace VolleyballMvc
         new { favicon = @"(.*/)?favicon.ico(/.*)?" });
 
             routes.MapRoute(
-                "routeWithGender", // Route name
+                "Default", // Route name
                 "{gender}/{controller}/{action}", // URL with parameters
-                new { controller = "home", action = "index" } // Parameter defaults
+                new { controller = "home", action = "index", gender = "" } // Parameter defaults
         );
 
-            routes.MapRoute(
-    "Default", // Route name
-    "{controller}/{action}", // URL with parameters
-    new { controller = "home", action = "index", gender = "" } // Parameter defaults
-);
+//            routes.MapRoute(
+//    "Default", // Route name
+//    "{controller}/{action}", // URL with parameters
+//    new { controller = "home", action = "index", gender = "" } // Parameter defaults
+//);
 
             //routes.MapRoute(
             //    name: "Default" ,

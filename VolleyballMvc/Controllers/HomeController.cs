@@ -7,49 +7,26 @@ using VolleyballMvc.Models;
 
 namespace VolleyballMvc.Controllers
 {
-    public abstract class BaseController : Controller
-    {
-        protected string Gender
-        {
-            get { return (string)ControllerContext.RouteData.Values["gender"]; }
-        }
-    }
-
 
     [GenderActionFilter]
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         public ActionResult Index(string gender)
         {
-            string path;
-            //if (string.IsNullOrEmpty(gender))
-            //{
-            //    return HttpNotFound();
-            //}
-            if (gender == "female")
+            if (!string.IsNullOrEmpty(gender))
             {
-                path = "../Content/Styles/Home.css";
+                ViewBag.gender = gender;
             }
-            else
-            {
-                path = "../Content/Styles/HomeW.css";
-            }
-            //ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
             return View();
         }
 
-        public ActionResult About()
+        [GenderActionFilter]
+        public ActionResult Contact(string gender)
         {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+            if (!string.IsNullOrEmpty(gender))
+            {
+                ViewBag.gender = gender;
+            }
             return View();
         }
     }

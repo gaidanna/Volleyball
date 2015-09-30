@@ -1,0 +1,94 @@
+﻿#title {  
+    margin: 50px 0;
+    text-align:center;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: white;
+    text-shadow: 3px 2px 3px #1f1a96;
+}
+
+#content {
+    padding-top : 50px;
+    display:block;
+    width: 1000px ;    
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:30px;
+    overflow-y: scroll;
+    height: 580px;
+    background-color:rgba(0, 10, 41, 0.5);
+    font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+
+#SmallLogo {
+display:inline;
+position: relative;
+
+}
+#smallImage  {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*margin-right: -50%;*/
+    transform: translate(-50%, -50%);
+    margin-left: 50px;
+}
+
+.Players {
+    margin: 0 65px;
+}
+
+.Player {
+    padding-top: 10px;
+    height: 60px;
+    background-color: #FFFFFF;
+    color:#2548c0;
+    text-transform: uppercase;
+    font-family: "oswaldlight","Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 34px;
+    font-size: 2rem;
+    line-height: 34px;
+    line-height: 3.4rem;
+    text-align: left;
+}
+
+#PlayerName {
+    display:inline;
+    margin-left: 100px;
+
+}
+/*.GameSchedule {
+    overflow-y: scroll;
+    height: 580px;    
+    width: 1000px;
+}*/
+
+.LowerLine {
+    vertical-align: middle;
+    height: 5px;
+    background-color: #edebeb;
+    width: 100%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 1px solid #2548c0;
+}
+
+.UpperLine {
+    vertical-align: middle;
+    height: 5px;
+    background-color: #edebeb;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 1px solid #2548c0;
+}
+
+.EmptyLine {
+    vertical-align: middle;
+    height: 40px;
+    width: 100%;
+}
+
+
+
+

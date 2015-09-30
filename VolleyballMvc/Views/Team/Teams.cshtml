@@ -8,7 +8,15 @@
 <hgroup class="title"></hgroup>
 
 @section css{
+@if (ViewBag.gender == "female")
+    {
+    <link href="@Url.Content("~/Content/Styles/TeamsW.css")" rel="stylesheet" />
+}
+else
+{
     <link href="@Url.Content("~/Content/Styles/Teams.css")" rel="stylesheet" />
+}
+    
 }
 
 <article>
