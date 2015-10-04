@@ -19,10 +19,26 @@
                         </div>
                         <div class="Teams">
                             <div class="Team1">@game.Teams[ 0 ].Name </div>
-                            <div class="Score">@game.Score.Trim( new char[] { '(' , ')' , ';' } ).Replace( ", " , ":" )</div>
-                            <div class="Team2">@game.Teams[ 1 ].Name</div>
-                        </div>
-                    }
+                            @{
+                        int firstTeamCount = 0;
+                        int secondTeamCount = 0;
+                                var result = game.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                                for (int i = 0; i < result.Length-1; i+=2)
+                                {
+                                    if (Convert.ToInt32(result[i]) > Convert.ToInt32(result[i + 1]))
+                                    {
+                                        firstTeamCount++;
+                                    }
+                                    else
+                                    {
+                                        secondTeamCount++;
+                                    }
+                                }
+                                <div class="Score">@String.Format("{0} : {1}", firstTeamCount, secondTeamCount)</div>
+                                    }
+                                    <div class="Team2">@game.Teams[ 1 ].Name</div>
+                                </div>
+                            }
                 </div>
             }
         }

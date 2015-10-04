@@ -67,12 +67,6 @@
     <Compile Include="ApplicationWindows\AddPlayer.xaml.cs">
       <DependentUpon>AddPlayer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationWindows\AddPlayerControl.xaml.cs">
-      <DependentUpon>AddPlayerControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ApplicationWindows\AddPlayerPreciseTeam.xaml.cs">
-      <DependentUpon>AddPlayerPreciseTeam.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ApplicationWindows\AddScore.xaml.cs">
       <DependentUpon>AddScore.xaml</DependentUpon>
     </Compile>
@@ -86,14 +80,6 @@
     <Page Include="ApplicationWindows\AddPlayer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ApplicationWindows\AddPlayerControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ApplicationWindows\AddPlayerPreciseTeam.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ApplicationWindows\AddScore.xaml">
       <SubType>Designer</SubType>

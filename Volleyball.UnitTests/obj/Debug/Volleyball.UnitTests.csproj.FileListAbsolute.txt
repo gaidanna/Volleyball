@@ -32,3 +32,4 @@ D:\Source\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.dll
 D:\Source\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.pdb
 D:\Source\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
 D:\Source\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb
+D:\Source\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache

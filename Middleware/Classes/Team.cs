@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 using Volleyball.Attributes;
 using Middleware;
 using System.Reflection;
+using Middleware.VolleyballService;
 
 namespace Middleware
 {
@@ -30,12 +31,12 @@ namespace Middleware
 
         private List<Player> players;
         private List<Game> games;
-        //private static VolleyballServiceClient client;
+        private static VolleyballServiceClient client;
 
         static Team()
         {
             //TableInform.TryCreateTable( "Teams" , GetRowNames );
-            //client = new VolleyballServiceClient();
+            client = new VolleyballServiceClient();
         }
 
         public static string GetRowNames()
@@ -146,11 +147,11 @@ namespace Middleware
              get
              {
                  players = new List<Player>();
-                 //var playersList = client.ReadPlayers_Team(Id);
-                 //foreach (var plInfo in playersList)
-                 //{
-                 //    players.Add(new Player(plInfo));
-                 //}
+                 var playersList = client.ReadPlayers_Team(Id);
+                 foreach (var plInfo in playersList)
+                 {
+                     players.Add(new Player(plInfo));
+                 }
                  return players;
              }
          }
@@ -160,11 +161,11 @@ namespace Middleware
              get
              {
                  games = new List<Game>();
-                 //var gamesList = client.ReadGames_Team(Id);
-                 //foreach (var gameInfo in gamesList)
-                 //{
-                 //    games.Add(new Game(gameInfo));
-                 //}
+                 var gamesList = client.ReadGames_Team(Id);
+                 foreach (var gameInfo in gamesList)
+                 {
+                     games.Add(new Game(gameInfo));
+                 }
                  return games;
              }
          }
