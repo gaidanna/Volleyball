@@ -59,7 +59,7 @@
                 <TextBox Grid.Row="1" Grid.Column="1" Name="manager" Width="150" Margin="4" HorizontalAlignment="Left"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Margin="15 4 4 4" Text="Phone:"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Name="phone" Width="150" Margin="4" HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Name="phone" Width="150" Margin="4" HorizontalAlignment="Left" PreviewTextInput="phone_PreviewTextInput"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Margin="15 4 4 4" Text="Email:"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Name="email" Width="150" Margin="4" HorizontalAlignment="Left"/>
@@ -71,7 +71,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Content="Add Player" Name="AddPlayer" Grid.Column="0" HorizontalAlignment="Right" Margin="25 10 4 4" VerticalAlignment="Top" Height="39" Width="90" Click="AddPlayer_Click"/>
+                <Button Content="Add Player" Name="AddPlayer" Grid.Column="0" HorizontalAlignment="Right" Margin="25 10 4 4" VerticalAlignment="Top" Height="39" Width="90" Click="AddPlayer_Click" IsEnabled="False"/>
                 <Button Content="Update Player" Name="UpdatePlayer" Grid.Column="0" HorizontalAlignment="Right" Margin="25 10 4 4" VerticalAlignment="Top" Height="39" Width="90" Visibility="Collapsed" Click="UpdatePlayer_Click"/>
                 <Button Content="Remove Player" Name="DeletePlayer" Grid.Column="1" HorizontalAlignment="Left" Margin="4 10 4 4" VerticalAlignment="Top" Height="39" Width="90" Click="DeletePlayer_Click" IsEnabled="False"/>
             </Grid>
@@ -103,7 +103,7 @@
 
             <Grid Grid.Row="1">
 
-                <ListBox HorizontalAlignment="Center" SelectionChanged="ListBox_SelectionChanged" Name="listBoxPlayers" Margin="4 4 15 4" Width="280" Height="200" SelectionMode="Single">
+                <ListBox HorizontalAlignment="Center" SelectionChanged="ListBox_SelectionChanged" Name="listBoxPlayers" ItemsSource="{Binding playersList}"  Margin="4 4 15 4" Width="280" Height="200" SelectionMode="Single">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>

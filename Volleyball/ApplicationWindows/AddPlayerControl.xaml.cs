@@ -68,32 +68,32 @@ namespace Volleyball.ApplicationWindows
             stringNumber = txboxPlayerNumb.Text.Trim();
             isCaptain = checkboxCaptain.IsChecked.Value;
 
-            validated = ValidatePlayer(name, stringNumber, amplua, isCaptain, AddTeamWindow.playersList);
+            //validated = ValidatePlayer(name, stringNumber, amplua, isCaptain, AddTeamWindow.playersList);
 
-            if (validated)
-            {
-                Int32.TryParse(stringNumber, out number);
-                var otherplayer = AddTeamWindow.playersList.Find(pl => pl.Number == number);
-                if (otherplayer == null)
-                {
-                    player = new Player(name, number, amplua, isCaptain);
+            //if (validated)
+            //{
+            //    //Int32.TryParse(stringNumber, out number);
+            //    //var otherplayer = AddTeamWindow.playersList.Find(pl => pl.Number == number);
+            //    //if (otherplayer == null)
+            //    //{
+            //    //    player = new Player(name, number, amplua, isCaptain, league);
 
-                    var playerDict = player.ConvertInstanceToDictionary();
-                    client.Insert( playerDict , Middleware.VolleyballService.TablesNames.Players );
-                    AddTeamWindow.playersList.Add(player);
-                    //playerInTeam = new PlayerInTeam(new Team, new Player(name, number));
-                    //playerInTeam.Save();
-                    AddTeamWindow.RefreshListBox();
-                    //AddTeamWindow.listBox.ItemsSource = null;
-                    //AddTeamWindow.listBox.ItemsSource = AddTeamWindow.playersList;
-                    ClearInputInfo();
-                    parentWindow.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    MessageBox.Show("Player with this number already exists.");
-                }
-            }
+            //    //    var playerDict = player.ConvertInstanceToDictionary();
+            //    //    client.Insert( playerDict , Middleware.VolleyballService.TablesNames.Players );
+            //    //    AddTeamWindow.playersList.Add(player);
+            //    //    //playerInTeam = new PlayerInTeam(new Team, new Player(name, number));
+            //    //    //playerInTeam.Save();
+            //    //    AddTeamWindow.RefreshListBox();
+            //    //    //AddTeamWindow.listBox.ItemsSource = null;
+            //    //    //AddTeamWindow.listBox.ItemsSource = AddTeamWindow.playersList;
+            //    //    ClearInputInfo();
+            //    //    parentWindow.Visibility = Visibility.Hidden;
+            //    //}
+            //    //else
+            //    //{
+            //    //    MessageBox.Show("Player with this number already exists.");
+            //    //}
+            //}
         }
 
         private bool ValidatePlayer(string name, string stringNumber, string amplua, bool captainCheckbox, List<Player> playersList)
@@ -166,37 +166,37 @@ namespace Volleyball.ApplicationWindows
             stringNumber = txboxPlayerNumb.Text.Trim();
             isCaptain = checkboxCaptain.IsChecked.Value;
 
-            validated = ValidatePlayer(name, stringNumber, amplua, isCaptain, AddTeamWindow.playersList);
+            //validated = ValidatePlayer(name, stringNumber, amplua, isCaptain, AddTeamWindow.playersList);
 
-            if (validated)
-            {
-                playerInfo["Name"] = name;
-                playerInfo["Number"] = stringNumber;
-                playerInfo["Amplua"] = amplua;
-                playerInfo["Captain"] = isCaptain.ToString();
-                client.Update( playerInfo , Middleware.VolleyballService.TablesNames.Players );
+            //if (validated)
+            //{
+            //    playerInfo["Name"] = name;
+            //    playerInfo["Number"] = stringNumber;
+            //    playerInfo["Amplua"] = amplua;
+            //    playerInfo["Captain"] = isCaptain.ToString();
+            //    client.Update( playerInfo , Middleware.VolleyballService.TablesNames.Players );
 
-                var player = AddTeamWindow.playersList.Find(pl => pl.Id.ToString() == playerInfo["Id"]);
-                Int32.TryParse(stringNumber, out number);
-                player.Name = name;
-                player.Number = number;
-                player.Amplua = amplua;
-                player.Captain = isCaptain;
+            //    var player = AddTeamWindow.playersList.Find(pl => pl.Id.ToString() == playerInfo["Id"]);
+            //    Int32.TryParse(stringNumber, out number);
+            //    player.Name = name;
+            //    player.Number = number;
+            //    player.Amplua = amplua;
+            //    player.Captain = isCaptain;
 
-                //if (Player.Items.ContainsKey(player.Id))
-                //{
-                //    Player.Items[player.Id] = player;
-                //}
-                //else
-                //{
-                //    Player.Items.Add(player.Id, player);
-                //}
+            //    //if (Player.Items.ContainsKey(player.Id))
+            //    //{
+            //    //    Player.Items[player.Id] = player;
+            //    //}
+            //    //else
+            //    //{
+            //    //    Player.Items.Add(player.Id, player);
+            //    //}
 
-                AddTeamWindow.RefreshListBox();//.listBox.ItemsSource = null;
-                //AddTeamWindow.listBox.ItemsSource = AddTeamWindow.playersList;
-                ClearInputInfo();
-                parentWindow.Visibility = Visibility.Hidden;
-            }
+            //    AddTeamWindow.RefreshListBox();//.listBox.ItemsSource = null;
+            //    //AddTeamWindow.listBox.ItemsSource = AddTeamWindow.playersList;
+            //    ClearInputInfo();
+            //    parentWindow.Visibility = Visibility.Hidden;
+            //}
         }
 
         public void SetPlayerInfo(Dictionary<string, string> player)

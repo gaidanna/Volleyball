@@ -38,7 +38,7 @@ namespace Middleware
             //client = new VolleyballServiceClient();
         }
 
-        private static string GetRowNames()
+        public static string GetRowNames()
         {
             return "( Id uniqueidentifier NOT NULL, LEAGUE varchar(50) NOT NULL, NAME varchar(50) NOT NULL, MANAGER varchar(50) NOT NULL, PHONE varchar(50) NOT NULL, EMAIL varchar(50) NOT NULL, PRIMARY KEY (Id) )";
         }

@@ -82,6 +82,9 @@
     <None Include="Service References\VolleyballService\VolleyballService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\VolleyballService\VolleyballService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Volleyball.Attributes\Volleyball.Attributes.csproj">

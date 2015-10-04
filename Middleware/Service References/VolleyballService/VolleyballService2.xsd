@@ -3,6 +3,7 @@
   <xs:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Middleware" />
   <xs:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:element name="Insert">
     <xs:complexType>
       <xs:sequence>
@@ -156,7 +157,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ValidatePlayer">
+  <xs:element name="IsIdentifiedDuplicate">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="number" type="xs:int" />
@@ -165,11 +166,40 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ValidatePlayerResponse">
+  <xs:element name="IsIdentifiedDuplicateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ValidatePlayerResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="IsIdentifiedDuplicateResult" type="xs:boolean" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindDuplicatedPlayers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="number" type="xs:int" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="teamId" type="q26:guid" />
+        <xs:element minOccurs="0" name="captain" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindDuplicatedPlayersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FindDuplicatedPlayersResult" nillable="true" type="q27:ArrayOfArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TryCreateTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="table" nillable="true" type="xs:string" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="getRowNames" nillable="true" type="q28:FuncOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TryCreateTableResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

@@ -19,15 +19,22 @@ namespace VolleyballMvc.Controllers
     {
         public ActionResult Players(string gender)
         {
-            List<Player> playersList = new List<Player>();
-            //ViewBag.Message = "Teams available.";
-            Middleware.VolleyballService.VolleyballServiceClient client = new Middleware.VolleyballService.VolleyballServiceClient();
+            List<Dictionary<string, string>> list;
+            List<Player> playersList;
+            Middleware.VolleyballService.VolleyballServiceClient client;
 
-            List<Dictionary<string, string>> list = new List<Dictionary<string, string>>(client.ReadAll(Middleware.VolleyballService.TablesNames.Players, Middleware.VolleyballService.Gender.NotSpecified));
-
+            playersList = new List<Player>();
+            client = new Middleware.VolleyballService.VolleyballServiceClient();
+            
             if (!string.IsNullOrEmpty(gender))
             {
+                var result = Enum.Parse(typeof(Middleware.VolleyballService.Gender), gender, true);
+                list = new List<Dictionary<string, string>>(client.ReadAll(Middleware.VolleyballService.TablesNames.Players, (Middleware.VolleyballService.Gender)result));
                 ViewBag.gender = gender;
+            }
+            else
+            {
+                list = new List<Dictionary<string, string>>(client.ReadAll(Middleware.VolleyballService.TablesNames.Players, Middleware.VolleyballService.Gender.Male));
             }
             foreach (var item in list)
             {

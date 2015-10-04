@@ -47,7 +47,12 @@ namespace MiddlewareHost
         List<Dictionary<string, string>> ReadPlaeyrs_Game(Guid gameId);
 
         [OperationContract]
-        bool ValidatePlayer(int number, Guid teamId, bool captain);
-
+        bool IsIdentifiedDuplicate(int number, Guid teamId, bool captain);
+        
+        [OperationContract]
+        List<Dictionary<string, string>> FindDuplicatedPlayers(int number, Guid teamId, bool captain);
+        
+        [OperationContract]
+        void TryCreateTable(string table, Func<string> getRowNames);
     }    
 }

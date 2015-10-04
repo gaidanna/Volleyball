@@ -5,38 +5,27 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Middleware.VolleyballService;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Volleyball.ApplicationWindows
 {
     public partial class AddTeamWindow : Window
     {
         private string league;
-        private static TextBox teamTxtBox;
-        private TextBox managerTxtBox;
-        private TextBox phoneTxtBox;
-        private TextBox emailTxtBox;
-        public static ListBox listBox;
-        private Button addButton;
-        private Button updateButton;
-        private Button deleteButton;
         private VolleyballServiceClient client;
-        public static List<Player> playersList;
+        public static ObservableCollection<Player> playersList;
+        //public static List<Player> playersList;
         private DispatcherTimer dispatcherTimer;
-        private AddPlayerPreciseTeam addPlayerWindow;
+        private AddPlayer addPlayerWindow;
+        private Team sampleTeam;
 
         public AddTeamWindow()
         {
             InitializeComponent();
             client = new VolleyballServiceClient();
-            playersList = new List<Player>();
-            teamTxtBox = (TextBox)this.FindName("team");
-            managerTxtBox = (TextBox)this.FindName("manager");
-            phoneTxtBox = (TextBox)this.FindName("phone");
-            emailTxtBox = (TextBox)this.FindName("email");
-            listBox = (ListBox)this.FindName("listBoxPlayers");
-            addButton = (Button)this.FindName("AddPlayer");
-            updateButton = (Button)this.FindName("UpdatePlayer");
-            deleteButton = (Button)this.FindName("DeletePlayer");
+            playersList = new ObservableCollection<Player>();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -44,51 +33,48 @@ namespace Volleyball.ApplicationWindows
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
+            listBoxPlayers.ItemsSource = playersList;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (listBox.SelectedIndex != -1)
+            if (listBoxPlayers.SelectedIndex != -1)
             {
-                addButton.Visibility = Visibility.Collapsed;
-                updateButton.Visibility = Visibility.Visible;
-                deleteButton.IsEnabled = true;
+                AddPlayer.Visibility = Visibility.Collapsed;
+                UpdatePlayer.Visibility = Visibility.Visible;
+                DeletePlayer.IsEnabled = true;
                 dispatcherTimer.Start();
             }
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            addButton.Visibility = Visibility.Visible;
-            updateButton.Visibility = Visibility.Collapsed;
-            deleteButton.IsEnabled = false;
+            AddPlayer.Visibility = Visibility.Visible;
+            UpdatePlayer.Visibility = Visibility.Collapsed;
+            DeletePlayer.IsEnabled = false;
         }
-
-        //private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
-        //{
-        //    ListBoxItem lbi = e.Source as ListBoxItem;
-
-        //    if (lbi != null)
-        //    {
-        //        MessageBox.Show(lbi.Content.ToString() + " is selected.");
-        //    }
-        //}
 
         private void RadioButtonMale_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton radioButton = sender as RadioButton;
             league = radioButton.Content.ToString();
+            AddPlayer.IsEnabled = true;
         }
 
         private void RadioButtonFemale_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton radioButton = sender as RadioButton;
             league = radioButton.Content.ToString();
+            AddPlayer.IsEnabled = true;
         }
 
         private void AddPlayer_Click(object sender, RoutedEventArgs e)
         {
-            addPlayerWindow = new AddPlayerPreciseTeam();
+            if (sampleTeam == null)
+            {
+                sampleTeam = new Team(league, team.Text, manager.Text, phone.Text, email.Text);
+            }
+            addPlayerWindow = new AddPlayer(sampleTeam, playersList, league);
             bool? res = addPlayerWindow.ShowDialog();
         }
 
@@ -96,59 +82,100 @@ namespace Volleyball.ApplicationWindows
         {
             Player pl;
             Player identifiedplayer;
-            Dictionary<string,string> playerDict;
+            //Dictionary<string,string> playerDict;
 
-            pl = (Player)listBox.SelectedItem;
-            playerDict = pl.ConvertInstanceToDictionary();
-            client.Delete( playerDict , Middleware.VolleyballService.TablesNames.Players );
+            pl = (Player)listBoxPlayers.SelectedItem;
+            //playerDict = pl.ConvertInstanceToDictionary();
+            //client.Delete( playerDict , Middleware.VolleyballService.TablesNames.Players );
 
-            identifiedplayer = playersList.Find(player => player.Id == pl.Id);
-            playersList.Remove(identifiedplayer);
-            //Player.Items.Remove(pl.Id);
+            identifiedplayer = playersList.FirstOrDefault(player => player.Id == pl.Id);
+            //playersList.Find(player => player.Id == pl.Id);
+            if (identifiedplayer != null)
+            {
+                playersList.Remove(identifiedplayer);
+            }
 
-            RefreshListBox();
+            //RefreshListBox();
         }
 
-        public static void RefreshListBox()
-        {
-            listBox.ItemsSource = null;
-            listBox.ItemsSource = playersList;
-        }
+        //public void RefreshListBox()
+        //{
+        //    listBoxPlayers.ItemsSource = null;
+        //    listBoxPlayers.ItemsSource = playersList;
+        //}
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            bool validated;
             string teamName;
             string managerName;
             string phoneName;
             string emailName;
-            Team team;
+            Team newTeam;
             PlayerInTeam plInTeam;
             Dictionary<string, string> teamDict;
+            Dictionary<string, string> plDict;
             Dictionary<string, string> plInTeamDict;
 
-            teamName = teamTxtBox.Text;
-            managerName = managerTxtBox.Text;
-            phoneName = phoneTxtBox.Text;
-            emailName = emailTxtBox.Text;
+            teamName = team.Text;
+            managerName = manager.Text;
+            phoneName = phone.Text;
+            emailName = email.Text;
 
-            if (teamName != null && managerName != null && emailName != null && league != null && phoneName != null)
+            validated = ValidateTeam(teamName, managerName, emailName, league, phoneName);
+            
+            if (validated)
             {
-                team = new Team(league, teamName, managerName, phoneName, emailName);
-                teamDict = team.ConvertInstanceToDictionary();
-                client.Insert( teamDict , Middleware.VolleyballService.TablesNames.Teams );
+                newTeam = new Team(league, teamName, managerName, phoneName, emailName);
+                teamDict = newTeam.ConvertInstanceToDictionary();
+                client.Insert(teamDict, Middleware.VolleyballService.TablesNames.Teams);
 
                 foreach (var player in playersList)
-                { 
-                    plInTeam = new PlayerInTeam(team, player);
+                {
+                    plInTeam = new PlayerInTeam(newTeam, player);
+
+                    plDict = player.ConvertInstanceToDictionary();
                     plInTeamDict = plInTeam.ConvertInstanceToDictionary();
-                    client.Insert( plInTeamDict , Middleware.VolleyballService.TablesNames.PlayerInTeams );
+
+                    client.Insert(plDict, Middleware.VolleyballService.TablesNames.Players);
+                    client.Insert(plInTeamDict, Middleware.VolleyballService.TablesNames.PlayerInTeams);
                 }
                 this.Visibility = Visibility.Hidden;
             }
-            else
+        }
+
+        private bool ValidateTeam(string name, string managerName, string email, string league, string phone)
+        {
+            Regex regex = new Regex(@"^[\p{L}\p{M}' \.\-]+$");
+            //Regex regexPhone = new Regex(@"/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/");
+
+            if (regex.IsMatch(name) && name.Length <= 50 && name.Length >= 2)
             {
-                MessageBox.Show("Please check insreted information.");
-            }   
+                if (regex.IsMatch(managerName) && managerName.Length <= 50 && managerName.Length >= 2)
+                {
+                    if (email.Length > 2 && email.Contains("@"))
+                    {
+                        if (league.Length > 0)
+                        {
+                            if(phone.Length >= 5 && phone.Length <= 13)
+                            //if (regexPhone.IsMatch(phone))
+                            {
+                                return true;
+                            }
+                            else { MessageBox.Show("Please check phone number."); }
+                        }
+                        else
+                        { MessageBox.Show("Please select league."); }
+                    }
+                    else
+                    { MessageBox.Show("Please check email."); }
+                }
+                else
+                { MessageBox.Show("Please specify correct manager name."); }
+            }
+            else
+            { MessageBox.Show("Please specify correct team name."); }
+            return false;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -161,11 +188,21 @@ namespace Volleyball.ApplicationWindows
             Player pl;
             Dictionary<string, string> result;
 
-            pl = (Player)listBox.SelectedItem;
-            result = client.Read( pl.Id , Middleware.VolleyballService.TablesNames.Players );
-
-            addPlayerWindow.SetPlayerInfo(result);
+            pl = (Player)listBoxPlayers.SelectedItem;
+            //result = client.Read( pl.Id , Middleware.VolleyballService.TablesNames.Players );
+            addPlayerWindow.SetPlayerInfo(pl);
             bool? res = addPlayerWindow.ShowDialog();
+        }
+
+        private void phone_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
+
+        private static bool IsTextAllowed(string text)
+        {
+            Regex regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
+            return !regex.IsMatch(text);
         }
     }
 }

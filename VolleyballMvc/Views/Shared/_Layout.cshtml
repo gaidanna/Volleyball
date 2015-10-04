@@ -6,19 +6,19 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @{
-    if (ViewBag.gender == "female")
-    {
-        <link href="@Url.Content("~/Content/Styles/CommonW.css")" rel="stylesheet" type="text/css" />
-    }
-    else
-    {
+        if (ViewBag.gender == "female")
+        {
+            <link href="@Url.Content("~/Content/Styles/CommonW.css")" rel="stylesheet" type="text/css" />
+        }
+        else
+        {
             <link href="@Url.Content("~/Content/Styles/Common.css")" rel="stylesheet" type="text/css" />
-    }
+        }
     }
 
     @*@Styles.Render( "~/Content/css" )*@
-    @Scripts.Render( "~/bundles/modernizr" )
-    @RenderSection( "css" , false )
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", false)
 </head>
 <body>
     <div id="container">
@@ -37,14 +37,24 @@
                                 <ul id="menu">
                                     <li id="imageLogo"></li>
                                     <li id="vb"><img src="~/Content/Images/thisisv.png" width="181" height="17" /></li>
-                                    <li>@Html.ActionLink( "home" , "Index" , "Home" )</li>
-                                    <li>@Html.ActionLink( "games" , "Games" , "Game" )</li>
-                                    <li>@Html.ActionLink( "teams" , "Teams" , "Team" )</li>
-                                    <li>@Html.ActionLink( "players" , "Players" , "Player" )</li>
-                                    <li>@Html.ActionLink( "contact" , "Contact" , "Home" )</li>
-                                    <li class="gender active">@Html.ActionLink( "men" , "Index", "Home", new { gender = "male" }, null)</li>
-                                    <li class="gender">@Html.ActionLink( "women" , "Index" , "Home", new { gender = "female" }, null)</li>
-                                </ul>
+                                    <li>@Html.ActionLink("home", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("games", "Games", "Game")</li>
+                                    <li>@Html.ActionLink("teams", "Teams", "Team")</li>
+                                    <li>@Html.ActionLink("players", "Players", "Player")</li>
+                                    <li>@Html.ActionLink("contact", "Contact", "Home")</li>
+                                    @{
+                                        if (ViewBag.gender == "female")
+                                        {
+                                            <li class="gender" id="male">@Html.ActionLink("men", "Index", "Home", new { gender = "male" }, null)</li>
+                                            <li class="gender active" id="female">@Html.ActionLink("women", "Index", "Home", new { gender = "female" }, null)</li>
+                                        }
+                                        else
+                                        {
+                                            <li class="gender active" id="male">@Html.ActionLink("men", "Index", "Home", new { gender = "male" }, null)</li>
+                                            <li class="gender" id="female">@Html.ActionLink("women", "Index", "Home", new { gender = "female" }, null)</li>
+                                         }
+                                     }
+                                     </ul>
                             </div>
                         </nav>
                     </div>
@@ -52,7 +62,7 @@
             </div>
         </header>
         <div id="body">
-            @RenderSection( "featured" , required: false )
+            @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>
@@ -68,8 +78,8 @@
         </div>
     </footer>
 
-    @Scripts.Render( "~/bundles/jquery" )
-    @RenderSection( "scripts" , required: false )
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
 
     <script type="text/javascript">
         //var selector = '.gender';

@@ -8,6 +8,7 @@ using Volleyball.Attributes;
 using System.Data;
 using Middleware;
 using System.Reflection;
+using Middleware.VolleyballService;
 
 namespace Middleware
 {
@@ -22,6 +23,8 @@ namespace Middleware
         private string amplua;
         [DataMember]
         private bool captain;
+        [DataMember]
+        private string league;
 
         //private bool yellowCard;
         //private bool redCard;
@@ -31,23 +34,25 @@ namespace Middleware
         private List<Game> games;
 
         
-        //VolleyballServiceClient client = new VolleyballServiceClient();
+        public static VolleyballServiceClient client;
 
         protected static IDataBase dataBase;
         //public static Dictionary<Guid, Player> Items = new Dictionary<Guid, Player>();
 
         static Player()
         {
+            client = new VolleyballServiceClient();
             table = MethodBase.GetCurrentMethod().DeclaringType.Name + "s";
+            //client.TryCreateTable(table, GetRowNames);
             //TableInform.TryCreateTable(table, GetRowNames);
         }
 
-        private static string GetRowNames()
+        public static string GetRowNames()
         {
-            return "( Id uniqueidentifier NOT NULL, Name varchar(50) NOT NULL, Number int NOT NULL, Amplua varchar(50) NOT NULL, Captain bit NOT NULL, PRIMARY KEY (Id) )";
+            return "( Id uniqueidentifier NOT NULL, Name varchar(50) NOT NULL, Number int NOT NULL, League varchar(50) NOT NULL, Amplua varchar(50) NOT NULL, Captain bit NOT NULL, PRIMARY KEY (Id) )";
         }
 
-        public Player(string name, int number, string amplua, bool captain)
+        public Player(string name, int number, string amplua, bool captain, string league)
             : base()
         {
             
@@ -55,6 +60,7 @@ namespace Middleware
             this.number = number;
             this.amplua = amplua;
             this.captain = captain;
+            this.league = league;
             //Items.Add(Id, this);
         }
 
@@ -68,6 +74,7 @@ namespace Middleware
                 this.number = Convert.ToInt32(fieldsDict["Number"]);
                 this.amplua = fieldsDict["Amplua"];
                 this.captain = Convert.ToBoolean(fieldsDict["Captain"]);
+                this.league = fieldsDict["League"];
             }
             catch
             { }
@@ -129,6 +136,20 @@ namespace Middleware
             }
         }
 
+        [IsInTable]
+        [DataMember]
+        public string League
+        {
+            get
+            {
+                return league;
+            }
+            set
+            {
+                league = value;
+            }
+        }
+
         public string CaptainTextPresentation
         {
             get
@@ -169,6 +190,8 @@ namespace Middleware
                 return games;
             }
         }
+
+       
 
         //public List<PlayerInTeam> PlayerTeamObjs
         //{

@@ -17,7 +17,7 @@ namespace Middleware
             //TableInform.TryCreateTable( "PlayerInGames" , GetRowNames );
         }
 
-        private static string GetRowNames()
+        public static string GetRowNames()
         {
             return "( Id uniqueidentifier NOT NULL, PlayerId uniqueidentifier, GameId uniqueidentifier, BestPlayer bit NOT NULL, YellowCard bit NOT NULL, RedCard bit NOT NULL, PRIMARY KEY (Id) )";
         }

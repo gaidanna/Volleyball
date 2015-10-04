@@ -24,6 +24,7 @@
     <MetadataSource Address="http://localhost:54293/VolleyballService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="VolleyballService4.xsd" MetadataType="Schema" ID="191e7c23-cc52-4509-975e-48427d228e70" SourceId="1" SourceUrl="http://localhost:54293/VolleyballService.svc?xsd=xsd4" />
     <MetadataFile FileName="VolleyballService.xsd" MetadataType="Schema" ID="065bc44c-0232-431c-83a9-61d23d565737" SourceId="1" SourceUrl="http://localhost:54293/VolleyballService.svc?xsd=xsd2" />
     <MetadataFile FileName="VolleyballService1.xsd" MetadataType="Schema" ID="ccd101ad-6f4f-4d52-8798-244ab4d03e45" SourceId="1" SourceUrl="http://localhost:54293/VolleyballService.svc?xsd=xsd3" />
     <MetadataFile FileName="VolleyballService2.xsd" MetadataType="Schema" ID="dd404741-53c2-4b05-8453-8f2f6321ce5e" SourceId="1" SourceUrl="http://localhost:54293/VolleyballService.svc?xsd=xsd0" />

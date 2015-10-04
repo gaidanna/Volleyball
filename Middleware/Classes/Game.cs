@@ -49,7 +49,7 @@ namespace Middleware
             //TableInform.TryCreateTable(table, GetRowNames);
         }
 
-        private static string GetRowNames()
+        public static string GetRowNames()
         {
             return "( Id uniqueidentifier NOT NULL, League varchar(50) NOT NULL, FirstReferee varchar(50) NOT NULL, SecondReferee varchar(50) NOT NULL, Location varchar(50) NOT NULL, Date date NOT NULL, TeamOneId uniqueidentifier NOT NULL, TeamTwoId uniqueidentifier NOT NULL, Score varchar(50) NOT NULL, PRIMARY KEY (Id) )";
         }

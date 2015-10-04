@@ -11,6 +11,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -18,24 +19,33 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        
-        <TextBlock Grid.Row="0" Grid.Column="0" Width="60" Margin="4 20 4 4" Text="Team: "></TextBlock>
-        <ComboBox Grid.Row="0" Name="teamsCombobox" Grid.Column="1" ItemsSource="{Binding Path=listOfTeams}" DisplayMemberPath="Name" Margin="4 20 4 4" Height="25" Width="200" HorizontalAlignment="Left" />
 
-        <TextBlock Grid.Row="1" Width="60" Grid.Column="0" Margin="4" Text="Name: "></TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Name="playerName" Margin="4" Width="200" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Grid.Row="0" Grid.Column="0" Width="60" Margin="4 20 4 4" Text="Gender: "/>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Content="Male" Name="RadioButtonMale" Grid.Column="0" HorizontalAlignment="Left" Margin="4 20 4 4" Checked="RadioButtonMale_Checked"/>
+            <RadioButton Content="Female" Name="RadioButtonFemale" Grid.Column="1" HorizontalAlignment="Left" Margin="4 20 4 4"  Checked="RadioButtonFemale_Checked"/>
+        </Grid>
+        <TextBlock Grid.Row="1" Grid.Column="0" Width="60" Margin="4" Text="Team: "></TextBlock>
+        <ComboBox Grid.Row="1" Name="teamsCombobox" Grid.Column="1" ItemsSource="{Binding Path=listOfTeams}" DisplayMemberPath="Name" Margin="4" Height="25" Width="200" HorizontalAlignment="Left" DropDownOpened="teamsCombobox_DropDownOpened" IsEnabled="False" />
 
-            <TextBlock Grid.Row="2" Width="60" Grid.Column="0" Margin="4" Text="Number: "></TextBlock>
-            <TextBox Grid.Row="2" Grid.Column="1" Name="playerNumber" Margin="4" Width="200" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Grid.Row="2" Width="60" Grid.Column="0" Margin="4" Text="Name: "></TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="playerName" Margin="4" Width="200" HorizontalAlignment="Left"></TextBox>
 
-            <TextBlock Grid.Row="3" Width="60" Grid.Column="0" Margin="4" Text="Position: "/>
-            <ComboBox Grid.Row="3" Grid.Column="1" Name="amplua" Margin="4" Width="200" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="3" Width="60" Grid.Column="0" Margin="4" Text="Number: "></TextBlock>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="playerNumber" Margin="4" Width="200" HorizontalAlignment="Left" PreviewTextInput="playerNumber_PreviewTextInput"></TextBox>
+
+            <TextBlock Grid.Row="4" Width="60" Grid.Column="0" Margin="4" Text="Position: "/>
+            <ComboBox Grid.Row="4" Grid.Column="1" Name="amplua" Margin="4" Width="200" HorizontalAlignment="Left"/>
             <!--<TextBox Grid.Row="2" Grid.Column="1" Name="amplua" Margin="4" Width="200" HorizontalAlignment="Left"/>-->
 
-            <TextBlock Grid.Row="4" Width="60" Grid.Column="0" Margin="4" Text="Captain" />
-            <CheckBox Grid.Row="4" Grid.Column="1" Margin="4" Name="captainSign" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="5" Width="60" Grid.Column="0" Margin="4" Text="Captain" />
+            <CheckBox Grid.Row="5" Grid.Column="1" Margin="4" Name="captainSign" HorizontalAlignment="Left"/>
 
-            <WrapPanel Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right">
+            <WrapPanel Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right">
                 <Button Content="Save" Name="saveButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10" Click="SaveButton_Click"  Height="38"></Button>
                 <Button Content="Update" Name="updateButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10" Click="UpdateButton_Click" Height="38" Visibility="Collapsed"></Button>
                 <Button Content="Cancel" Name="cancelButton" Width="80" Padding="4 8 4 8" Margin="4 50 4 10"  Click="CancelButton_Click" Height="38"></Button>

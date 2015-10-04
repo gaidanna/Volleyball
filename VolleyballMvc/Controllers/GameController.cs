@@ -21,17 +21,23 @@ namespace VolleyballMvc.Controllers
         {
             Game game;
             List<Game> games;
+            List<Dictionary<string, string>> resultedList;
             Middleware.VolleyballService.VolleyballServiceClient client;
-            List<Dictionary<string , string>> resultedList;
-
-            client = new Middleware.VolleyballService.VolleyballServiceClient();
-            resultedList = new List<Dictionary<string , string>>( client.ReadAll( Middleware.VolleyballService.TablesNames.Games , Middleware.VolleyballService.Gender.NotSpecified ) );
 
             games = new List<Game>();
+            client = new Middleware.VolleyballService.VolleyballServiceClient();
+            
             if (!string.IsNullOrEmpty(gender))
             {
+                var result = Enum.Parse(typeof(Middleware.VolleyballService.Gender), gender, true);
+                resultedList = new List<Dictionary<string, string>>(client.ReadAll(Middleware.VolleyballService.TablesNames.Games, (Middleware.VolleyballService.Gender)result));
                 ViewBag.gender = gender;
             }
+            else
+            {
+                resultedList = new List<Dictionary<string, string>>(client.ReadAll(Middleware.VolleyballService.TablesNames.Games, Middleware.VolleyballService.Gender.Male));
+            }
+
             if ( string.IsNullOrEmpty( month ) )
             {
                 month = DateTimeFormatInfo.CurrentInfo.GetMonthName( DateTime.Now.Month );

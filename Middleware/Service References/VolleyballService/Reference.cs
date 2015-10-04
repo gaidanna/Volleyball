@@ -116,11 +116,23 @@ namespace Middleware.VolleyballService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ReadPlaeyrs_Game", ReplyAction="http://tempuri.org/IVolleyballService/ReadPlaeyrs_GameResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> ReadPlaeyrs_GameAsync(System.Guid gameId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ValidatePlayer", ReplyAction="http://tempuri.org/IVolleyballService/ValidatePlayerResponse")]
-        bool ValidatePlayer(int number, System.Guid teamId, bool captain);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/IsIdentifiedDuplicate", ReplyAction="http://tempuri.org/IVolleyballService/IsIdentifiedDuplicateResponse")]
+        bool IsIdentifiedDuplicate(int number, System.Guid teamId, bool captain);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ValidatePlayer", ReplyAction="http://tempuri.org/IVolleyballService/ValidatePlayerResponse")]
-        System.Threading.Tasks.Task<bool> ValidatePlayerAsync(int number, System.Guid teamId, bool captain);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/IsIdentifiedDuplicate", ReplyAction="http://tempuri.org/IVolleyballService/IsIdentifiedDuplicateResponse")]
+        System.Threading.Tasks.Task<bool> IsIdentifiedDuplicateAsync(int number, System.Guid teamId, bool captain);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/FindDuplicatedPlayers", ReplyAction="http://tempuri.org/IVolleyballService/FindDuplicatedPlayersResponse")]
+        System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> FindDuplicatedPlayers(int number, System.Guid teamId, bool captain);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/FindDuplicatedPlayers", ReplyAction="http://tempuri.org/IVolleyballService/FindDuplicatedPlayersResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> FindDuplicatedPlayersAsync(int number, System.Guid teamId, bool captain);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/TryCreateTable", ReplyAction="http://tempuri.org/IVolleyballService/TryCreateTableResponse")]
+        void TryCreateTable(string table, System.Func<string> getRowNames);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/TryCreateTable", ReplyAction="http://tempuri.org/IVolleyballService/TryCreateTableResponse")]
+        System.Threading.Tasks.Task TryCreateTableAsync(string table, System.Func<string> getRowNames);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -238,12 +250,28 @@ namespace Middleware.VolleyballService {
             return base.Channel.ReadPlaeyrs_GameAsync(gameId);
         }
         
-        public bool ValidatePlayer(int number, System.Guid teamId, bool captain) {
-            return base.Channel.ValidatePlayer(number, teamId, captain);
+        public bool IsIdentifiedDuplicate(int number, System.Guid teamId, bool captain) {
+            return base.Channel.IsIdentifiedDuplicate(number, teamId, captain);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidatePlayerAsync(int number, System.Guid teamId, bool captain) {
-            return base.Channel.ValidatePlayerAsync(number, teamId, captain);
+        public System.Threading.Tasks.Task<bool> IsIdentifiedDuplicateAsync(int number, System.Guid teamId, bool captain) {
+            return base.Channel.IsIdentifiedDuplicateAsync(number, teamId, captain);
+        }
+        
+        public System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> FindDuplicatedPlayers(int number, System.Guid teamId, bool captain) {
+            return base.Channel.FindDuplicatedPlayers(number, teamId, captain);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> FindDuplicatedPlayersAsync(int number, System.Guid teamId, bool captain) {
+            return base.Channel.FindDuplicatedPlayersAsync(number, teamId, captain);
+        }
+        
+        public void TryCreateTable(string table, System.Func<string> getRowNames) {
+            base.Channel.TryCreateTable(table, getRowNames);
+        }
+        
+        public System.Threading.Tasks.Task TryCreateTableAsync(string table, System.Func<string> getRowNames) {
+            return base.Channel.TryCreateTableAsync(table, getRowNames);
         }
     }
 }

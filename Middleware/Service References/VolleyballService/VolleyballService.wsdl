@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Middleware" />
+      <xsd:import schemaLocation="http://localhost:54293/VolleyballService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IVolleyballService_Insert_InputMessage">
@@ -74,11 +75,23 @@
   <wsdl:message name="IVolleyballService_ReadPlaeyrs_Game_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReadPlaeyrs_GameResponse" />
   </wsdl:message>
-  <wsdl:message name="IVolleyballService_ValidatePlayer_InputMessage">
-    <wsdl:part name="parameters" element="tns:ValidatePlayer" />
+  <wsdl:message name="IVolleyballService_IsIdentifiedDuplicate_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsIdentifiedDuplicate" />
   </wsdl:message>
-  <wsdl:message name="IVolleyballService_ValidatePlayer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ValidatePlayerResponse" />
+  <wsdl:message name="IVolleyballService_IsIdentifiedDuplicate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsIdentifiedDuplicateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVolleyballService_FindDuplicatedPlayers_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindDuplicatedPlayers" />
+  </wsdl:message>
+  <wsdl:message name="IVolleyballService_FindDuplicatedPlayers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindDuplicatedPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVolleyballService_TryCreateTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:TryCreateTable" />
+  </wsdl:message>
+  <wsdl:message name="IVolleyballService_TryCreateTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TryCreateTableResponse" />
   </wsdl:message>
   <wsdl:portType name="IVolleyballService">
     <wsdl:operation name="Insert">
@@ -125,9 +138,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlaeyrs_Game" message="tns:IVolleyballService_ReadPlaeyrs_Game_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlaeyrs_GameResponse" message="tns:IVolleyballService_ReadPlaeyrs_Game_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ValidatePlayer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/ValidatePlayer" message="tns:IVolleyballService_ValidatePlayer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/ValidatePlayerResponse" message="tns:IVolleyballService_ValidatePlayer_OutputMessage" />
+    <wsdl:operation name="IsIdentifiedDuplicate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/IsIdentifiedDuplicate" message="tns:IVolleyballService_IsIdentifiedDuplicate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/IsIdentifiedDuplicateResponse" message="tns:IVolleyballService_IsIdentifiedDuplicate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDuplicatedPlayers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/FindDuplicatedPlayers" message="tns:IVolleyballService_FindDuplicatedPlayers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/FindDuplicatedPlayersResponse" message="tns:IVolleyballService_FindDuplicatedPlayers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TryCreateTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/TryCreateTable" message="tns:IVolleyballService_TryCreateTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/TryCreateTableResponse" message="tns:IVolleyballService_TryCreateTable_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IVolleyballService" type="tns:IVolleyballService">
@@ -231,8 +252,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ValidatePlayer">
-      <soap:operation soapAction="http://tempuri.org/IVolleyballService/ValidatePlayer" style="document" />
+    <wsdl:operation name="IsIdentifiedDuplicate">
+      <soap:operation soapAction="http://tempuri.org/IVolleyballService/IsIdentifiedDuplicate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDuplicatedPlayers">
+      <soap:operation soapAction="http://tempuri.org/IVolleyballService/FindDuplicatedPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryCreateTable">
+      <soap:operation soapAction="http://tempuri.org/IVolleyballService/TryCreateTable" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
