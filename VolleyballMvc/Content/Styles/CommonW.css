@@ -60,7 +60,7 @@ html {
 .menu ul {
      height: auto;
     list-style-type: none;
-    padding: 10px;
+    padding: 9px;
     overflow: hidden;
 }
 
@@ -82,7 +82,7 @@ html {
 .menu a {
     text-decoration: none;
     text-transform: uppercase;
-    color: #868686;
+    color: #e0e0e0;
     padding: 8px;
 }
 
@@ -107,6 +107,12 @@ html {
 
 .active a {
 background-color: #c21152;
+color: #FFFFFF;
 border-radius: 8px;
+}
+
+a.styled, a.styled:link, a.styled:visited, a.styled:hover, a.styled:focus, a.styled:active{
+  color:#c21152;
+   text-decoration: none;
 }
 

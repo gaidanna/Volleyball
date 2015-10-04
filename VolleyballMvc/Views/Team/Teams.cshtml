@@ -8,15 +8,15 @@
 <hgroup class="title"></hgroup>
 
 @section css{
-@if (ViewBag.gender == "female")
+    @if (ViewBag.gender == "female")
     {
-    <link href="@Url.Content("~/Content/Styles/TeamsW.css")" rel="stylesheet" />
-}
-else
-{
-    <link href="@Url.Content("~/Content/Styles/Teams.css")" rel="stylesheet" />
-}
-    
+        <link href="@Url.Content("~/Content/Styles/TeamsW.css")" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="@Url.Content("~/Content/Styles/Teams.css")" rel="stylesheet" />
+    }
+
 }
 
 <article>
@@ -26,19 +26,21 @@ else
             @if (Model != null)
             {
                 <div class="Teams">
-                    
+
                     @foreach (var team in Model.Teams)
                     {
                         <div class="UpperLine">
                         </div>
 
                         <div class="Team">
-                            <div id="SmallLogo">
-                                <img id="smallImage" src="~/Content/Images/smalLogo5.jpg" width="50" height="50" />
-                            </div>
-                            <div id="TeamName">
-                                @String.Format("{0, -20} >", team.Name)
-                            </div>
+                            <a class="styled" href="@Url.Action("Index", "Team", new { teamId = @team.Id })">
+                                <div id="SmallLogo">
+                                    <img id="smallImage" src="~/Content/Images/smalLogo5.jpg" width="50" height="50" />
+                                </div>
+                                <div id="TeamName">
+                                    @String.Format("{0, -20} >", team.Name)
+                                </div>
+                            </a>
 
                         </div>
                         <div class="LowerLine">

@@ -1,44 +1,44 @@
 ﻿@model VolleyballMvc.Models.GameScheduleModel
 @using VolleyballMvc.Models
 
-@if ( Model.Games.Count > 0 )
+@if (Model.Games.Count > 0)
 {
     <div class="GameSchedule">
-        @foreach ( var gameByDay in Model.Games )
+
+        @foreach (var gameByDay in Model.Games)
         {
-            if ( gameByDay.Value.Count > 0 )
+            if (gameByDay.Value.Count > 0)
             {
                 <div class="GameScheduleSection">
                     <div class="GameDate">
-                        @gameByDay.Key.ToString( "dd MMM yyyy" )
+                        @gameByDay.Key.ToString("dd MMM yyyy")
                     </div>
-                    @foreach ( var game in gameByDay.Value )
+                    @foreach (var game in gameByDay.Value)
                     {
                         <div class="GameLocation">
                             Location: @game.Location
                         </div>
                         <div class="Teams">
-                            <div class="Team1">@game.Teams[ 0 ].Name </div>
-                            @{
+                            <a class="styled" href="@Url.Action("Index", "Game" )">
+                                <div class="Team1">@game.Teams[0].Name </div>
+                                @{
                         int firstTeamCount = 0;
                         int secondTeamCount = 0;
-                                var result = game.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-                                for (int i = 0; i < result.Length-1; i+=2)
-                                {
-                                    if (Convert.ToInt32(result[i]) > Convert.ToInt32(result[i + 1]))
-                                    {
-                                        firstTeamCount++;
-                                    }
-                                    else
-                                    {
-                                        secondTeamCount++;
-                                    }
+                        var result = game.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+
+                        for (int i = 0; i < result.Length - 1; i += 2)
+                        {
+                            if (Convert.ToInt32(result[i]) > Convert.ToInt32(result[i + 1]))
+                            { firstTeamCount++; }
+                            else
+                            { secondTeamCount++; }
+                        }
+                        <div class="Score">@String.Format("{0} : {1}", firstTeamCount, secondTeamCount)</div>
                                 }
-                                <div class="Score">@String.Format("{0} : {1}", firstTeamCount, secondTeamCount)</div>
-                                    }
-                                    <div class="Team2">@game.Teams[ 1 ].Name</div>
-                                </div>
-                            }
+                                <div class="Team2">@game.Teams[1].Name</div>
+                            </a>
+                        </div>
+                    }
                 </div>
             }
         }

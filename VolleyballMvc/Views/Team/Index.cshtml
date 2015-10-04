@@ -1,0 +1,83 @@
+﻿@model VolleyballMvc.Models.TeamModel
+@using VolleyballMvc.Models
+
+@{
+    ViewBag.Title = "Team profile";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hgroup class="title"></hgroup>
+
+@section css{
+    @if (ViewBag.gender == "female")
+    {
+        <link href="@Url.Content("~/Content/Styles/TeamProfileW.css")" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="@Url.Content("~/Content/Styles/TeamProfile.css")" rel="stylesheet" />
+    }
+}
+
+<article>
+    <div id="main">
+        <h1 class="pageTitle">Team Profile</h1>
+        <div id="activeArea">
+        <div id="teamImage">
+                    <img id="mainImage" src="~/Content/Images/TeamProfile.jpg"/>
+        </div>
+            
+@if (Model != null)
+{
+    <ul id="teamInfo">
+        <li>League: @Model.Team.League</li>
+        <li>Manager: @Model.Team.Manager</li>
+        <li>Phone: @Model.Team.Phone</li>
+        <li>Email: @Model.Team.Email</li>
+    </ul>
+}
+    
+        <div id="content">
+            @if (Model != null)
+            {
+                <ul class="Players">
+
+                    @{
+                Random r = new Random();
+                foreach (var pl in Model.TeamPlayers)
+                {
+                    @*<div class="UpperLine">
+                    </div>*@
+
+                        <li class="Player">
+                            <a class="styled" href="@Url.Action("Index", "Player" )">
+                                <div id="SmallLogo">
+                                    @{
+                    int number = r.Next(1, 9);
+                    string path = "/Content/Images/" + number + ".png";
+                                    }
+                                    <img id="smallImage" src=@path width="110" height="160" />
+                                </div>
+                                <div id="PlayerName">
+                                    @pl.Name
+                                    @pl.Number
+                                </div>
+                            </a>
+
+                        </li>
+                        @*<div class="LowerLine">
+                        </div>
+                        <div class="EmptyLine">
+                        </div>*@
+                }
+                    }
+                </ul>
+            }
+            else
+            {
+                <h1>There are no players. Please, check later.</h1>
+            }
+        </div>
+            </div>
+    </div>
+</article>

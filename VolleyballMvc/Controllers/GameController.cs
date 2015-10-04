@@ -53,5 +53,15 @@ namespace VolleyballMvc.Controllers
 
             return View( new GameScheduleModel( games , month ) );
         }
+
+        [GenderActionFilter]
+        public ActionResult Index()
+        {
+            Middleware.VolleyballService.VolleyballServiceClient client;
+            
+            client = new Middleware.VolleyballService.VolleyballServiceClient();
+
+            return View();
+        }
     }
 }

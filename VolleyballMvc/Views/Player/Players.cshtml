@@ -8,14 +8,14 @@
 <hgroup class="title"></hgroup>
 
 @section css{
-   @if (ViewBag.gender == "female")
+    @if (ViewBag.gender == "female")
     {
-    <link href="@Url.Content("~/Content/Styles/PlayersW.css")" rel="stylesheet" />
-   }
-   else
-   {
-    <link href="@Url.Content("~/Content/Styles/Players.css")" rel="stylesheet" />
-   }
+        <link href="@Url.Content("~/Content/Styles/PlayersW.css")" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="@Url.Content("~/Content/Styles/Players.css")" rel="stylesheet" />
+    }
 }
 
 <article>
@@ -27,37 +27,39 @@
                 <div class="Players">
 
                     @{
-                        Random r = new Random();
-                        foreach (var pl in Model.Players)
-                        {
-                            <div class="UpperLine">
-                            </div>
+                Random r = new Random();
+                foreach (var pl in Model.Players)
+                {
+                    <div class="UpperLine">
+                    </div>
 
-                            <div class="Player">
+                        <div class="Player">
+                            <a class="styled" href="@Url.Action("Index", "Player" )">
                                 <div id="SmallLogo">
                                     @{
-                                        int number = r.Next(1, 9);
-                                        string path = "/Content/Images/" + number + ".png";
+                    int number = r.Next(1, 9);
+                    string path = "/Content/Images/" + number + ".png";
                                     }
                                     <img id="smallImage" src=@path width="50" height="50" />
                                 </div>
                                 <div id="PlayerName">
                                     @pl.Name
                                 </div>
+                            </a>
 
-                            </div>
-                            <div class="LowerLine">
-                            </div>
-                            <div class="EmptyLine">
-                            </div>
-                         }
+                        </div>
+                        <div class="LowerLine">
+                        </div>
+                        <div class="EmptyLine">
+                        </div>
+                }
                     }
                 </div>
-                }
-                else
-                {
-                    <h1>There are no players. Please, check later.</h1>
-                }                       
+            }
+            else
+            {
+                <h1>There are no players. Please, check later.</h1>
+            }
         </div>
     </div>
 </article>

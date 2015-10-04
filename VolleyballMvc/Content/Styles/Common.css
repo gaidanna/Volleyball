@@ -19,7 +19,8 @@ html, body, #container {
 }
 
 html {
-    background: url("../Images/manVB1.png");
+    background: url("../Images/manVB1.png"), url("../Images/BGContinuation.png");
+    background-repeat:no-repeat, repeat-y;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -60,7 +61,7 @@ html {
 .menu ul {
         height: auto;
         list-style-type: none;
-        padding: 10px;
+        padding: 9px;
         overflow: hidden;
 }
 
@@ -97,4 +98,10 @@ html {
 .active a {
     background-color: #2548c0;
     color: #FFFFFF;
+    border-radius: 8px;
+}
+
+a.styled, a.styled:link, a.styled:visited, a.styled:hover, a.styled:focus, a.styled:active{
+  color:#2548c0;
+   text-decoration: none;
 }

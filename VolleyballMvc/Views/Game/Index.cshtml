@@ -1,0 +1,23 @@
+﻿@model VolleyballMvc.Models.GameScheduleModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>GameScheduleModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Month)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Month)
+    </div>
+</fieldset>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

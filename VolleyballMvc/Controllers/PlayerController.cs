@@ -43,5 +43,15 @@ namespace VolleyballMvc.Controllers
 
             return View(new PlayerModel(playersList));// new TeamModel() { Users = users } );
         }
+
+        [GenderActionFilter]
+        public ActionResult Index()
+        {
+            Middleware.VolleyballService.VolleyballServiceClient client;
+
+            client = new Middleware.VolleyballService.VolleyballServiceClient();
+
+            return View();
+        }
     }
 }

@@ -1,4 +1,11 @@
-﻿#title {  
+﻿#mainImage {
+ display:block;
+       width: 750px;
+    height: 500px;
+    position: relative;
+    margin: auto;
+}
+#title {  
     margin: 50px 0;
     text-align:center;
     font-family: Tahoma, Geneva, sans-serif;
@@ -6,19 +13,39 @@
     text-shadow: 3px 2px 3px #1f1a96;
 }
 
-#content {
-    padding-top : 50px;
+#activeArea {
+    padding-top : 100px;
     display:block;
     width: 1000px ;    
     margin-left: auto;
     margin-right: auto;
-    margin-bottom:30px;
+    margin-bottom:100px;
     /*overflow-y: scroll;*/
-    height: 580px;
+    /*height: 580px;*/
+    /*height: 95%;*/
     background-color:rgba(0, 10, 41, 0.5);
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
+#teamInfo {
+    padding-top: 50px;
+    margin-top: 50px;
+    height: 150px;
+    font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    color: white;
+    border-bottom: 1px solid #2548c0;
+    border-top: 1px solid #2548c0;
+}
+
+#teamInfo li {
+    padding: 4px;
+    margin-left: 100px;
+    display: block;
+    /*float: left;*/
+    list-style-type:none;
+    /*padding: 0 20px;*/
+}
 #SmallLogo {
 display:inline;
 position: relative;
@@ -30,29 +57,39 @@ position: relative;
     top: 50%;
     left: 50%;
     /*margin-right: -50%;*/
-    transform: translate(-50%, -50%);
+    /*transform: translate(-50%, -50%);*/
     margin-left: 50px;
 }
 
-.Teams {
-    margin: 0 65px;
+.Players {
+    /*margin: 0 65px;*/
 }
 
-.Team {
-    padding-top: 30px;
-    height: 80px;
+.Player {
+
+    min-height: 225px;
+    /*padding-top: 10px;
+    height: 60px;
     background-color: #FFFFFF;
     color:#2548c0;
     text-transform: uppercase;
     font-family: "oswaldlight","Trebuchet MS",Arial,Helvetica,sans-serif;
     font-size: 34px;
-    font-size: 3.4rem;
+    font-size: 2rem;
     line-height: 34px;
     line-height: 3.4rem;
-    text-align: left;
+    text-align: left;*/
 }
 
-#TeamName {
+#content ul li {
+    display: inline-block;
+    /*float: left;*/
+    width: 33%;
+    list-style-type:none;
+    /*padding: 0 20px;*/
+}
+
+#PlayerName {
     display:inline;
     margin-left: 100px;
 
@@ -65,7 +102,7 @@ position: relative;
 
 .LowerLine {
     vertical-align: middle;
-    height: 15px;
+    height: 5px;
     background-color: #edebeb;
     width: 100%;
     border-bottom-right-radius: 5px;
@@ -75,7 +112,7 @@ position: relative;
 
 .UpperLine {
     vertical-align: middle;
-    height: 15px;
+    height: 5px;
     background-color: #edebeb;
     width: 100%;
     border-top-right-radius: 5px;

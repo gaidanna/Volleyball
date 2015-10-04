@@ -218,6 +218,7 @@
     <Content Include="Content\Images\8.png" />
     <Content Include="Content\Images\7.png" />
     <Content Include="Content\Images\accent.png" />
+    <Content Include="Content\Images\BGContinuation.png" />
     <Content Include="Content\Images\bullet.png" />
     <Content Include="Content\Images\heroAccent.png" />
     <Content Include="Content\Images\Im1.jpg" />
@@ -253,6 +254,7 @@
     <Content Include="Content\Images\smalLogo3.jpg" />
     <Content Include="Content\Images\smalLogo4.jpg" />
     <Content Include="Content\Images\smalLogo5.jpg" />
+    <Content Include="Content\Images\TeamProfile.jpg" />
     <Content Include="Content\Images\thisisv.png" />
     <Content Include="Content\Images\WomenVB1.png" />
     <Content Include="Content\Styles\CommonW.css" />
@@ -261,6 +263,8 @@
     <Content Include="Content\Styles\HomeW.css" />
     <Content Include="Content\Styles\PlayersW.css" />
     <Content Include="Content\Styles\Players.css" />
+    <Content Include="Content\Styles\TeamProfile.css" />
+    <Content Include="Content\Styles\TeamProfileW.css" />
     <Content Include="Content\Styles\TeamsW.css" />
     <Content Include="Content\Styles\Teams.css" />
     <Content Include="Content\Styles\GameSchedule.css" />
@@ -388,6 +392,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Player\Players.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Player\Index.cshtml" />
+    <Content Include="Views\Team\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

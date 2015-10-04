@@ -20,28 +20,6 @@ namespace VolleyballMvc.Models
             private set;
         }
 
-        //public string ShortScore
-        //{
-        //    get {
-        //        int firstTeamCount = 0;
-        //        int secondTeamCount = 0;
-        //        var result = game.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-        //        for (int i = 0; i < result.Length - 1; i++)
-        //        {
-        //            if (Convert.ToInt32(result[i]) > Convert.ToInt32(result[i + 1]))
-        //            {
-        //                firstTeamCount++;
-        //            }
-        //            else
-        //            {
-        //                secondTeamCount++;
-        //            }
-        //        }
-                                
-            
-        //    }
-        //}
-
         public GameScheduleModel( List<Game> games , string month )
         {
             this.Month = month;

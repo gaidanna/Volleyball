@@ -27,7 +27,7 @@ namespace VolleyballMvc.Controllers
 
             teamsList = new List<Team>();
             client = new Middleware.VolleyballService.VolleyballServiceClient();
-            
+
             if (!string.IsNullOrEmpty(gender))
             {
                 var result = Enum.Parse(typeof(Middleware.VolleyballService.Gender), gender, true);
@@ -43,15 +43,31 @@ namespace VolleyballMvc.Controllers
             {
                 teamsList.Add(new Team(item));
             }
-            
+
             return View(new TeamModel(teamsList));// new TeamModel() { Users = users } );
         }
 
-        public ActionResult TeamInfo()
+        [GenderActionFilter]
+        public ActionResult Index(Guid teamId)
         {
-            //ViewBag.Message = "Your app description page.";
+            Team team;
+            Dictionary<string, string> teamDict;
+            List<Dictionary<string, string>> list;
+            List<Player> playersList = new List<Player>();
+            Middleware.VolleyballService.VolleyballServiceClient client;
 
-            return View();
+            client = new Middleware.VolleyballService.VolleyballServiceClient();
+
+            list = new List<Dictionary<string, string>>(client.ReadPlayers_Team(teamId));
+            teamDict = client.Read(teamId, Middleware.VolleyballService.TablesNames.Teams);
+            team = new Team(teamDict);
+
+            foreach (var item in list)
+            {
+                playersList.Add(new Player(item));
+            }
+
+            return View(new TeamModel(playersList, team));
         }
 
         //public ActionResult Contact()
