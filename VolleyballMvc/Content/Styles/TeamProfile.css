@@ -47,18 +47,28 @@
     /*padding: 0 20px;*/
 }
 #SmallLogo {
-display:inline;
-position: relative;
+    width: 120px;
+    height: 160px;
+    position: relative;
+    float: left;
+/*display:inline;
+position: relative;*/
 
 }
 #smallImage  {
-    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    /*margin: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%;*/
     /*margin-right: -50%;*/
     /*transform: translate(-50%, -50%);*/
-    margin-left: 50px;
+    /*margin-left: 50px;*/
 }
 
 .Players {
@@ -66,8 +76,10 @@ position: relative;
 }
 
 .Player {
-
+    color: white;
     min-height: 225px;
+    margin-top: 30px;
+    margin-left: 20px;
     /*padding-top: 10px;
     height: 60px;
     background-color: #FFFFFF;
@@ -84,14 +96,16 @@ position: relative;
 #content ul li {
     display: inline-block;
     /*float: left;*/
-    width: 33%;
+    width: 31%;
     list-style-type:none;
     /*padding: 0 20px;*/
 }
 
 #PlayerName {
     display:inline;
-    margin-left: 100px;
+    margin-top: 20px;
+    margin-left: 30px;
+    /*margin-left: 100px;*/
 
 }
 /*.GameSchedule {
@@ -100,7 +114,7 @@ position: relative;
     width: 1000px;
 }*/
 
-.LowerLine {
+/*.LowerLine {
     vertical-align: middle;
     height: 5px;
     background-color: #edebeb;
@@ -124,7 +138,7 @@ position: relative;
     vertical-align: middle;
     height: 40px;
     width: 100%;
-}
+}*/
 
 
 

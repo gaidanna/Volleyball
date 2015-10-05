@@ -48,7 +48,7 @@ namespace VolleyballMvc.Controllers
         }
 
         [GenderActionFilter]
-        public ActionResult Index(Guid teamId)
+        public ActionResult Index(Guid teamId, string gender)
         {
             Team team;
             Dictionary<string, string> teamDict;
@@ -67,7 +67,11 @@ namespace VolleyballMvc.Controllers
                 playersList.Add(new Player(item));
             }
 
-            return View(new TeamModel(playersList, team));
+            if (!string.IsNullOrEmpty(gender))
+            {
+                ViewBag.gender = gender;
+            }
+                return View(new TeamModel(playersList, team));
         }
 
         //public ActionResult Contact()

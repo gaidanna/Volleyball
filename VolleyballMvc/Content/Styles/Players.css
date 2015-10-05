@@ -12,9 +12,10 @@
     width: 1000px ;    
     margin-left: auto;
     margin-right: auto;
-    margin-bottom:30px;
+    margin-bottom: 100px;
+    min-height: 600px;
     /*overflow-y: scroll;*/
-    height: 580px;
+
     background-color:rgba(0, 10, 41, 0.5);
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
