@@ -1,23 +1,140 @@
-﻿@model VolleyballMvc.Models.GameScheduleModel
+﻿@model VolleyballMvc.Models.PreciseGameModel
+@using VolleyballMvc.Models
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Game Center";
 }
 
-<h2>Index</h2>
+<hgroup class="title"></hgroup>
 
-<fieldset>
-    <legend>GameScheduleModel</legend>
+@section css{
+    @if (ViewBag.gender == "female")
+    {
+        <link href="@Url.Content("~/Content/Styles/GameCenterW.css")" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="@Url.Content("~/Content/Styles/GameCenter.css")" rel="stylesheet" />
+    }
+}
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Month)
+<article>
+    <div id="main">
+        <h1 class="pageTitle">Game Center</h1>
+        <div id="activeArea">
+            <div>
+                <img id="mainImage" src="~/Content/Images/banner.jpg" />
+            </div>
+            @if (Model != null)
+            {
+                <div class="GameSchedule">
+                    <div class="GameScheduleSection">
+                        <div class="GameDate">
+                            @Model.PreciseGame.Date.ToString("dd MMM yyyy")
+                        </div>
+                        <div class="GameLocation">
+                            Location: @Model.PreciseGame.Location
+                        </div>
+                        <div class="Teams">
+                            <div class="Team1">@Model.PreciseGame.Teams[0].Name </div>
+                            @{
+                int firstTeamCount = 0;
+                int secondTeamCount = 0;
+                int firstTeamTotal = 0;
+                int secondTeamTotal = 0;
+
+                string[] result = Model.PreciseGame.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                string liveScore = null;
+
+                for (int i = 0; i < result.Length - 1; i += 2)
+                {
+                    int t1 = Convert.ToInt32(result[i]);
+                    int t2 = Convert.ToInt32(result[i + 1]);
+                    firstTeamTotal += t1;
+                    secondTeamTotal += t2;
+                    if (t1 > t2)
+                    { firstTeamCount++; }
+                    else
+                    { secondTeamCount++; }
+                    liveScore += string.Format("{0} - {1}   ", t1, t2);
+                }
+                <div class="Score">@String.Format("{0} : {1}", firstTeamCount, secondTeamCount)</div>
+                            }
+                            <div class="Team2">@Model.PreciseGame.Teams[1].Name</div>
+                        </div>
+                        <div id="liveScore">
+                            <div id="scoreText">LIVE SCORE</div>
+                            <div id="longScore">@liveScore</div>
+                            <div id="shortScore">@string.Format("TOTAL: {0} - {1}", firstTeamTotal, secondTeamTotal)</div>
+                        </div>
+                    </div>
+                    <div id="teamplayers">
+                    <div id="teamOne">
+                        <ul>
+
+                            @{
+                Random r = new Random();
+                foreach (var pl in Model.PreciseGame.Teams[0].Players)
+                {
+                    <li class="Player">
+                        <a class="styled" href="@Url.Action("Index", "Player" )">
+                            <div id="SmallLogo">
+                                @{
+                    int number = r.Next(1, 9);
+                    string path = "/Content/Images/" + number + ".png";
+                                }
+                                <img id="smallImage" src=@path width="110" height="160" />
+                            </div>
+                            <div id="PlayerName">
+                                @pl.Name;
+                                @if (pl.Captain)
+                                {
+                                    @pl.Captain;
+                                }
+                                @pl.Number;
+                                @pl.Amplua;
+                            </div>
+                        </a>
+
+                    </li>
+                }
+                            }
+                        </ul>
+                    </div>
+                    <div id="teamTwo">
+                        <ul>
+
+                            @{foreach (var pl in Model.PreciseGame.Teams[1].Players)
+                {
+                    <li class="Player">
+                        <a class="styled" href="@Url.Action("Index", "Player" )">
+                            <div id="SmallLogo">
+                                @{
+                    int number = r.Next(1, 9);
+                    string path = "/Content/Images/" + number + ".png";
+                                }
+                                <img id="smallImage" src=@path width="110" height="160" />
+                            </div>
+                            <div id="PlayerName">
+                                @pl.Name;
+                                @if (pl.Captain)
+                                {
+                                    @pl.Captain;
+                                }
+                                @pl.Number;
+                                @pl.Amplua;
+                            </div>
+                        </a>
+
+                    </li>
+                }
+                            }
+                        </ul>
+                    </div>
+            </div>
+                </div>
+            }
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Month)
-    </div>
-</fieldset>
-<p>
-    @*@Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")*@
-</p>
+</article>
+

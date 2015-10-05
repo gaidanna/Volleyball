@@ -30,6 +30,7 @@
 @if (Model != null)
 {
     <ul id="teamInfo">
+        <li >Team name: @Model.Team.Name.ToUpper()</li>
         <li>League: @Model.Team.League</li>
         <li>Manager: @Model.Team.Manager</li>
         <li>Phone: @Model.Team.Phone</li>

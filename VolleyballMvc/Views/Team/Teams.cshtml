@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="Team">
-                            <a class="styled" href="@Url.Action("Index", "Team", new { teamId = @team.Id })">
+                            <a class="styled" href="@Url.Action("Index", "Team", new { teamId = @team.Id, gender = @ViewBag.gender })">
                                 <div id="SmallLogo">
                                     <img id="smallImage" src="~/Content/Images/smalLogo5.jpg" width="50" height="50" />
                                 </div>

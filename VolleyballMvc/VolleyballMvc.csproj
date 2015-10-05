@@ -218,6 +218,7 @@
     <Content Include="Content\Images\8.png" />
     <Content Include="Content\Images\7.png" />
     <Content Include="Content\Images\accent.png" />
+    <Content Include="Content\Images\banner.jpg" />
     <Content Include="Content\Images\BGContinuation.png" />
     <Content Include="Content\Images\bullet.png" />
     <Content Include="Content\Images\heroAccent.png" />
@@ -258,6 +259,8 @@
     <Content Include="Content\Images\thisisv.png" />
     <Content Include="Content\Images\WomenVB1.png" />
     <Content Include="Content\Styles\CommonW.css" />
+    <Content Include="Content\Styles\GameCenter.css" />
+    <Content Include="Content\Styles\GameCenterW.css" />
     <Content Include="Content\Styles\GamesW.css" />
     <Content Include="Content\Styles\GameScheduleW.css" />
     <Content Include="Content\Styles\HomeW.css" />

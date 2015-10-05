@@ -19,7 +19,7 @@
                             Location: @game.Location
                         </div>
                         <div class="Teams">
-                            <a class="styled" href="@Url.Action("Index", "Game" )">
+                            <a class="styled" href="@Url.Action("Index", "Game", new { gameId = @game.Id, gender = @ViewBag.gender })">
                                 <div class="Team1">@game.Teams[0].Name </div>
                                 @{
                         int firstTeamCount = 0;

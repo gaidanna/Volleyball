@@ -55,13 +55,37 @@ namespace VolleyballMvc.Controllers
         }
 
         [GenderActionFilter]
-        public ActionResult Index()
+        public ActionResult Index(Guid gameId, string gender)
         {
+            List<Player> playersList = new List<Player>();
+            List<Team> teamsList = new List<Team>();
+
             Middleware.VolleyballService.VolleyballServiceClient client;
             
             client = new Middleware.VolleyballService.VolleyballServiceClient();
 
-            return View();
+            var playersInGameDict = client.ReadPlaeyrs_Game(gameId);
+            var teamsDict = client.ReadTeams_Game(gameId);
+            var gameDict = client.Read(gameId, Middleware.VolleyballService.TablesNames.Games);
+
+            foreach (var item in playersInGameDict)
+            {
+                playersList.Add(new Player(item));
+            }
+
+            foreach (var item in teamsDict)
+            {
+                teamsList.Add(new Team(item));
+            }
+
+            Game game = new Game(gameDict);
+
+            if (!string.IsNullOrEmpty(gender))
+            {
+                ViewBag.gender = gender;
+            }
+
+            return View(new PreciseGameModel(playersList, game));
         }
     }
 }

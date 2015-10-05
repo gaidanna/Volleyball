@@ -46,4 +46,27 @@ namespace VolleyballMvc.Models
             return "month-picker-label" + ( month.Equals( this.Month , StringComparison.InvariantCultureIgnoreCase ) ? " active" : "" );
         }
     }
+
+    public class PreciseGameModel
+    {
+        public Game PreciseGame
+        { get; private set; }
+
+        public List<Player> FirstTeamPlayers
+        { get; private set; }
+
+        public List<Player> SecondTeamPlayers
+        { get; private set; }
+
+        public List<Player> Players
+        { get; private set; }
+
+        public PreciseGameModel(List<Player> teamPlayers, Game game)
+        {
+            PreciseGame = game;
+            Players = teamPlayers;
+            //FirstTeamPlayers = teamPlayers.FindAll(item => item.);
+            //SecondTeamPlayers = secondTeamPlayers;
+        }
+    }
 }
