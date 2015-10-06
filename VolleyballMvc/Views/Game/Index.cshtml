@@ -69,72 +69,84 @@
                         </div>
                     </div>
                     <div id="teamplayers">
-                    <div id="teamOne">
-                        <ul>
+                        @*<div>*@
+                        <div class ="teamName">@Model.PreciseGame.Teams[0].Name</div>
+                            <table class="team" id="firstTeam">
+                                <thead>
+                                    <tr class="tableHeader centerText">
+                                        <td>Name</td>
+                                        <td>Captain</td>
+                                        <td>Number</td>
+                                        <td>Amplua</td>
+                                        <td>Best Player</td>
+                                        <td>Yellow Card</td>
+                                        <td>Red Card</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="tableBody">
+                                    @foreach (var pl in Model.PreciseGame.Teams[0].Players)
+                                    {
+                                        <tr>
+                                            <td>@pl.Name</td>
+                                            @{
+                                        if (pl.Captain)
+                                        {
+                                            <td class="centerText">YES</td>}
+                                        else
+                                        {
+                                            <td class="centerText"> - </td>}
+}
+                                            <td class="centerText">@pl.Number</td>
+                                            <td>@pl.Amplua</td>
+                                            <td class="centerText"> - </td>
+                                            <td class="centerText"> - </td>
+                                            <td class="centerText"> - </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        @*</div>*@
+                        @*<div >*@
+                            <div class="teamName">@Model.PreciseGame.Teams[1].Name</div>
+                            <table class="team">
+                                <thead>
+                                    <tr class="tableHeader centerText">
+                                        <td>Name</td>
+                                        <td>Captain</td>
+                                        <td>Number</td>
+                                        <td>Amplua</td>
+                                        <td>Best Player</td>
+                                        <td>Yellow Card</td>
+                                        <td>Red Card</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="tableBody">
+                                    @foreach (var pl in Model.PreciseGame.Teams[1].Players)
+                                    {
+                                        <tr>
+                                            <td>@pl.Name</td>
+                                            @{
+                                        if (pl.Captain)
+                                        {
+                                            <td class="centerText">YES</td>}
+                                        else
+                                        {
+                                            <td class="centerText"> - </td>}
+}
+                                            <td class="centerText">@pl.Number</td>
+                                            <td>@pl.Amplua</td>
+                                            <td class="centerText"> - </td>
+                                            <td class="centerText"> - </td>
+                                            <td class="centerText"> - </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
 
-                            @{
-                Random r = new Random();
-                foreach (var pl in Model.PreciseGame.Teams[0].Players)
-                {
-                    <li class="Player">
-                        <a class="styled" href="@Url.Action("Index", "Player" )">
-                            <div id="SmallLogo">
-                                @{
-                    int number = r.Next(1, 9);
-                    string path = "/Content/Images/" + number + ".png";
-                                }
-                                <img id="smallImage" src=@path width="110" height="160" />
-                            </div>
-                            <div id="PlayerName">
-                                @pl.Name;
-                                @if (pl.Captain)
-                                {
-                                    @pl.Captain;
-                                }
-                                @pl.Number;
-                                @pl.Amplua;
-                            </div>
-                        </a>
-
-                    </li>
-                }
-                            }
-                        </ul>
+                        @*</div>*@
                     </div>
-                    <div id="teamTwo">
-                        <ul>
-
-                            @{foreach (var pl in Model.PreciseGame.Teams[1].Players)
-                {
-                    <li class="Player">
-                        <a class="styled" href="@Url.Action("Index", "Player" )">
-                            <div id="SmallLogo">
-                                @{
-                    int number = r.Next(1, 9);
-                    string path = "/Content/Images/" + number + ".png";
-                                }
-                                <img id="smallImage" src=@path width="110" height="160" />
-                            </div>
-                            <div id="PlayerName">
-                                @pl.Name;
-                                @if (pl.Captain)
-                                {
-                                    @pl.Captain;
-                                }
-                                @pl.Number;
-                                @pl.Amplua;
-                            </div>
-                        </a>
-
-                    </li>
-                }
-                            }
-                        </ul>
-                    </div>
-            </div>
                 </div>
             }
         </div>
     </div>
 </article>
-

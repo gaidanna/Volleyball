@@ -34,7 +34,7 @@
 .GameDate {
     margin-top: 5px;
     line-height: 25px;
-    border-bottom: 1px solid #c70511;
+    border-bottom: 1px solid #e6002d;
     text-align: center;
     width: 100%;
 }
@@ -94,7 +94,7 @@
 
 #scoreText {
     float: left;
-    color: #c70511;
+    color: #e6002d;
     width: 300px;
     text-align : right;
 }
@@ -109,38 +109,64 @@
 }
 
 #shortScore {
-    color:#c70511;
+    color:#e6002d;
     text-align : left;
 }
 
 #teamplayers {
+    width: 1000px;
     padding-top: 10px;
+    padding-bottom: 30px;
     /*height: 40px;*/
     /*color: #2548c0;*/
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: "oswaldlight","Trebuchet MS",Arial,Helvetica,sans-serif;
     /*font-size: 20px;
     background-color: #242222;*/
 }
 
-#teamOne {
-    float: left;
-    /*color: #c70511;*/
-    width: 450px;
+.team {
+        width: 95%;
+    border-collapse: collapse;
     text-align : left;
-    margin-left : 20px;
-    margin-right : 20px;
+    margin: 20px auto 30px auto;
 }
 
-#teamTwo {
-    float: left;
-    width: 450px;
-    /*color:white;*/
-    margin-left : 20px;
-    margin-right : 20px;
-    text-align:left;
+.team, td, th {
+    border: 1px solid white;
+    padding: 18px;
 }
 
+.tableHeader {
+    text-transform: uppercase;
+    background-color: #edebeb;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.centerText {
+text-align:center;
+}
+
+.tableBody {
+background-color: white;
+color: #555;
+}
+/*#firstTeam {
+margin-bottom: 50px;
+}*/
+
+.teamName {
+    color: #e6002d;
+    font-size: 25px;
+    font-weight: bold;
+    /*text-shadow: 3px 2px 3px #1f1a96;*/
+    padding: 50px 0 0 0; 
+    text-align:center;
+    /*margin-left:auto;
+    margin-right:auto;*/
+}
 
 #title {
     margin: 50px 0;

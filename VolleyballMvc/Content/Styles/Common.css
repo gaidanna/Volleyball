@@ -19,8 +19,11 @@ html, body, #container {
 }
 
 html {
-    background: url("../Images/manVB1.png"), url("../Images/BGContinuation.png");
-    background-repeat:no-repeat, repeat-y;
+    background: url("../Images/manVB1.png");
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    /*background: url("../Images/manVB1.png"), url("../Images/BGContinuation.png");
+    background-repeat:no-repeat, repeat-y;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
