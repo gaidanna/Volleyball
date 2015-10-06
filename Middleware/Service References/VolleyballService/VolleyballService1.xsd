@@ -18,4 +18,12 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Gender" nillable="true" type="tns:Gender" />
+  <xs:simpleType name="PlayersInfo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BestPlayer" />
+      <xs:enumeration value="YellowCard" />
+      <xs:enumeration value="RedCard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlayersInfo" nillable="true" type="tns:PlayersInfo" />
 </xs:schema>

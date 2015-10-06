@@ -113,6 +113,49 @@ namespace MiddlewareHost
             }
             return resultedList;
         }
+
+        public List<Dictionary<string, string>> ReadPlayersInfoInGame(Guid gameId, PlayersInfo playersInfo)
+        {
+            TableInform table;
+            DbConnection connection;
+            List<DataRow> rows;
+            List<Dictionary<string, string>> resultedList;
+
+            connection = TableInform.Connection;
+            resultedList = new List<Dictionary<string, string>>();
+            table = new TableInform(TablesNames.PlayerInGames.ToString());
+
+            if (playersInfo == PlayersInfo.BestPlayer)
+            {
+                rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("BestPlayer") == true).ToList();
+                foreach (var row in rows)
+                {
+                    var result = table.ConvertRowToDict(row);
+                    resultedList.Add(result);
+                }
+            }
+            else if (playersInfo == PlayersInfo.YellowCard)
+            {
+                rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("YellowCard") == true).ToList();
+                foreach (var row in rows)
+                {
+                    var result = table.ConvertRowToDict(row);
+                    resultedList.Add(result);
+                }
+            }
+            else if(playersInfo == PlayersInfo.RedCard)
+            {
+                rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("RedCard") == true).ToList();
+                foreach (var row in rows)
+                {
+                    var result = table.ConvertRowToDict(row);
+                    resultedList.Add(result);
+                }
+            }
+
+
+            return resultedList;
+        }
         #endregion
 
         #region Team+
@@ -223,10 +266,8 @@ namespace MiddlewareHost
             var res = (from r in table.Table.AsEnumerable()
                        where r.Field<Guid>("PlayerId") == playerId
                        select r.Field<Guid>(param)).ToList();
-            //var res = (from DataRow r in table.Table.Rows select r["Id"].Equals(playerId.ToString())).ToList();
-            return res;
-            //table.Table.AsEnumerable().Where(row => row.Field<Guid>["PlayerId"] == playerId);//.Where(id => id == playerId.ToString()).ToList();
-        }
+             return res;
+           }
 
         //team
         private List<Guid> GetPlayersByTeamId(TablesNames tableName, Guid teamId)
@@ -239,8 +280,6 @@ namespace MiddlewareHost
                        where r.Field<Guid>("TeamId") == teamId
                        select r.Field<Guid>("PlayerId")).ToList();
             return res;
-            // return table.Table.Select(row => row["TeamId"]).Where(id => id == teamId.ToString()).ToList();
-            //return table.Table.AsEnumerable().Select(row => row["TeamId"] == teamId.ToString()).ToList();
         }
 
         //team
@@ -255,10 +294,7 @@ namespace MiddlewareHost
             var res = (from r in table.Table.AsEnumerable()
                        where r.Field<Guid>("TeamOneId") == teamId || r.Field<Guid>("TeamTwoId") == teamId
                        select r.Field<Guid>("Id")).ToList();
-
-            // var result = table.ConvertRowToDict(res);
-            //return result;
-            return res;
+             return res;
         }
 
         //game
@@ -272,8 +308,7 @@ namespace MiddlewareHost
                        where r.Field<Guid>("GameId") == gameId
                        select r.Field<Guid>("PlayerId")).ToList();
             return res;
-            //return table.Table.Select(row => row["GameId"]).Where(id => id == gameId.ToString()).ToList();
-        }
+         }
         //game
         private List<Guid> GetTeamsByGameId(TablesNames tableName, Guid gameId)
         {
@@ -283,22 +318,17 @@ namespace MiddlewareHost
 
             var res = (from r in table.Table.AsEnumerable()
                        where r.Field<Guid>("Id") == gameId
-                       //select r.Field<Guid>("TeamOneId") && r.Field<Guid>("TeamTwoId")).ToList();
                        select r).SingleOrDefault();
             List<Guid> result = new List<Guid>();
             result.Add((Guid)res["TeamOneId"]);
             result.Add((Guid)res["TeamTwoId"]);
-            //.ToList();// && r.Field<string>("TeamTwoId")
 
-            //select r.Field<string>("PlayerId")).ToList();
             return result;
-            //return table.Table.Select(row => row["GameId"]).Where(id => id == gameId.ToString()).ToList();
         }
 
         private List<Dictionary<string, string>> ReadByIds(TablesNames tableName, List<Guid> idList)
         {
             TableInform table;
-            //DataRow row;
             List<Dictionary<string, string>> resultedList;
 
             resultedList = new List<Dictionary<string, string>>();

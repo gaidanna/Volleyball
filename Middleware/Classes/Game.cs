@@ -41,6 +41,7 @@ namespace Middleware
 
         //public static Dictionary<Guid, Game> Items = new Dictionary<Guid, Game>();
         private List<Player> players;
+        private List<PlayerInGame> playersInGame;
         private Team[] teams;
 
         static Game()
@@ -73,9 +74,7 @@ namespace Middleware
         {
             try
             {
-
                 this.Id = new Guid( fieldsDict[ "Id" ] );
-                //this,teamOneId = new Guid[2];
                 this.teamOneId = new Guid( fieldsDict[ "TeamOneId" ] );
                 this.teamTwoId = new Guid( fieldsDict[ "TeamTwoId" ] );
                 this.league = fieldsDict[ "League" ];
@@ -192,6 +191,48 @@ namespace Middleware
                     players.Add(new Player(pl));
                 }
                 return players;
+            }
+        }
+
+        public List<PlayerInGame> BestPlayers
+        {
+            get
+            {
+                playersInGame = new List<PlayerInGame>();
+                var playersList = client.ReadPlayersInfoInGame(Id, VolleyballService.PlayersInfo.BestPlayer);
+                foreach (var pl in playersList)
+                {
+                    playersInGame.Add(new PlayerInGame(pl));
+                }
+                return playersInGame;
+            }
+        }
+
+        public List<PlayerInGame> YellowCardsPlayers
+        {
+            get
+            {
+                playersInGame = new List<PlayerInGame>();
+                var playersList = client.ReadPlayersInfoInGame(Id, VolleyballService.PlayersInfo.YellowCard);
+                foreach (var pl in playersList)
+                {
+                    playersInGame.Add(new PlayerInGame(pl));
+                }
+                return playersInGame;
+            }
+        }
+
+        public List<PlayerInGame> RedCardsPlayers
+        {
+            get
+            {
+                playersInGame = new List<PlayerInGame>();
+                var playersList = client.ReadPlayersInfoInGame(Id, VolleyballService.PlayersInfo.RedCard);
+                foreach (var pl in playersList)
+                {
+                    playersInGame.Add(new PlayerInGame(pl));
+                }
+                return playersInGame;
             }
         }
     }

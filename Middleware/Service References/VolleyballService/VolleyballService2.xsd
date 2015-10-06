@@ -202,4 +202,19 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ReadPlayersInfoInGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="gameId" type="q29:guid" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Middleware" minOccurs="0" name="playersInfo" type="q30:PlayersInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadPlayersInfoInGameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReadPlayersInfoInGameResult" nillable="true" type="q31:ArrayOfArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

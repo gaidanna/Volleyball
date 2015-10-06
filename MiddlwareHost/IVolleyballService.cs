@@ -54,5 +54,8 @@ namespace MiddlewareHost
         
         [OperationContract]
         void TryCreateTable(string table, Func<string> getRowNames);
+
+        [OperationContract]
+        List<Dictionary<string, string>> ReadPlayersInfoInGame(Guid gameId, PlayersInfo playersInfo);
     }    
 }

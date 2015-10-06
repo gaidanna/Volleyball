@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using Middleware;
 using System.Runtime.Serialization;
 using Volleyball.Attributes;
+using Middleware.VolleyballService;
 
 namespace Middleware
 {
     [DataContract]
     public class PlayerInGame : Base
     {
+        private static VolleyballServiceClient client = new VolleyballServiceClient();
+
         static PlayerInGame()
         {
             //TableInform.TryCreateTable( "PlayerInGames" , GetRowNames );
@@ -34,6 +37,21 @@ namespace Middleware
             this.redCard = redCard;
         }
 
+        public PlayerInGame(Dictionary<string, string> fieldsDict)
+        {
+            try
+            {
+                this.Id = new Guid( fieldsDict[ "Id" ] );
+                this.playerId = new Guid( fieldsDict[ "PlayerId" ] );
+                this.gameId = new Guid( fieldsDict[ "GameId" ] );
+                this.bestPlayer = Convert.ToBoolean(fieldsDict[ "BestPlayer" ]);
+                this.yellowCard = Convert.ToBoolean(fieldsDict["YellowCard"]);
+                this.redCard = Convert.ToBoolean(fieldsDict["RedCard"]);
+            }
+            catch
+            { }
+        }
+
          [IsInTable]
         [DataMember]
         private Guid playerId;
@@ -54,31 +72,24 @@ namespace Middleware
         [DataMember]
         private Guid gameId;
 
-        //[DataMember]
-        // public Game Game
-        // {
-        //     get
-        //     {
-        //         return game;
-        //     }
-        //     set
-        //     {
-        //         Game.Id = value.Id;
-        //         //gameId = value.Id;
-        //     }
-        // }
+         [DataMember]
+         public Player Player
+         {
+             get
+             {
+                 var playerDict = client.Read(playerId, VolleyballService.TablesNames.Players);
+                 return new Player(playerDict);
+             }
+         }
 
-        //[DataMember]
-        //public Player Player
-        //{
-        //    get
-        //    {
-        //        return playerId;
-        //    }
-        //    set
-        //    {
-        //        playerId = value.Id;
-        //    }
-        //}
+         [DataMember]
+         public Game Game
+         {
+             get
+             {
+                 var playerDict = client.Read(gameId, VolleyballService.TablesNames.Games);
+                 return new Game(playerDict);
+             }
+         }
     }
 }

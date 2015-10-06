@@ -167,12 +167,12 @@ namespace Middleware
             get
             {
                 teams = new List<Team>();
-                
-                //var teamsList = client.ReadTeams_Player(Id);
-                //foreach (var teamInfo in teamsList)
-                //{
-                //    teams.Add(new Team(teamInfo));
-                //}
+
+                var teamsList = client.ReadTeams_Player(Id);
+                foreach (var teamInfo in teamsList)
+                {
+                    teams.Add(new Team(teamInfo));
+                }
                 return teams;
             }
         }
@@ -182,11 +182,11 @@ namespace Middleware
             get
             {
                 games = new List<Game>();
-                //var gamesList = client.ReadGames_Player(Id);
-                //foreach (var gameInfo in gamesList)
-                //{
-                //    games.Add(new Game(gameInfo));
-                //}
+                var gamesList = client.ReadGames_Player(Id);
+                foreach (var gameInfo in gamesList)
+                {
+                    games.Add(new Game(gameInfo));
+                }
                 return games;
             }
         }

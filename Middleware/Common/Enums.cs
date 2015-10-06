@@ -21,4 +21,11 @@ namespace Middleware
         Female ,
         NotSpecified
     }
+
+    public enum PlayersInfo
+    { 
+        BestPlayer,
+        YellowCard,
+        RedCard
+    }
 }

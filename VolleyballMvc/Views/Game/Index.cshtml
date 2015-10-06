@@ -38,26 +38,26 @@
                         <div class="Teams">
                             <div class="Team1">@Model.PreciseGame.Teams[0].Name </div>
                             @{
-                int firstTeamCount = 0;
-                int secondTeamCount = 0;
-                int firstTeamTotal = 0;
-                int secondTeamTotal = 0;
+                            int firstTeamCount = 0;
+                            int secondTeamCount = 0;
+                            int firstTeamTotal = 0;
+                            int secondTeamTotal = 0;
 
-                string[] result = Model.PreciseGame.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-                string liveScore = null;
+                            string[] result = Model.PreciseGame.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                            string liveScore = null;
 
-                for (int i = 0; i < result.Length - 1; i += 2)
-                {
-                    int t1 = Convert.ToInt32(result[i]);
-                    int t2 = Convert.ToInt32(result[i + 1]);
-                    firstTeamTotal += t1;
-                    secondTeamTotal += t2;
-                    if (t1 > t2)
-                    { firstTeamCount++; }
-                    else
-                    { secondTeamCount++; }
-                    liveScore += string.Format("{0} - {1}   ", t1, t2);
-                }
+                            for (int i = 0; i < result.Length - 1; i += 2)
+                            {
+                                int t1 = Convert.ToInt32(result[i]);
+                                int t2 = Convert.ToInt32(result[i + 1]);
+                                firstTeamTotal += t1;
+                                secondTeamTotal += t2;
+                                if (t1 > t2)
+                                { firstTeamCount++; }
+                                else
+                                { secondTeamCount++; }
+                                liveScore += string.Format("{0} - {1}   ", t1, t2);
+                            }
                 <div class="Score">@String.Format("{0} : {1}", firstTeamCount, secondTeamCount)</div>
                             }
                             <div class="Team2">@Model.PreciseGame.Teams[1].Name</div>
@@ -69,81 +69,78 @@
                         </div>
                     </div>
                     <div id="teamplayers">
-                        @*<div>*@
-                        <div class ="teamName">@Model.PreciseGame.Teams[0].Name</div>
-                            <table class="team" id="firstTeam">
-                                <thead>
-                                    <tr class="tableHeader centerText">
-                                        <td>Name</td>
-                                        <td>Captain</td>
-                                        <td>Number</td>
-                                        <td>Amplua</td>
-                                        <td>Best Player</td>
-                                        <td>Yellow Card</td>
-                                        <td>Red Card</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="tableBody">
-                                    @foreach (var pl in Model.PreciseGame.Teams[0].Players)
+                        <div class="teamName">@Model.PreciseGame.Teams[0].Name</div>
+                        <table class="team" id="firstTeam">
+                            <thead>
+                                <tr class="tableHeader centerText">
+                                    <td>Name</td>
+                                    <td>Captain</td>
+                                    <td>Number</td>
+                                    <td>Amplua</td>
+                                    <td>Best Player</td>
+                                    <td>Yellow Card</td>
+                                    <td>Red Card</td>
+                                </tr>
+                            </thead>
+                            <tbody class="tableBody">
+                                @{
+                                    foreach (var pl in Model.PreciseGame.Teams[0].Players)
+                                    { 
+                                    <tr>
+                                        <td>@pl.Name</td>
+                                        @{
+                                    if (pl.Captain)
                                     {
-                                        <tr>
-                                            <td>@pl.Name</td>
-                                            @{
-                                        if (pl.Captain)
-                                        {
-                                            <td class="centerText">YES</td>}
-                                        else
-                                        {
-                                            <td class="centerText"> - </td>}
-}
-                                            <td class="centerText">@pl.Number</td>
-                                            <td>@pl.Amplua</td>
-                                            <td class="centerText"> - </td>
-                                            <td class="centerText"> - </td>
-                                            <td class="centerText"> - </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        @*</div>*@
-                        @*<div >*@
-                            <div class="teamName">@Model.PreciseGame.Teams[1].Name</div>
-                            <table class="team">
-                                <thead>
-                                    <tr class="tableHeader centerText">
-                                        <td>Name</td>
-                                        <td>Captain</td>
-                                        <td>Number</td>
-                                        <td>Amplua</td>
-                                        <td>Best Player</td>
-                                        <td>Yellow Card</td>
-                                        <td>Red Card</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="tableBody">
-                                    @foreach (var pl in Model.PreciseGame.Teams[1].Players)
+                                        <td class="centerText">YES</td>}
+                                    else
                                     {
-                                        <tr>
-                                            <td>@pl.Name</td>
-                                            @{
-                                        if (pl.Captain)
-                                        {
-                                            <td class="centerText">YES</td>}
-                                        else
-                                        {
-                                            <td class="centerText"> - </td>}
-}
-                                            <td class="centerText">@pl.Number</td>
-                                            <td>@pl.Amplua</td>
-                                            <td class="centerText"> - </td>
-                                            <td class="centerText"> - </td>
-                                            <td class="centerText"> - </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-
-                        @*</div>*@
+                                        <td class="centerText"> - </td>}
+                                        }
+                                        <td class="centerText">@pl.Number</td>
+                                        <td>@pl.Amplua</td>
+                                        <td class="centerText"> - </td>
+                                        <td class="centerText"> - </td>
+                                        <td class="centerText"> - </td>
+                                    </tr>
+                                }
+                                }
+                            </tbody>
+                        </table>
+                        <div class="teamName">@Model.PreciseGame.Teams[1].Name</div>
+                        <table class="team">
+                            <thead>
+                                <tr class="tableHeader centerText">
+                                    <td>Name</td>
+                                    <td>Captain</td>
+                                    <td>Number</td>
+                                    <td>Amplua</td>
+                                    <td>Best Player</td>
+                                    <td>Yellow Card</td>
+                                    <td>Red Card</td>
+                                </tr>
+                            </thead>
+                            <tbody class="tableBody">
+                                @foreach (var pl in Model.PreciseGame.Teams[1].Players)
+                                {
+                                    <tr>
+                                        <td>@pl.Name</td>
+                                        @{
+                                    if (pl.Captain)
+                                    {
+                                        <td class="centerText">YES</td>}
+                                    else
+                                    {
+                                        <td class="centerText"> - </td>}
+                                        }
+                                        <td class="centerText">@pl.Number</td>
+                                        <td>@pl.Amplua</td>
+                                        <td class="centerText"> - </td>
+                                        <td class="centerText"> - </td>
+                                        <td class="centerText"> - </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             }

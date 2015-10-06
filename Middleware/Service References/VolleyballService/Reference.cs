@@ -46,6 +46,20 @@ namespace Middleware.VolleyballService {
         NotSpecified = 2,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PlayersInfo", Namespace="http://schemas.datacontract.org/2004/07/Middleware")]
+    public enum PlayersInfo : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BestPlayer = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        YellowCard = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RedCard = 2,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="VolleyballService.IVolleyballService")]
     public interface IVolleyballService {
@@ -133,6 +147,12 @@ namespace Middleware.VolleyballService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/TryCreateTable", ReplyAction="http://tempuri.org/IVolleyballService/TryCreateTableResponse")]
         System.Threading.Tasks.Task TryCreateTableAsync(string table, System.Func<string> getRowNames);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGame", ReplyAction="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGameResponse")]
+        System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> ReadPlayersInfoInGame(System.Guid gameId, Middleware.VolleyballService.PlayersInfo playersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGame", ReplyAction="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGameResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> ReadPlayersInfoInGameAsync(System.Guid gameId, Middleware.VolleyballService.PlayersInfo playersInfo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -272,6 +292,14 @@ namespace Middleware.VolleyballService {
         
         public System.Threading.Tasks.Task TryCreateTableAsync(string table, System.Func<string> getRowNames) {
             return base.Channel.TryCreateTableAsync(table, getRowNames);
+        }
+        
+        public System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> ReadPlayersInfoInGame(System.Guid gameId, Middleware.VolleyballService.PlayersInfo playersInfo) {
+            return base.Channel.ReadPlayersInfoInGame(gameId, playersInfo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> ReadPlayersInfoInGameAsync(System.Guid gameId, Middleware.VolleyballService.PlayersInfo playersInfo) {
+            return base.Channel.ReadPlayersInfoInGameAsync(gameId, playersInfo);
         }
     }
 }
