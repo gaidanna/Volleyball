@@ -84,23 +84,48 @@
                             </thead>
                             <tbody class="tableBody">
                                 @{
+                                    List<Middleware.Player> bestPlayers = Model.PreciseGame.BestPlayers;
+                                    List<Middleware.Player> YellowCardsPlayers = Model.PreciseGame.YellowCardsPlayers;
+                                    List<Middleware.Player> RedCardsPlayers = Model.PreciseGame.RedCardsPlayers;
+                                    
                                     foreach (var pl in Model.PreciseGame.Teams[0].Players)
-                                    { 
-                                    <tr>
+                                    {
+                                        <tr>
                                         <td>@pl.Name</td>
                                         @{
-                                    if (pl.Captain)
-                                    {
-                                        <td class="centerText">YES</td>}
-                                    else
-                                    {
-                                        <td class="centerText"> - </td>}
+                                        if (pl.Captain)
+                                        { <td class="centerText">YES</td>}
+                                        else
+                                        { <td class="centerText"> - </td>}
                                         }
                                         <td class="centerText">@pl.Number</td>
                                         <td>@pl.Amplua</td>
-                                        <td class="centerText"> - </td>
-                                        <td class="centerText"> - </td>
-                                        <td class="centerText"> - </td>
+                                            @{
+                                        if (bestPlayers!= null)
+                                        {
+                                            if (bestPlayers[0].Id == pl.Id || bestPlayers[1].Id == pl.Id)
+                                        { <td class="centerText">YES</td> }
+                                        else
+                                        { <td class="centerText">-</td> }
+                                        }
+                                        else
+                                        {
+                                        <td class="centerText">-</td>}
+                                        }
+                                            @{
+                                        if(YellowCardsPlayers  != null && YellowCardsPlayers.Any(player => player.Id == pl.Id))
+                                        { <td class="centerText">YES</td> }
+                                         else
+                                        {<td class="centerText">-</td> }
+                                         }
+                                        @{
+                                        if (RedCardsPlayers != null && RedCardsPlayers.Any(player => player.Id == pl.Id))
+                                        {
+                                        <td class="centerText">YES</td> }
+                                        else
+                                        {
+                                        <td class="centerText">-</td> }
+                                        }
                                     </tr>
                                 }
                                 }
@@ -120,24 +145,53 @@
                                 </tr>
                             </thead>
                             <tbody class="tableBody">
-                                @foreach (var pl in Model.PreciseGame.Teams[1].Players)
-                                {
-                                    <tr>
-                                        <td>@pl.Name</td>
-                                        @{
-                                    if (pl.Captain)
+                                @{
+                                    foreach (var pl in Model.PreciseGame.Teams[1].Players)
                                     {
+                                        <tr>
+                                            <td>@pl.Name</td>
+                                            @{
+                                        if (pl.Captain)
+                                        {
                                         <td class="centerText">YES</td>}
-                                    else
-                                    {
+                                        else
+                                        {
                                         <td class="centerText"> - </td>}
+                                            }
+                                            <td class="centerText">@pl.Number</td>
+                                            <td>@pl.Amplua</td>
+                                            @{
+                                        if (bestPlayers != null)
+                                        {
+                                            if (bestPlayers[0].Id == pl.Id || bestPlayers[1].Id == pl.Id)
+                                            {
+                                            <td class="centerText">YES</td> }
+                                            else
+                                            {
+                                            <td class="centerText">-</td> }
                                         }
-                                        <td class="centerText">@pl.Number</td>
-                                        <td>@pl.Amplua</td>
-                                        <td class="centerText"> - </td>
-                                        <td class="centerText"> - </td>
-                                        <td class="centerText"> - </td>
-                                    </tr>
+                                        else
+                                        {
+                                            <td class="centerText">-</td>}
+                                            }
+                                            @{
+                                        if (YellowCardsPlayers != null && YellowCardsPlayers.Any(player => player.Id == pl.Id))
+                                        {
+                                        <td class="centerText">YES</td> }
+                                        else
+                                        {
+                                        <td class="centerText">-</td> }
+                                            }
+                                            @{
+                                        if (RedCardsPlayers != null && RedCardsPlayers.Any(player => player.Id == pl.Id))
+                                        {
+                                            <td class="centerText">YES</td> }
+                                        else
+                                        {
+                                            <td class="centerText">-</td> }
+                                            }
+                                        </tr>
+                                    }
                                 }
                             </tbody>
                         </table>

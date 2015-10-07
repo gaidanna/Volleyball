@@ -118,7 +118,7 @@ namespace MiddlewareHost
         {
             TableInform table;
             DbConnection connection;
-            List<DataRow> rows;
+            //List<DataRow> rows;
             List<Dictionary<string, string>> resultedList;
 
             connection = TableInform.Connection;
@@ -127,30 +127,33 @@ namespace MiddlewareHost
 
             if (playersInfo == PlayersInfo.BestPlayer)
             {
-                rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("BestPlayer") == true).ToList();
-                foreach (var row in rows)
-                {
-                    var result = table.ConvertRowToDict(row);
-                    resultedList.Add(result);
-                }
+                var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("BestPlayer") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
+                resultedList = ReadByIds(TablesNames.Players, rows);
+                //foreach (var row in rows)
+                //{ 
+                //    //var result = table.ConvertRowToDict(row);
+                //    //resultedList.Add(result);
+                //}
             }
             else if (playersInfo == PlayersInfo.YellowCard)
             {
-                rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("YellowCard") == true).ToList();
-                foreach (var row in rows)
-                {
-                    var result = table.ConvertRowToDict(row);
-                    resultedList.Add(result);
-                }
+                var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("YellowCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
+                resultedList = ReadByIds(TablesNames.Players, rows);
+                //foreach (var row in rows)
+                //{
+                //    var result = table.ConvertRowToDict(row);
+                //    resultedList.Add(result);
+                //}
             }
             else if(playersInfo == PlayersInfo.RedCard)
             {
-                rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("RedCard") == true).ToList();
-                foreach (var row in rows)
-                {
-                    var result = table.ConvertRowToDict(row);
-                    resultedList.Add(result);
-                }
+                var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("RedCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
+                resultedList = ReadByIds(TablesNames.Players, rows);
+                //foreach (var row in rows)
+                //{
+                //    var result = table.ConvertRowToDict(row);
+                //    resultedList.Add(result);
+                //}
             }
 
 

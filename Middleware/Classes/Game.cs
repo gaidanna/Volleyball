@@ -41,7 +41,7 @@ namespace Middleware
 
         //public static Dictionary<Guid, Game> Items = new Dictionary<Guid, Game>();
         private List<Player> players;
-        private List<PlayerInGame> playersInGame;
+        private List<Player> playersInGame;
         private Team[] teams;
 
         static Game()
@@ -194,45 +194,57 @@ namespace Middleware
             }
         }
 
-        public List<PlayerInGame> BestPlayers
+        public List<Player> BestPlayers
         {
             get
             {
-                playersInGame = new List<PlayerInGame>();
+                playersInGame = new List<Player>();
                 var playersList = client.ReadPlayersInfoInGame(Id, VolleyballService.PlayersInfo.BestPlayer);
-                foreach (var pl in playersList)
+                if (playersList != null)
                 {
-                    playersInGame.Add(new PlayerInGame(pl));
+                    foreach (var pl in playersList)
+                    {
+                        playersInGame.Add(new Player(pl));
+                    }
+                    return playersInGame;
                 }
-                return playersInGame;
+                return null;
             }
         }
 
-        public List<PlayerInGame> YellowCardsPlayers
+        public List<Player> YellowCardsPlayers
         {
             get
             {
-                playersInGame = new List<PlayerInGame>();
+                playersInGame = new List<Player>();
                 var playersList = client.ReadPlayersInfoInGame(Id, VolleyballService.PlayersInfo.YellowCard);
-                foreach (var pl in playersList)
+                if (playersList != null)
                 {
-                    playersInGame.Add(new PlayerInGame(pl));
+                    foreach (var pl in playersList)
+                    {
+                        playersInGame.Add(new Player(pl));
+                    }
+                    return playersInGame;
                 }
-                return playersInGame;
+                return null;
             }
         }
 
-        public List<PlayerInGame> RedCardsPlayers
+        public List<Player> RedCardsPlayers
         {
             get
             {
-                playersInGame = new List<PlayerInGame>();
+                playersInGame = new List<Player>();
                 var playersList = client.ReadPlayersInfoInGame(Id, VolleyballService.PlayersInfo.RedCard);
-                foreach (var pl in playersList)
+                if (playersList != null)
                 {
-                    playersInGame.Add(new PlayerInGame(pl));
+                    foreach (var pl in playersList)
+                    {
+                        playersInGame.Add(new Player(pl));
+                    }
+                    return playersInGame;
                 }
-                return playersInGame;
+                return null;
             }
         }
     }
