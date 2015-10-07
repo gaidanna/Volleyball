@@ -51,7 +51,7 @@
                     </div>*@
 
                         <li class="Player">
-                            <a class="styled" href="@Url.Action("Index", "Player" )">
+                            <a class="styledWhite" href="@Url.Action("Index", "Player" )">
                                 <div id="SmallLogo">
                                     @{
                     int number = r.Next(1, 9);
@@ -59,7 +59,7 @@
                                     }
                                     <img id="smallImage" src=@path width="110" height="160" />
                                 </div>
-                                <div id="PlayerName">
+                                <div class="PlayerFullInfo">
                                     @pl.Name
                                     @pl.Number
                                 </div>
