@@ -250,6 +250,7 @@
     <Content Include="Content\Images\orderedList7.png" />
     <Content Include="Content\Images\orderedList8.png" />
     <Content Include="Content\Images\orderedList9.png" />
+    <Content Include="Content\Images\Player.jpg" />
     <Content Include="Content\Images\smalLogo1.jpg" />
     <Content Include="Content\Images\smalLogo2.jpg" />
     <Content Include="Content\Images\smalLogo3.jpg" />
@@ -263,6 +264,8 @@
     <Content Include="Content\Styles\GameCenterW.css" />
     <Content Include="Content\Styles\GamesW.css" />
     <Content Include="Content\Styles\GameScheduleW.css" />
+    <Content Include="Content\Styles\PlayerProfileW.css" />
+    <Content Include="Content\Styles\PlayerProfile.css" />
     <Content Include="Content\Styles\HomeW.css" />
     <Content Include="Content\Styles\PlayersW.css" />
     <Content Include="Content\Styles\Players.css" />

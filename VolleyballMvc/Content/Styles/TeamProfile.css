@@ -1,6 +1,6 @@
 ﻿#mainImage {
- display:block;
-       width: 750px;
+    display:block;
+    width: 750px;
     height: 500px;
     position: relative;
     margin: auto;
@@ -20,15 +20,12 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom:100px;
-    /*overflow-y: scroll;*/
-    /*height: 580px;*/
-    /*height: 95%;*/
     background-color:rgba(0, 10, 41, 0.5);
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
 #teamInfo {
-    padding-top: 50px;
+    padding-top: 20px;
     margin-top: 50px;
     height: 150px;
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
@@ -42,18 +39,13 @@
     padding: 4px;
     margin-left: 100px;
     display: block;
-    /*float: left;*/
     list-style-type:none;
-    /*padding: 0 20px;*/
 }
 #SmallLogo {
     width: 120px;
     height: 160px;
     position: relative;
     float: left;
-/*display:inline;
-position: relative;*/
-
 }
 #smallImage  {
     float: left;
@@ -63,13 +55,6 @@ position: relative;*/
     top: 0px;
     left: 0px;
     z-index: 0;
-    /*margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;*/
-    /*margin-right: -50%;*/
-    /*transform: translate(-50%, -50%);*/
-    /*margin-left: 50px;*/
 }
 
 .Players {
@@ -77,78 +62,51 @@ position: relative;*/
 }
 
 .Player {
-     display:block;
+    display:block;
     color: white;
     min-height: 225px;
     margin-top: 30px;
     margin-left: 20px;
-    /*padding-top: 10px;
-    height: 60px;
-    background-color: #FFFFFF;
-    color:#2548c0;
-    text-transform: uppercase;
-    font-family: "oswaldlight","Trebuchet MS",Arial,Helvetica,sans-serif;
-    font-size: 34px;
-    font-size: 2rem;
-    line-height: 34px;
-    line-height: 3.4rem;
-    text-align: left;*/
 }
 
 #content ul li {
-    background-color: rgba(0, 10, 41, 0.3);
     display: inline-block;
-    /*float: left;*/
     width: 30%;
     list-style-type:none;
-    /*padding: 0 20px;*/
 }
     a.styledWhite, a.styledWhite:link, a.styledWhite:visited, a.styledWhite:hover, a.styledWhite:focus, a.styledWhite:active{
-  color: #e0e0e0;
-   text-decoration: none;
-}
-
+    color: #e0e0e0;
+    text-decoration: none;
 }
 
 .PlayerFullInfo{
     float: left;
     display:inline;
-    margin-top: 20px;
-    margin-left: 40px;
-    /*margin-left: 100px;*/
-
-}
-/*.GameSchedule {
-    overflow-y: scroll;
-    height: 580px;    
-    width: 1000px;
-}*/
-
-/*.LowerLine {
-    vertical-align: middle;
-    height: 5px;
-    background-color: #edebeb;
-    width: 100%;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top: 1px solid #2548c0;
+    margin-left: 20px;
+    font-family: "oswaldlight","Trebuchet MS",Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
-.UpperLine {
-    vertical-align: middle;
-    height: 5px;
-    background-color: #edebeb;
-    width: 100%;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom: 1px solid #2548c0;
+#playerNumber {
+    margin-left:5px;
+    width:40px;
+    height:40px;
+    text-align:center;
+    background-color: #e6002d;
+    font-size:35px;
+
 }
 
-.EmptyLine {
-    vertical-align: middle;
-    height: 40px;
-    width: 100%;
-}*/
+#captain {
+    color: #e6002d;
+}
+
+.info {
+    margin-left:5px;
+    margin-top: 7px;
+}
+
 
 
 

@@ -47,11 +47,8 @@
                 Random r = new Random();
                 foreach (var pl in Model.TeamPlayers)
                 {
-                    @*<div class="UpperLine">
-                    </div>*@
-
                         <li class="Player">
-                            <a class="styledWhite" href="@Url.Action("Index", "Player" )">
+                            <a class="styledWhite" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender } )">
                                 <div id="SmallLogo">
                                     @{
                     int number = r.Next(1, 9);
@@ -60,16 +57,14 @@
                                     <img id="smallImage" src=@path width="110" height="160" />
                                 </div>
                                 <div class="PlayerFullInfo">
-                                    @pl.Name
-                                    @pl.Number
+                                    <div id="playerNumber">@pl.Number</div>
+                                    <div class="info">@pl.Name</div>
+                                    <div class="info">@pl.Amplua</div>
+                                    @if(pl.Captain)
+                                    { <div class="info" id="captain">CAPTAIN</div> }
                                 </div>
                             </a>
-
                         </li>
-                        @*<div class="LowerLine">
-                        </div>
-                        <div class="EmptyLine">
-                        </div>*@
                 }
                     }
                 </ul>

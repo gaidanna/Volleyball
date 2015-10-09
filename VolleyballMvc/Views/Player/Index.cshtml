@@ -1,8 +1,26 @@
-﻿@model VolleyballMvc.Models.PlayerModel
-
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    ViewBag.Title = "Player Profile";
 }
 
-<h2>Index</h2>
+@section css{
+    @if (ViewBag.gender == "female")
+    {
+        <link href="@Url.Content("~/Content/Styles/PlayerProfileW.css")" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="@Url.Content("~/Content/Styles/PlayerProfile.css")" rel="stylesheet" />
+    }
+
+}
+
+<div id="main">
+    <h1 class="pageTitle">Player Profile</h1>
+    <div id="content">
+        <div id="crossfade">
+                <img src="~/Content/Images/Player.jpg"/>
+        </div>
+        <div id="info">
+        </div>
+    </div>
+</div>
