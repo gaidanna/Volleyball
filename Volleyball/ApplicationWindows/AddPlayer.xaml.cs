@@ -16,6 +16,9 @@ using Volleyball.ApplicationWindows;
 using Middleware.VolleyballService;
 using System.Text.RegularExpressions;
 using System.Collections.ObjectModel;
+using System.IO;
+using Microsoft.Win32;
+using System.Drawing;
 
 namespace Volleyball
 {
@@ -28,6 +31,9 @@ namespace Volleyball
         private Team team;
         private ObservableCollection<Player> playersList;
 
+        private byte[] fileData;
+        private string filename;
+        private OpenFileDialog openFileDlg;
         //delegate void SavePlayerDelegate(Dictionary<string, string> dictionary, Middleware.VolleyballService.TablesNames tableName);
 
         public AddPlayer()
@@ -121,6 +127,27 @@ namespace Volleyball
 
                         client.Insert(playerDict, Middleware.VolleyballService.TablesNames.Players);
                         client.Insert(plInTeamDict, Middleware.VolleyballService.TablesNames.PlayerInTeams);
+                        //client.SaveImage(fileData, filename);
+
+                        try
+                        {
+                            string iName = imageUrl.Text;
+                            if (iName.Length > 0)
+                            {
+                                string filepath = "D:\\Source\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+
+                                File.Copy(System.IO.Path.GetFullPath(iName), filepath);
+
+                                //picProduct.Image = new Bitmap(opFile.OpenFile());
+                            }
+                        }
+
+                        catch (Exception exp)
+                        {
+
+                            MessageBox.Show("Unable to open file " + exp.Message);
+
+                        }
                     }
                     else
                     {
@@ -341,6 +368,27 @@ namespace Volleyball
         {
             Regex regex = new Regex("[^0-9]+"); //regex that matches disallowed text
             return !regex.IsMatch(text);
+        }
+
+        private void imageButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            openFileDlg = new OpenFileDialog();
+            openFileDlg.InitialDirectory = "C:\\";
+            openFileDlg.Filter = "Bmp(*.BMP;)|*.BMP;| Jpg(*Jpg)|*.jpg";
+            if (openFileDlg.ShowDialog() == true)
+            {
+
+                //FileInfo fi = new FileInfo(openFileDlg.FileName);
+                //FileStream fs = new FileStream(fi.FullName, FileMode.Open, FileAccess.Read);
+                //filename = fi.FullName;
+                //BinaryReader rdr = new BinaryReader(fs);
+                //fileData = rdr.ReadBytes((int)fs.Length);
+                //rdr.Close();
+                //fs.Close();
+                imageUrl.Text = openFileDlg.FileName;
+                
+            }
         }
     }
 }

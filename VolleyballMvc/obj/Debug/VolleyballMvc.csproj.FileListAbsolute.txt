@@ -555,7 +555,6 @@ D:\Projects\Volleyball\VolleyballMvc\bin\zh-Hant\System.Spatial.resources.dll
 D:\Projects\Volleyball\VolleyballMvc\obj\Debug\VolleyballMvc.csprojResolveAssemblyReference.cache
 D:\Projects\Volleyball\VolleyballMvc\obj\Debug\VolleyballMvc.dll
 D:\Projects\Volleyball\VolleyballMvc\obj\Debug\VolleyballMvc.pdb
-D:\Source\Volleyball\VolleyballMvc\obj\Debug\VolleyballMvc.csprojResolveAssemblyReference.cache
 D:\Source\Volleyball\VolleyballMvc\obj\Debug\VolleyballMvc.dll
 D:\Source\Volleyball\VolleyballMvc\bin\app.config
 D:\Source\Volleyball\VolleyballMvc\bin\VolleyballMvc.dll.config
@@ -650,3 +649,4 @@ D:\Source\Volleyball\VolleyballMvc\bin\ru\System.Spatial.resources.dll
 D:\Source\Volleyball\VolleyballMvc\bin\zh-Hans\System.Spatial.resources.dll
 D:\Source\Volleyball\VolleyballMvc\bin\zh-Hant\System.Spatial.resources.dll
 D:\Source\Volleyball\VolleyballMvc\obj\Debug\VolleyballMvc.pdb
+D:\Source\Volleyball\VolleyballMvc\obj\Debug\VolleyballMvc.csprojResolveAssemblyReference.cache

@@ -28,6 +28,8 @@ namespace Middleware
         private string phone;
         [DataMember]
         private string email;
+        [DataMember]
+        private byte[] image;
 
         private List<Player> players;
         private List<Game> games;
@@ -56,11 +58,23 @@ namespace Middleware
             this.email = email;
         }
 
+        public Team(string league, string name, string manager, string phone, string email, byte[] image)
+            : base()
+        {
+
+            this.league = league;
+            this.name = name;
+            this.manager = manager;
+            this.phone = phone;
+            this.email = email;
+            this.image = image;
+        }
+
+
         public Team(Dictionary<string, string> fieldsDict)
         {
             try
             {
-                
                 this.Id = new Guid(fieldsDict["Id"]);
                 this.league = fieldsDict["LEAGUE"];
                 this.name = fieldsDict["NAME"];

@@ -8,6 +8,9 @@ using Middleware.VolleyballService;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Win32;
+using System.IO;
+using System.Data;
 
 namespace Volleyball.ApplicationWindows
 {
@@ -203,6 +206,35 @@ namespace Volleyball.ApplicationWindows
         {
             Regex regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
             return !regex.IsMatch(text);
+        }
+
+        private void imageButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDlg = new OpenFileDialog();
+            openFileDlg.InitialDirectory = Directory.GetCurrentDirectory();
+            if (openFileDlg.ShowDialog() == true)
+            {
+                FileInfo fi = new FileInfo(openFileDlg.FileName);
+                FileStream fs = new FileStream(fi.FullName, FileMode.Open, FileAccess.Read);
+                BinaryReader rdr = new BinaryReader(fs);
+                byte[] fileData = rdr.ReadBytes((int)fs.Length);
+                rdr.Close();
+                fs.Close();
+                imageUrl.Text = openFileDlg.FileName;
+
+                //string cs = @"Data Source=<your server>;Initial Catalog=MyFsDb;Integrated Security=TRUE";
+                //using (SqlConnection con = new SqlConnection(cs))
+                //{
+                //    con.Open();
+                //    string sql = "INSERT INTO MyFsTable VALUES (@fData, @fName, default)";
+                //    SqlCommand cmd = new SqlCommand(sql, con);
+                //    cmd.Parameters.Add("@fData", SqlDbType.Image, fileData.Length).Value = fileData;
+                //    cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = fi.Name;
+                //    cmd.ExecuteNonQuery();
+                //    con.Close();
+                //}
+                //MessageBox.Show(fi.FullName, "File Inserted!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

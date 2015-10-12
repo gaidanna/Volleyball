@@ -27,7 +27,7 @@ namespace Middleware
         {
             ObtainSqlConfiguration();
             connection = dbProviderFactory.CreateConnection();
-            connection.ConnectionString = ConfigurationManager.ConnectionStrings[ "VolleyballStats" ].ConnectionString;
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings[ "VB" ].ConnectionString;
             SetTables();
         }
 
@@ -113,7 +113,7 @@ namespace Middleware
         {
             try
             {
-                var sql = ConfigurationManager.ConnectionStrings[ "VolleyballStats" ];
+                var sql = ConfigurationManager.ConnectionStrings[ "VB" ];
                 dbProviderFactory = DbProviderFactories.GetFactory( sql.ProviderName );
 
             }
@@ -232,33 +232,5 @@ namespace Middleware
             Dictionary<string , string> dictionary = row.Table.Columns.Cast<DataColumn>().ToDictionary( col => col.ColumnName , col => row.Field<object>( col.ColumnName ).ToString() );
             return dictionary;
         }
-
-        //public static void Select(string tableName, string InfoToSelect = "*", string fromColumn = "", string query = "")
-        //{
-        //    List<string> info = new List<string>();
-        //    //SELECT * FROM VolleyballStats.dbo.Players WHERE Id='EB91C9E8-3697-4E6A-B3B5-110CDBE73433'
-        //    if (Connection != null)
-        //    {
-        //        try
-        //        {
-        //            using (DbCommand command = TableInform.dbProviderFactory.CreateCommand())
-        //            {
-        //                string stringRowNames = (query.Length > 0) ? String.Format("SELECT {0} FROM {1} WHERE {2} = {3}", InfoToSelect, tableName, fromColumn, query) : String.Format("SELECT {0} FROM {1}", InfoToSelect, tableName);
-        //                command.Connection = connection;
-        //                command.CommandText = stringRowNames;
-
-        //                DbDataReader reader = command.ExecuteReader();
-        //                int c = 0;
-        //                while (reader.Read())
-        //                {
-        //                    info.Add(reader[c].ToString());
-        //                    c++;
-        //                }
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        { }
-        //    }
-        //}
     }
 }

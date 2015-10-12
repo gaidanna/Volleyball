@@ -55,6 +55,7 @@
     <Compile Include="Classes\PlayerInTeam.cs" />
     <Compile Include="Classes\Serialization.cs" />
     <Compile Include="Classes\Team.cs" />
+    <Compile Include="Common\Converter.cs" />
     <Compile Include="Common\Enums.cs" />
     <Compile Include="Interfaces\IDataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +113,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

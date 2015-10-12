@@ -153,6 +153,12 @@ namespace Middleware.VolleyballService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGame", ReplyAction="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGameResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> ReadPlayersInfoInGameAsync(System.Guid gameId, Middleware.VolleyballService.PlayersInfo playersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/SaveImage", ReplyAction="http://tempuri.org/IVolleyballService/SaveImageResponse")]
+        void SaveImage(byte[] bytes, string file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/SaveImage", ReplyAction="http://tempuri.org/IVolleyballService/SaveImageResponse")]
+        System.Threading.Tasks.Task SaveImageAsync(byte[] bytes, string file);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -300,6 +306,14 @@ namespace Middleware.VolleyballService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> ReadPlayersInfoInGameAsync(System.Guid gameId, Middleware.VolleyballService.PlayersInfo playersInfo) {
             return base.Channel.ReadPlayersInfoInGameAsync(gameId, playersInfo);
+        }
+        
+        public void SaveImage(byte[] bytes, string file) {
+            base.Channel.SaveImage(bytes, file);
+        }
+        
+        public System.Threading.Tasks.Task SaveImageAsync(byte[] bytes, string file) {
+            return base.Channel.SaveImageAsync(bytes, file);
         }
     }
 }

@@ -25,6 +25,12 @@ namespace Middleware
         private bool captain;
         [DataMember]
         private string league;
+        [DataMember]
+        private string imagePath;
+        [DataMember]
+        private int age;
+        [DataMember]
+        private int height;
 
         //private bool yellowCard;
         //private bool redCard;
@@ -52,17 +58,32 @@ namespace Middleware
             return "( Id uniqueidentifier NOT NULL, Name varchar(50) NOT NULL, Number int NOT NULL, League varchar(50) NOT NULL, Amplua varchar(50) NOT NULL, Captain bit NOT NULL, PRIMARY KEY (Id) )";
         }
 
-        public Player(string name, int number, string amplua, bool captain, string league)
+        public Player(string name, int number, string amplua, bool captain, string league, string imagepath, int age, int height)
             : base()
         {
-            
             this.name = name;
             this.number = number;
             this.amplua = amplua;
             this.captain = captain;
             this.league = league;
+            this.imagePath = imagepath;
+            this.age = age;
+            this.height = height;
             //Items.Add(Id, this);
         }
+
+        //public Player(string name, int number, string amplua, bool captain, string league, string image)
+        //    : base()
+        //{
+
+        //    this.name = name;
+        //    this.number = number;
+        //    this.amplua = amplua;
+        //    this.captain = captain;
+        //    this.league = league;
+        //    this.image = image;
+        //    //Items.Add(Id, this);
+        //}
 
         public Player(Dictionary<string, string> fieldsDict)
         {

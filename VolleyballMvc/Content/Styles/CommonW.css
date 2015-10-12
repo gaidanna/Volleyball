@@ -74,7 +74,7 @@ html {
 
 .menu li {
     display: inline; 
-    padding: 20px;
+    padding: 0 7px;
     height: 30px; 
     position:center;
 }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Reflection;
 using System.Data.Common;
 using Middleware;
+using System.Data.SqlClient;
 
 namespace MiddlewareHost
 {
@@ -145,7 +146,7 @@ namespace MiddlewareHost
                 //    resultedList.Add(result);
                 //}
             }
-            else if(playersInfo == PlayersInfo.RedCard)
+            else if (playersInfo == PlayersInfo.RedCard)
             {
                 var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("RedCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
                 resultedList = ReadByIds(TablesNames.Players, rows);
@@ -269,8 +270,8 @@ namespace MiddlewareHost
             var res = (from r in table.Table.AsEnumerable()
                        where r.Field<Guid>("PlayerId") == playerId
                        select r.Field<Guid>(param)).ToList();
-             return res;
-           }
+            return res;
+        }
 
         //team
         private List<Guid> GetPlayersByTeamId(TablesNames tableName, Guid teamId)
@@ -297,7 +298,7 @@ namespace MiddlewareHost
             var res = (from r in table.Table.AsEnumerable()
                        where r.Field<Guid>("TeamOneId") == teamId || r.Field<Guid>("TeamTwoId") == teamId
                        select r.Field<Guid>("Id")).ToList();
-             return res;
+            return res;
         }
 
         //game
@@ -311,7 +312,7 @@ namespace MiddlewareHost
                        where r.Field<Guid>("GameId") == gameId
                        select r.Field<Guid>("PlayerId")).ToList();
             return res;
-         }
+        }
         //game
         private List<Guid> GetTeamsByGameId(TablesNames tableName, Guid gameId)
         {
@@ -408,6 +409,64 @@ namespace MiddlewareHost
                 }
             }
             return result;
+        }
+
+        public void SaveImage(byte[] bytes, string file)
+        {
+            DbConnection connection;
+            connection = TableInform.Connection;
+
+            string strQuery = "INSERT INTO FileStreamTest([Name], [Data]) VALUES (@Name, @Data)";
+            SqlCommand command = new SqlCommand(strQuery);
+            var parameter = new System.Data.SqlClient.SqlParameter("@Name",
+                            System.Data.SqlDbType.NVarChar, 100);
+            parameter.Value = file.Substring(file.LastIndexOf('\\') + 1);
+            command.Parameters.Add(parameter);
+
+            var parameter2 = new System.Data.SqlClient.SqlParameter("@Data",
+                            System.Data.SqlDbType.VarBinary);
+            parameter2.Value = bytes;
+            command.Parameters.Add(parameter2);
+
+            InsertUpdateData(command);
+
+        }
+
+        private Boolean InsertUpdateData(SqlCommand cmd)
+        {
+            //TableInform table;
+            DbConnection connection;
+            DataRow result;
+
+            //table = new TableInform(tableName.ToString());
+            connection = TableInform.Connection;
+            //result = table.ConvertDictToRow(dictionary);
+
+            //table.Table.Rows.Add(result);
+            //table.Update(new DataRow[] { result });
+
+
+            //String strConnString = System.Configuration.ConfigurationManager
+            //.ConnectionStrings["conString"].ConnectionString;
+            //SqlConnection con = new SqlConnection(strConnString);
+            cmd.CommandType = CommandType.Text;
+            //cmd.Connection = connection;
+            try
+            {
+                //connection.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //Response.Write(ex.Message);
+                return false;
+            }
+            finally
+            {
+                //con.Close();
+                //con.Dispose();
+            }
         }
     }
 }
