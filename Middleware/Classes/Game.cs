@@ -33,7 +33,7 @@ namespace Middleware
         private string location;
         [DataMember]
         private DateTime date;
-        protected static string table;
+        //protected static string table;
         [DataMember]
         private string score;
 
@@ -46,7 +46,7 @@ namespace Middleware
 
         static Game()
         {
-            table = MethodBase.GetCurrentMethod().DeclaringType.Name + "s";
+            //table = MethodBase.GetCurrentMethod().DeclaringType.Name + "s";
             //TableInform.TryCreateTable(table, GetRowNames);
         }
 

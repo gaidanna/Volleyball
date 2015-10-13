@@ -69,10 +69,13 @@ namespace Volleyball
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             string[] Positions;
+            int[] ageArray;
             client = new VolleyballServiceClient();
 
             Positions = new string[] { "Middle Blocker", "Outside Hitter", "Right Side Hitter", "Opposite Hitter", "Libero", "Setter" };
+            ageArray = Enumerable.Range(14, 60).ToArray();
             amplua.ItemsSource = Positions;
+            playerAge.ItemsSource = ageArray;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -117,7 +120,7 @@ namespace Volleyball
                 if (!isDuplicated)
                 {
                     
-                    player = new Player(name, number, playerAmplua, isCaptain, league);
+                    player = new Player(name, number, playerAmplua, isCaptain, league, openFileDlg.FileName, 0, 0);
 
                     if (team == null)
                     {
@@ -375,7 +378,7 @@ namespace Volleyball
             
             openFileDlg = new OpenFileDialog();
             openFileDlg.InitialDirectory = "C:\\";
-            openFileDlg.Filter = "Bmp(*.BMP;)|*.BMP;| Jpg(*Jpg)|*.jpg";
+            openFileDlg.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (openFileDlg.ShowDialog() == true)
             {
 
@@ -389,6 +392,11 @@ namespace Volleyball
                 imageUrl.Text = openFileDlg.FileName;
                 
             }
+        }
+
+        private void playerHeight_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
         }
     }
 }

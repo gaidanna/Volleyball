@@ -1,4 +1,4 @@
-﻿@model VolleyballMvc.Models.PlayerModel
+﻿@model VolleyballMvc.Models.PlayersModel
 @using VolleyballMvc.Models
 
 @{
@@ -34,11 +34,11 @@
                     </div>
 
                         <div class="Player">
-                            <a class="styled" href="@Url.Action("Index", "Player" )">
+                            <a class="styled" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender })">
                                 <div id="SmallLogo">
                                     @{
-                    int number = r.Next(1, 9);
-                    string path = "/Content/Images/" + number + ".png";
+                                        int number = r.Next(1, 9);
+                                        string path = "/Content/Images/" + number + ".png";
                                     }
                                     <img id="smallImage" src=@path width="50" height="50" />
                                 </div>

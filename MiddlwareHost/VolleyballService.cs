@@ -115,6 +115,35 @@ namespace MiddlewareHost
             return resultedList;
         }
 
+        public List<Dictionary<string, string>> ReadPlayerStatisticsInGames(Guid playerId, PlayersInfo playersInfo)
+        {
+            TableInform table;
+            DbConnection connection;
+            //List<DataRow> rows;
+            List<Dictionary<string, string>> resultedList;
+
+            connection = TableInform.Connection;
+            resultedList = new List<Dictionary<string, string>>();
+            table = new TableInform(TablesNames.PlayerInGames.ToString());
+
+            //if (playersInfo == PlayersInfo.BestPlayer)
+            //{
+                var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("PlayerId") == playerId && r.Field<bool>(playersInfo.ToString()) == true).Select(r => r.Field<Guid>("gameId")).ToList();
+                resultedList = ReadByIds(TablesNames.Games, rows);
+            //}
+            //else if (playersInfo == PlayersInfo.YellowCard)
+            //{
+            //    var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("playerId") == playerId && r.Field<bool>("YellowCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
+            //    resultedList = ReadByIds(TablesNames.Players, rows);
+            //}
+            //else if (playersInfo == PlayersInfo.RedCard)
+            //{
+            //    var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("playerId") == playerId && r.Field<bool>("RedCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
+            //    resultedList = ReadByIds(TablesNames.Players, rows);
+            //}
+            return resultedList;
+        }
+
         public List<Dictionary<string, string>> ReadPlayersInfoInGame(Guid gameId, PlayersInfo playersInfo)
         {
             TableInform table;
@@ -130,34 +159,17 @@ namespace MiddlewareHost
             {
                 var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("BestPlayer") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
                 resultedList = ReadByIds(TablesNames.Players, rows);
-                //foreach (var row in rows)
-                //{ 
-                //    //var result = table.ConvertRowToDict(row);
-                //    //resultedList.Add(result);
-                //}
             }
             else if (playersInfo == PlayersInfo.YellowCard)
             {
                 var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("YellowCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
                 resultedList = ReadByIds(TablesNames.Players, rows);
-                //foreach (var row in rows)
-                //{
-                //    var result = table.ConvertRowToDict(row);
-                //    resultedList.Add(result);
-                //}
             }
             else if (playersInfo == PlayersInfo.RedCard)
             {
                 var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("RedCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
                 resultedList = ReadByIds(TablesNames.Players, rows);
-                //foreach (var row in rows)
-                //{
-                //    var result = table.ConvertRowToDict(row);
-                //    resultedList.Add(result);
-                //}
             }
-
-
             return resultedList;
         }
         #endregion

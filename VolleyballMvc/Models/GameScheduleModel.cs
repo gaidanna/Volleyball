@@ -65,8 +65,6 @@ namespace VolleyballMvc.Models
         {
             PreciseGame = game;
             Players = teamPlayers;
-            //FirstTeamPlayers = teamPlayers.FindAll(item => item.);
-            //SecondTeamPlayers = secondTeamPlayers;
         }
     }
 }

@@ -27,9 +27,9 @@ D:\Projects\Volleyball\Volleyball.UnitTests\bin\Debug\Microsoft.VisualStudio.Qua
 D:\Projects\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
 D:\Projects\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb
 D:\Sources\GAG\trunk\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache
-D:\Projects\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache
 D:\Source\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.dll
 D:\Source\Volleyball\Volleyball.UnitTests\bin\Debug\Volleyball.UnitTests.pdb
 D:\Source\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.dll
 D:\Source\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.pdb
 D:\Source\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache
+D:\Projects\Volleyball\Volleyball.UnitTests\obj\Debug\Volleyball.UnitTests.csprojResolveAssemblyReference.cache

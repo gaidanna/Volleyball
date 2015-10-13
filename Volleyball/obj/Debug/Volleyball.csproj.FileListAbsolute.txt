@@ -201,15 +201,11 @@ D:\Projects\Volleyball\Volleyball\bin\Debug\Volleyball.Attributes.pdb
 D:\Projects\Volleyball\Volleyball\obj\Debug\Volleyball.csprojResolveAssemblyReference.cache
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.baml
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.baml
-D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.baml
-D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.baml
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.baml
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.baml
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.baml
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddGame.g.cs
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayer.g.cs
-D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerControl.g.cs
-D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddPlayerPreciseTeam.g.cs
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddScore.g.cs
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\AddTeamWindow.g.cs
 D:\Projects\Volleyball\Volleyball\obj\Debug\ApplicationWindows\MainWindow.g.cs
