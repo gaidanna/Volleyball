@@ -73,12 +73,5 @@ namespace VolleyballMvc.Controllers
             }
                 return View(new TeamModel(playersList, team));
         }
-
-        //public ActionResult Contact()
-        //{
-        //    //ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
     }
 }

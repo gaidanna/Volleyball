@@ -51,7 +51,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Row="4" Grid.Column="0" Name="imageUrl" Width="120" Margin="4" HorizontalAlignment="Left"/>
+            <TextBox Grid.Row="4" Grid.Column="0" Name="imagePath" Width="120" Margin="4" HorizontalAlignment="Left"/>
             <Button Grid.Row="4" Content="..." Grid.Column="1" Name="imageButton" Width="20" Margin="6 4 4 4" Click="imageButton_Click" HorizontalAlignment="Left"/>
         </Grid>
 

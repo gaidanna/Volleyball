@@ -20,18 +20,14 @@
     padding-bottom: 50px;
     margin-bottom: 100px;
     min-height: 600px;
-    /*float: left;*/
     color: white;
     background-color: rgba(0, 10, 41, 0.5);
     width: 1000px;
-    /*height: 600px;*/
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
 #calendar {
-    /*background-image: url(../Images/banner.jpg);*/
     width: 1000px;
-    /*height:500px;*/
     position: relative;
     float: left;
 }
@@ -63,16 +59,6 @@ table {
 html, body {
     min-height: 100%;
 }
-
-/*body {
-  font: 12px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
-  color: #404040;
-  background: #282537;
-  background-image: -webkit-radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-  background-image: -moz-radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-  background-image: -o-radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-  background-image: radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-}*/
 
 .month-picker {
     margin: 20px auto;

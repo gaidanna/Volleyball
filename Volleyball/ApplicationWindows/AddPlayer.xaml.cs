@@ -77,7 +77,7 @@ namespace Volleyball
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            Player player;
+            string path;
             bool isCaptain;
             string name;
             string playerAmplua;
@@ -85,8 +85,9 @@ namespace Volleyball
             bool validated;
             string stringNumber;
             int selectedTeamIndex;
-            //List<Player> otherPlayers;
             bool isDuplicated;
+            string filepath;
+            Player player;
 
             name = playerName.Text.Trim();
             playerAmplua = amplua.Text;
@@ -116,41 +117,36 @@ namespace Volleyball
                 }
                 if (!isDuplicated)
                 {
-                    
-                    player = new Player(name, number, playerAmplua, isCaptain, league);
-
+                   
                     if (team == null)
                     {
-                        var plInTeam = new PlayerInTeam( listOfTeams[teamsCombobox.SelectedIndex], player);
-                        var playerDict = player.ConvertInstanceToDictionary();
-                        var plInTeamDict = plInTeam.ConvertInstanceToDictionary();
-
-                        client.Insert(playerDict, Middleware.VolleyballService.TablesNames.Players);
-                        client.Insert(plInTeamDict, Middleware.VolleyballService.TablesNames.PlayerInTeams);
-                        //client.SaveImage(fileData, filename);
-
                         try
                         {
-                            string iName = imageUrl.Text;
-                            if (iName.Length > 0)
+                            path = imagePath.Text;
+                            if (path.Length > 0)
                             {
-                                string filepath = "D:\\Source\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                                filepath = "D:\\Source\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                                File.Copy(System.IO.Path.GetFullPath(path), filepath);
+                                player = new Player(name, number, playerAmplua, isCaptain, league, filepath, 0,0);
+                                var plInTeam = new PlayerInTeam(listOfTeams[teamsCombobox.SelectedIndex], player);
+                                var playerDict = player.ConvertInstanceToDictionary();
+                                var plInTeamDict = plInTeam.ConvertInstanceToDictionary();
 
-                                File.Copy(System.IO.Path.GetFullPath(iName), filepath);
-
-                                //picProduct.Image = new Bitmap(opFile.OpenFile());
+                                client.Insert(playerDict, Middleware.VolleyballService.TablesNames.Players);
+                                client.Insert(plInTeamDict, Middleware.VolleyballService.TablesNames.PlayerInTeams);
                             }
                         }
 
                         catch (Exception exp)
                         {
 
-                            MessageBox.Show("Unable to open file " + exp.Message);
+                            MessageBox.Show("Unable to save file " + exp.Message);
 
                         }
                     }
                     else
                     {
+                        player = null;
                         playersList.Add(player);
                     }
                     ClearInputInfo();
@@ -386,7 +382,7 @@ namespace Volleyball
                 //fileData = rdr.ReadBytes((int)fs.Length);
                 //rdr.Close();
                 //fs.Close();
-                imageUrl.Text = openFileDlg.FileName;
+                imagePath.Text = openFileDlg.FileName;
                 
             }
         }
