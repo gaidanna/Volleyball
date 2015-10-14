@@ -96,6 +96,9 @@ namespace Middleware
                 this.amplua = fieldsDict["Amplua"];
                 this.captain = Convert.ToBoolean(fieldsDict["Captain"]);
                 this.league = fieldsDict["League"];
+                this.imagePath = fieldsDict["ImagePath"];
+                this.age = Convert.ToInt32(fieldsDict["Age"]);
+                this.height = Convert.ToInt32(fieldsDict["Height"]);
             }
             catch
             { }

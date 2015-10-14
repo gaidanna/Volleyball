@@ -134,7 +134,7 @@ namespace Volleyball
                 {
                     try
                     {
-                        filepath = "D:\\Projects\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                        filepath = "D:\\Projects\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
                         File.Copy(System.IO.Path.GetFullPath(path), filepath);
                         player = new Player(name, number, playerAmplua, isCaptain, league, filepath, age, height);
 
@@ -224,7 +224,7 @@ namespace Volleyball
 
                 if (duplicatesList.Count == 0 || (duplicatesList.Count == 1 && duplicatesList[0].Id == playerToUpdate.Id))
                 {
-                    filepath = "D:\\Projects\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(path);
+                    filepath = "D:\\Projects\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(path);
                     File.Copy(System.IO.Path.GetFullPath(path), filepath);
 
                     index = playersList.IndexOf(playerToUpdate);

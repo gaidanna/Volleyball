@@ -125,10 +125,10 @@ namespace Volleyball.ApplicationWindows
 
             if (validated)
             {
-                filepath = "D:\\Projects\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                filepath = "D:\\Projects\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
                 File.Copy(Path.GetFullPath(path), filepath);
 
-                teamToSave = new Team(league, teamName, managerName, phoneName, emailName, DateTime.Now.Year, path);
+                teamToSave = new Team(league, teamName, managerName, phoneName, emailName, DateTime.Now.Year, filepath);
                 teamDict = teamToSave.ConvertInstanceToDictionary();
                 client.Insert(teamDict, Middleware.VolleyballService.TablesNames.Teams);
 

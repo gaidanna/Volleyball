@@ -23,7 +23,10 @@
         <h1 class="pageTitle">Team Profile</h1>
         <div id="activeArea">
             <div id="teamImage">
-                <img id="mainImage" src="~/Content/Images/TeamProfile.jpg" />
+                @{
+                    string pathToImage = String.Concat("~/", Model.Team.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
+                    <img id="mainImage" src="@Url.Content(pathToImage)" />
+                }
             </div>
 
             @if (Model != null)

@@ -39,7 +39,6 @@ namespace Middleware
 
         static Team()
         {
-            //TableInform.TryCreateTable( "Teams" , GetRowNames );
             client = new VolleyballServiceClient();
         }
 
@@ -47,18 +46,6 @@ namespace Middleware
         {
             return "( Id uniqueidentifier NOT NULL, LEAGUE varchar(50) NOT NULL, NAME varchar(50) NOT NULL, MANAGER varchar(50) NOT NULL, PHONE varchar(50) NOT NULL, EMAIL varchar(50) NOT NULL, PRIMARY KEY (Id) )";
         }
-
-        //[StringLengthValidation(3)]
-        //public Team(string league, string name, string manager, string phone, string email)
-        //    : base()
-        //{
-
-        //    this.league = league;
-        //    this.name = name;
-        //    this.manager = manager;
-        //    this.phone = phone;
-        //    this.email = email;
-        //}
 
         public Team(string league, string name, string manager, string phone, string email, int year, string imagePath)
             : base()
@@ -83,6 +70,8 @@ namespace Middleware
                 this.manager = fieldsDict["MANAGER"];
                 this.phone = fieldsDict["PHONE"];
                 this.email = fieldsDict["EMAIL"];
+                this.year = Convert.ToInt32(fieldsDict["YEAR"]);
+                this.imagePath = fieldsDict["imagePath"];
             }
             catch
             { }
