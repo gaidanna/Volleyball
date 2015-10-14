@@ -60,5 +60,8 @@ namespace MiddlewareHost
 
         [OperationContract]
         void SaveImage(byte[] bytes, string file);
+
+        [OperationContract]
+        List<Dictionary<string, string>> ReadPlayerStatisticsInGames(Guid playerId, PlayersInfo playersInfo);
     }    
 }

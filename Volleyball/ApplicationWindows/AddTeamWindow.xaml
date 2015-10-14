@@ -51,6 +51,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <!--<RowDefinition Height="auto"/>-->
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="15 4 4 4" Text="Team Name"/>
@@ -65,6 +66,9 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Margin="15 4 4 4" Text="Email:"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Name="email" Width="150" Margin="4" HorizontalAlignment="Left"/>
 
+                <!--<TextBlock Grid.Row="4" Width="60" Grid.Column="0" Margin="15 4 4 4" Text="Age: "/>
+                <ComboBox Grid.Row="4" Grid.Column="1" Name="participationYearInTeam" Margin="4" Width="150" HorizontalAlignment="Left"/>-->
+
                 <TextBlock Grid.Row="4" Grid.Column="0" Margin="15 4 4 4" Text="Select image:"/>
                 
                 <Grid Grid.Column="1" Grid.Row="4">
@@ -72,8 +76,8 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox Grid.Row="4" Grid.Column="0" Name="imageUrl" Width="120" Margin="4" HorizontalAlignment="Left"/>
-                    <Button Grid.Row="4" Content="..." Grid.Column="1" Name="imageButton" Width="20" Margin="6 4 4 4" Click="imageButton_Click" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="0" Name="imageUrl" Width="120" Margin="4" HorizontalAlignment="Left"/>
+                    <Button Content="..." Grid.Column="1" Name="imageButton" Width="20" Margin="6 4 4 4" Click="imageButton_Click" HorizontalAlignment="Left"/>
                 </Grid>
             </Grid>
 

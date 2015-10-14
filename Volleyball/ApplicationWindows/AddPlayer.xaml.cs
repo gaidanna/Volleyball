@@ -69,14 +69,19 @@ namespace Volleyball
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             string[] Positions;
+            int[] ageArray;
             client = new VolleyballServiceClient();
 
             Positions = new string[] { "Middle Blocker", "Outside Hitter", "Right Side Hitter", "Opposite Hitter", "Libero", "Setter" };
+            ageArray = Enumerable.Range(14, 60).ToArray();
             amplua.ItemsSource = Positions;
+            playerAge.ItemsSource = ageArray;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            bool succededHeightParse;
+            bool succededNumberParse;
             string path;
             bool isCaptain;
             string name;
@@ -87,19 +92,29 @@ namespace Volleyball
             int selectedTeamIndex;
             bool isDuplicated;
             string filepath;
+            int age;
+            int height;
             Player player;
 
+            path = imagePath.Text;
             name = playerName.Text.Trim();
             playerAmplua = amplua.Text;
+
+
             stringNumber = playerNumber.Text.Trim();
             isCaptain = captainSign.IsChecked.Value;
             selectedTeamIndex = teamsCombobox.SelectedIndex;
-            
-            validated = ValidatePlayer(name, stringNumber, playerAmplua, league);
-            
+            succededHeightParse = Int32.TryParse(playerHeight.Text, out height);
+            succededNumberParse = Int32.TryParse(stringNumber, out number);
+
+            validated = ValidatePlayer(name, stringNumber, playerAmplua, league, path, playerHeight.Text, playerAge.SelectedValue);
+
             if (validated)
             {
+                age = (int)playerAge.SelectedValue;
+                Int32.TryParse(playerHeight.Text, out height);
                 Int32.TryParse(stringNumber, out number);
+
                 if (team == null)
                 {
                     isDuplicated = client.IsIdentifiedDuplicate(number, listOfTeams[selectedTeamIndex].Id, isCaptain);
@@ -117,37 +132,30 @@ namespace Volleyball
                 }
                 if (!isDuplicated)
                 {
-                   
-                    if (team == null)
+                    try
                     {
-                        try
-                        {
-                            path = imagePath.Text;
-                            if (path.Length > 0)
-                            {
-                                filepath = "D:\\Source\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
-                                File.Copy(System.IO.Path.GetFullPath(path), filepath);
-                                player = new Player(name, number, playerAmplua, isCaptain, league, filepath, 0,0);
-                                var plInTeam = new PlayerInTeam(listOfTeams[teamsCombobox.SelectedIndex], player);
-                                var playerDict = player.ConvertInstanceToDictionary();
-                                var plInTeamDict = plInTeam.ConvertInstanceToDictionary();
+                        filepath = "D:\\Projects\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                        File.Copy(System.IO.Path.GetFullPath(path), filepath);
+                        player = new Player(name, number, playerAmplua, isCaptain, league, filepath, age, height);
 
-                                client.Insert(playerDict, Middleware.VolleyballService.TablesNames.Players);
-                                client.Insert(plInTeamDict, Middleware.VolleyballService.TablesNames.PlayerInTeams);
-                            }
+                        if (team == null)
+                        {
+                            var plInTeam = new PlayerInTeam(listOfTeams[teamsCombobox.SelectedIndex], player);
+                            var playerDict = player.ConvertInstanceToDictionary();
+                            var plInTeamDict = plInTeam.ConvertInstanceToDictionary();
+
+                            client.Insert(playerDict, Middleware.VolleyballService.TablesNames.Players);
+                            client.Insert(plInTeamDict, Middleware.VolleyballService.TablesNames.PlayerInTeams);
                         }
-
-                        catch (Exception exp)
+                        else
                         {
-
-                            MessageBox.Show("Unable to save file " + exp.Message);
-
+                            playersList.Add(player);
                         }
                     }
-                    else
+                    catch (Exception exp)
                     {
-                        player = null;
-                        playersList.Add(player);
+                        MessageBox.Show("Unable to save file " + exp.Message);
+
                     }
                     ClearInputInfo();
                     this.Visibility = Visibility.Hidden;
@@ -172,6 +180,11 @@ namespace Volleyball
             List<Player> duplicatesList;
             bool isDuplicated;
             Player player;
+            string path;
+            int index;
+            int age;
+            int height;
+            string filepath;
 
             duplicatesList = new List<Player>();
             name = playerName.Text.Trim();
@@ -179,12 +192,16 @@ namespace Volleyball
             stringNumber = playerNumber.Text.Trim();
             isCaptain = captainSign.IsChecked.Value;
             selectedTeamIndex = teamsCombobox.SelectedIndex;
+            path = imagePath.Text;
 
-            validated = ValidatePlayer(name, stringNumber, playerAmplua, league);
-            
+            validated = ValidatePlayer(name, stringNumber, playerAmplua, league, path, playerHeight.Text, playerAge.SelectedValue);
+
             if (validated)
             {
+                age = (int)playerAge.SelectedValue;
+                Int32.TryParse(playerHeight.Text, out height);
                 Int32.TryParse(stringNumber, out number);
+
                 if (team == null)
                 {
                     var list = client.FindDuplicatedPlayers(number, listOfTeams[selectedTeamIndex].Id, isCaptain);
@@ -198,10 +215,6 @@ namespace Volleyball
                     if (isCaptain)
                     {
                         duplicatesList = playersList.Where(pl => pl.Number == number || pl.Captain == true).ToList();
-
-                        //var anotherPlayer = from r in playersList.AsEnumerable()
-                        //                 where ((r.Number != number) || (r.Captain != true))
-                        //                 select r;
                     }
                     else
                     {
@@ -209,15 +222,20 @@ namespace Volleyball
                     }
                 }
 
-                    if (duplicatesList.Count== 0 || (duplicatesList.Count == 1 && duplicatesList[0].Id == playerToUpdate.Id))
-                    {
-                    
-                    int index = playersList.IndexOf(playerToUpdate);
+                if (duplicatesList.Count == 0 || (duplicatesList.Count == 1 && duplicatesList[0].Id == playerToUpdate.Id))
+                {
+                    filepath = "D:\\Projects\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(path);
+                    File.Copy(System.IO.Path.GetFullPath(path), filepath);
+
+                    index = playersList.IndexOf(playerToUpdate);
                     playerToUpdate.Amplua = playerAmplua;
                     playerToUpdate.Captain = isCaptain;
                     playerToUpdate.Name = name;
                     playerToUpdate.Number = number;
                     playerToUpdate.League = league;
+                    playerToUpdate.Height = height;
+                    playerToUpdate.Age = age;
+                    playerToUpdate.ImagePath = filepath;
 
                     if (team == null)
                     {
@@ -226,8 +244,6 @@ namespace Volleyball
                     }
                     else
                     {
-                        //playersList.IndexOf(.FirstOrDefault(pl => pl.Id = playerToUpdate.Id);
-                        //playersList.Remove(playerToUpdate);
                         playersList.RemoveAt(index);
                         playersList.Add(playerToUpdate);
                     }
@@ -248,37 +264,53 @@ namespace Volleyball
             //parentWindow.Visibility = Visibility.Hidden;
         }
 
-        private bool ValidatePlayer(string name, string stringNumber, string amplua, string league)
+        private bool ValidatePlayer(string name, string insertedNumber, string amplua, string league, string path, string insertedHeight, object insertedAge)
         {
             int number;
-            bool isNumber;
+            int height;
+            bool succededHeightParse;
+            bool succededNumberParse;
+            int age;
+
             Regex regex = new Regex(@"^[\p{L}\p{M}' \.\-]+$");
 
-            isNumber = Int32.TryParse(stringNumber, out number);
+            succededHeightParse = Int32.TryParse(insertedHeight, out height);
+            succededNumberParse = Int32.TryParse(insertedNumber, out number);
+            age = (int)insertedAge;
 
-            if (regex.IsMatch(name))
+            if (regex.IsMatch(name) && name.Length <= 50 && name.Length >= 2)
             {
-                if (name.Length <= 50 && name.Length >= 2)
+                if (succededNumberParse && number > 0 && number <= Int32.MaxValue)
                 {
-                    if (isNumber && number > 0 && number <= Int32.MaxValue)
+                    if (amplua.Length > 0)
                     {
-                        if (amplua.Length > 0)
+                        if (league.Length > 0)
                         {
-                            if (league.Length > 0)
+                            if (succededHeightParse && height > 100 && height < 250)
                             {
-                                return true;
+                                if (age != 0)
+                                {
+                                    if (File.Exists(path))
+                                    {
+                                        return true;
+                                    }
+                                    else
+                                    { MessageBox.Show("Please check path to image."); }
+                                }
+                                else
+                                { MessageBox.Show("Please specify age."); }
                             }
                             else
-                            { MessageBox.Show("Please select gender."); }
+                            { MessageBox.Show("Please check inserted height."); }
                         }
                         else
-                        { MessageBox.Show("Please select volleybal position."); }
+                        { MessageBox.Show("Please select gender."); }
                     }
                     else
-                    { MessageBox.Show("Please check inserted number."); }
+                    { MessageBox.Show("Please select volleybal position."); }
                 }
                 else
-                { MessageBox.Show("Please check inserted name."); }
+                { MessageBox.Show("Please check inserted number."); }
             }
             else
             { MessageBox.Show("Please specify correct name."); }
@@ -368,23 +400,18 @@ namespace Volleyball
 
         private void imageButton_Click(object sender, RoutedEventArgs e)
         {
-            
             openFileDlg = new OpenFileDialog();
             openFileDlg.InitialDirectory = "C:\\";
-            openFileDlg.Filter = "Bmp(*.BMP;)|*.BMP;| Jpg(*Jpg)|*.jpg";
+            openFileDlg.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (openFileDlg.ShowDialog() == true)
             {
-
-                //FileInfo fi = new FileInfo(openFileDlg.FileName);
-                //FileStream fs = new FileStream(fi.FullName, FileMode.Open, FileAccess.Read);
-                //filename = fi.FullName;
-                //BinaryReader rdr = new BinaryReader(fs);
-                //fileData = rdr.ReadBytes((int)fs.Length);
-                //rdr.Close();
-                //fs.Close();
                 imagePath.Text = openFileDlg.FileName;
-                
             }
+        }
+
+        private void playerHeight_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
         }
     }
 }

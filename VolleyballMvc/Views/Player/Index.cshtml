@@ -1,4 +1,7 @@
-﻿@{
+﻿@model VolleyballMvc.Models.PlayerInformationModel
+@using VolleyballMvc.Models
+
+@{
     ViewBag.Title = "Player Profile";
 }
 
@@ -11,16 +14,45 @@
     {
         <link href="@Url.Content("~/Content/Styles/PlayerProfile.css")" rel="stylesheet" />
     }
-
 }
 
-<div id="main">
-    <h1 class="pageTitle">Player Profile</h1>
-    <div id="content">
-        <div id="crossfade">
-                <img src="~/Content/Images/Player.jpg"/>
-        </div>
-        <div id="info">
+<article>
+    <div id="main">
+        <h1 class="pageTitle">Player Profile</h1>
+
+        <div id="content">
+            <div id="crossfade">
+                <img src="~/Content/Images/Player.jpg" />
+            </div>
+            <div id="info">
+                <ul class="playerInfo">
+                    <li class="naming" id="playerNumber">@Model.Player.Number</li>
+                    <li class="redStyle naming">@Model.Player.Name</li>
+                    <li>Amplua: @Model.Player.Amplua</li>
+                    @if (Model.Player.Captain)
+                    {
+                        <li id="captain">CAPTAIN</li> }
+                </ul>
+            </div>
+            <div id="career">
+                <ul class="playerInfo">
+                    <li class="redStyle"><div class="underlined">CAREER</div></li>
+                    @{
+                        foreach (var team in Model.Teams)
+                        {
+                            <li>@team.Name</li> }
+                    }
+                </ul>
+                <ul class="playerInfo">
+                    @if (Model.Games.Count > 0)
+                    {
+                        <li class="redStyle"><div class="underlined" id="secondPortionInfo">Best Player Reward</div></li>
+                        foreach (var game in Model.Games)
+                        {
+                            <li>@game.Teams[0].Name - @game.Teams[1].Name</li> }
+                    }
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+</article>

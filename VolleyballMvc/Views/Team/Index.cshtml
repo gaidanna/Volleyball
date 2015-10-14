@@ -1,9 +1,8 @@
-﻿@model VolleyballMvc.Models.TeamModel
+﻿@model VolleyballMvc.Models.TeamInformationModel
 @using VolleyballMvc.Models
 
 @{
     ViewBag.Title = "Team profile";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <hgroup class="title"></hgroup>
@@ -23,57 +22,56 @@
     <div id="main">
         <h1 class="pageTitle">Team Profile</h1>
         <div id="activeArea">
-        <div id="teamImage">
-         <img id="mainImage" src="~/Content/Images/TeamProfile.jpg"/>
-        </div>
-            
-@if (Model != null)
-{
-    <ul id="teamInfo">
-        <li >Team name: @Model.Team.Name.ToUpper()</li>
-        <li>League: @Model.Team.League</li>
-        <li>Manager: @Model.Team.Manager</li>
-        <li>Phone: @Model.Team.Phone</li>
-        <li>Email: @Model.Team.Email</li>
-    </ul>
-}
-    
-        <div id="content">
+            <div id="teamImage">
+                <img id="mainImage" src="~/Content/Images/TeamProfile.jpg" />
+            </div>
+
             @if (Model != null)
             {
-                <ul class="Players">
-
-                    @{
-                Random r = new Random();
-                foreach (var pl in Model.TeamPlayers)
-                {
-                        <li class="Player">
-                            <a class="styledWhite" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender } )">
-                                <div id="SmallLogo">
-                                    @{
-                    int number = r.Next(1, 9);
-                    string path = "/Content/Images/" + number + ".png";
-                                    }
-                                    <img id="smallImage" src=@path width="110" height="160" />
-                                </div>
-                                <div class="PlayerFullInfo">
-                                    <div id="playerNumber">@pl.Number</div>
-                                    <div class="info">@pl.Name</div>
-                                    <div class="info">@pl.Amplua</div>
-                                    @if(pl.Captain)
-                                    { <div class="info" id="captain">CAPTAIN</div> }
-                                </div>
-                            </a>
-                        </li>
-                }
-                    }
+                <ul id="teamInfo">
+                    <li>Team name: @Model.Team.Name.ToUpper()</li>
+                    <li>League: @Model.Team.League</li>
+                    <li>Manager: @Model.Team.Manager</li>
+                    <li>Phone: @Model.Team.Phone</li>
+                    <li>Email: @Model.Team.Email</li>
                 </ul>
             }
-            else
-            {
-                <h1>There are no players. Please, check later.</h1>
-            }
-        </div>
+
+            <div id="content">
+                @if (Model != null)
+                {
+                    <ul class="Players">
+                        @{
+                            Random r = new Random();
+                            foreach (var pl in Model.TeamPlayers)
+                            {
+                                <li class="Player">
+                                    <a class="styledWhite" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender } )">
+                                        <div id="SmallLogo">
+                                            @{
+                                                int number = r.Next(1, 9);
+                                                string path = "/Content/Images/" + number + ".png";
+                                            }
+                                            <img id="smallImage" src=@path width="110" height="160" />
+                                        </div>
+                                        <div class="PlayerFullInfo">
+                                            <div id="playerNumber">@pl.Number</div>
+                                            <div class="info">@pl.Name</div>
+                                            <div class="info">@pl.Amplua</div>
+                                            @if (pl.Captain)
+                                            { <div class="info" id="captain">CAPTAIN</div> }
+                                        </div>
+                                    </a>
+                                </li>
+                                                }
+                        }
+                    </ul>
+                                                }
+                                                else
+                                                {
+                                                    <h1>There are no players. Please, check later.</h1>
+                                                }
             </div>
+        </div>
     </div>
 </article>

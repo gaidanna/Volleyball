@@ -23,6 +23,7 @@ namespace Volleyball.ApplicationWindows
         private DispatcherTimer dispatcherTimer;
         private AddPlayer addPlayerWindow;
         private Team sampleTeam;
+        private OpenFileDialog openFileDlg;
 
         public AddTeamWindow()
         {
@@ -33,10 +34,14 @@ namespace Volleyball.ApplicationWindows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //int[] yearsArray;
+
+            //yearsArray = Enumerable.Range(2010, 50).ToArray();
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
             listBoxPlayers.ItemsSource = playersList;
+            //participationYearInTeam.ItemsSource = yearsArray;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -75,7 +80,7 @@ namespace Volleyball.ApplicationWindows
         {
             if (sampleTeam == null)
             {
-                sampleTeam = new Team(league, team.Text, manager.Text, phone.Text, email.Text);
+                sampleTeam = new Team(league, team.Text, manager.Text, phone.Text, email.Text, DateTime.Now.Year, imageUrl.Text);
             }
             addPlayerWindow = new AddPlayer(sampleTeam, playersList, league);
             bool? res = addPlayerWindow.ShowDialog();
@@ -85,27 +90,15 @@ namespace Volleyball.ApplicationWindows
         {
             Player pl;
             Player identifiedplayer;
-            //Dictionary<string,string> playerDict;
 
             pl = (Player)listBoxPlayers.SelectedItem;
-            //playerDict = pl.ConvertInstanceToDictionary();
-            //client.Delete( playerDict , Middleware.VolleyballService.TablesNames.Players );
 
             identifiedplayer = playersList.FirstOrDefault(player => player.Id == pl.Id);
-            //playersList.Find(player => player.Id == pl.Id);
             if (identifiedplayer != null)
             {
                 playersList.Remove(identifiedplayer);
             }
-
-            //RefreshListBox();
         }
-
-        //public void RefreshListBox()
-        //{
-        //    listBoxPlayers.ItemsSource = null;
-        //    listBoxPlayers.ItemsSource = playersList;
-        //}
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
@@ -114,7 +107,9 @@ namespace Volleyball.ApplicationWindows
             string managerName;
             string phoneName;
             string emailName;
-            Team newTeam;
+            string filepath;
+            string path;
+            Team teamToSave;
             PlayerInTeam plInTeam;
             Dictionary<string, string> teamDict;
             Dictionary<string, string> plDict;
@@ -124,18 +119,22 @@ namespace Volleyball.ApplicationWindows
             managerName = manager.Text;
             phoneName = phone.Text;
             emailName = email.Text;
+            path = imageUrl.Text;
 
-            validated = ValidateTeam(teamName, managerName, emailName, league, phoneName);
-            
+            validated = ValidateTeam(teamName, managerName, emailName, league, phoneName, imageUrl.Text);
+
             if (validated)
             {
-                newTeam = new Team(league, teamName, managerName, phoneName, emailName);
-                teamDict = newTeam.ConvertInstanceToDictionary();
+                filepath = "D:\\Projects\\Volleyball\\Middleware\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                File.Copy(Path.GetFullPath(path), filepath);
+
+                teamToSave = new Team(league, teamName, managerName, phoneName, emailName, DateTime.Now.Year, path);
+                teamDict = teamToSave.ConvertInstanceToDictionary();
                 client.Insert(teamDict, Middleware.VolleyballService.TablesNames.Teams);
 
                 foreach (var player in playersList)
                 {
-                    plInTeam = new PlayerInTeam(newTeam, player);
+                    plInTeam = new PlayerInTeam(teamToSave, player);
 
                     plDict = player.ConvertInstanceToDictionary();
                     plInTeamDict = plInTeam.ConvertInstanceToDictionary();
@@ -147,10 +146,9 @@ namespace Volleyball.ApplicationWindows
             }
         }
 
-        private bool ValidateTeam(string name, string managerName, string email, string league, string phone)
+        private bool ValidateTeam(string name, string managerName, string email, string league, string phone, string path)
         {
             Regex regex = new Regex(@"^[\p{L}\p{M}' \.\-]+$");
-            //Regex regexPhone = new Regex(@"/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/");
 
             if (regex.IsMatch(name) && name.Length <= 50 && name.Length >= 2)
             {
@@ -160,10 +158,12 @@ namespace Volleyball.ApplicationWindows
                     {
                         if (league.Length > 0)
                         {
-                            if(phone.Length >= 5 && phone.Length <= 13)
-                            //if (regexPhone.IsMatch(phone))
+                            if (phone.Length >= 5 && phone.Length <= 13)
                             {
-                                return true;
+                                if (File.Exists(path))
+                                { return true; }
+                                else
+                                { MessageBox.Show("Please check path to image."); }
                             }
                             else { MessageBox.Show("Please check phone number."); }
                         }
@@ -210,30 +210,12 @@ namespace Volleyball.ApplicationWindows
 
         private void imageButton_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDlg = new OpenFileDialog();
-            openFileDlg.InitialDirectory = Directory.GetCurrentDirectory();
+            openFileDlg = new OpenFileDialog();
+            openFileDlg.InitialDirectory = "C:\\";
+            openFileDlg.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (openFileDlg.ShowDialog() == true)
             {
-                FileInfo fi = new FileInfo(openFileDlg.FileName);
-                FileStream fs = new FileStream(fi.FullName, FileMode.Open, FileAccess.Read);
-                BinaryReader rdr = new BinaryReader(fs);
-                byte[] fileData = rdr.ReadBytes((int)fs.Length);
-                rdr.Close();
-                fs.Close();
                 imageUrl.Text = openFileDlg.FileName;
-
-                //string cs = @"Data Source=<your server>;Initial Catalog=MyFsDb;Integrated Security=TRUE";
-                //using (SqlConnection con = new SqlConnection(cs))
-                //{
-                //    con.Open();
-                //    string sql = "INSERT INTO MyFsTable VALUES (@fData, @fName, default)";
-                //    SqlCommand cmd = new SqlCommand(sql, con);
-                //    cmd.Parameters.Add("@fData", SqlDbType.Image, fileData.Length).Value = fileData;
-                //    cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = fi.Name;
-                //    cmd.ExecuteNonQuery();
-                //    con.Close();
-                //}
-                //MessageBox.Show(fi.FullName, "File Inserted!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

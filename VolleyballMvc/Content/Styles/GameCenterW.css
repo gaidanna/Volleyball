@@ -54,7 +54,7 @@
 .Teams {
     padding-top: 30px;
     height: 80px;
-    color: #2548c0;
+    color: #c21152;
     text-transform: uppercase;
     font-family: "oswaldlight","Trebuchet MS",Arial,Helvetica,sans-serif;
     font-size: 34px;
@@ -149,7 +149,7 @@
 }
 
 .teamName {
-    color: #e6002d;
+    color: #ffc4da;
     font-size: 25px;
     font-weight: bold;
     padding: 50px 0 0 0; 

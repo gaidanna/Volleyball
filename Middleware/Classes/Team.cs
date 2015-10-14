@@ -29,7 +29,9 @@ namespace Middleware
         [DataMember]
         private string email;
         [DataMember]
-        private byte[] image;
+        private int year;
+        [DataMember]
+        private string imagePath;
 
         private List<Player> players;
         private List<Game> games;
@@ -46,28 +48,28 @@ namespace Middleware
             return "( Id uniqueidentifier NOT NULL, LEAGUE varchar(50) NOT NULL, NAME varchar(50) NOT NULL, MANAGER varchar(50) NOT NULL, PHONE varchar(50) NOT NULL, EMAIL varchar(50) NOT NULL, PRIMARY KEY (Id) )";
         }
 
-        [StringLengthValidation( 3 )]
-        public Team( string league, string name, string manager, string phone, string email )
+        //[StringLengthValidation(3)]
+        //public Team(string league, string name, string manager, string phone, string email)
+        //    : base()
+        //{
+
+        //    this.league = league;
+        //    this.name = name;
+        //    this.manager = manager;
+        //    this.phone = phone;
+        //    this.email = email;
+        //}
+
+        public Team(string league, string name, string manager, string phone, string email, int year, string imagePath)
             : base()
         {
-            
             this.league = league;
             this.name = name;
             this.manager = manager;
             this.phone = phone;
             this.email = email;
-        }
-
-        public Team(string league, string name, string manager, string phone, string email, byte[] image)
-            : base()
-        {
-
-            this.league = league;
-            this.name = name;
-            this.manager = manager;
-            this.phone = phone;
-            this.email = email;
-            this.image = image;
+            this.year = year;
+            this.imagePath = imagePath;
         }
 
 
@@ -86,7 +88,7 @@ namespace Middleware
             { }
         }
 
-         [IsInTable]
+        [IsInTable]
         [DataMember]
         public string Name
         {
@@ -100,145 +102,116 @@ namespace Middleware
             }
         }
 
-         [IsInTable]
-         [DataMember]
-         public string League
-         {
-             get
-             {
-                 return league;
-             }
-             set
-             {
-                 league = value;
-             }
-         }
+        [IsInTable]
+        [DataMember]
+        public string League
+        {
+            get
+            {
+                return league;
+            }
+            set
+            {
+                league = value;
+            }
+        }
 
-         [IsInTable]
-         [DataMember]
-         public string Manager
-         {
-             get
-             {
-                 return manager;
-             }
-             set
-             {
-                 manager = value;
-             }
-         }
+        [IsInTable]
+        [DataMember]
+        public string Manager
+        {
+            get
+            {
+                return manager;
+            }
+            set
+            {
+                manager = value;
+            }
+        }
 
-         [IsInTable]
-         [DataMember]
-         public string Phone
-         {
-             get
-             {
-                 return phone;
-             }
-             set
-             {
-                 phone = value;
-             }
-         }
+        [IsInTable]
+        [DataMember]
+        public string Phone
+        {
+            get
+            {
+                return phone;
+            }
+            set
+            {
+                phone = value;
+            }
+        }
 
-         [IsInTable]
-         [DataMember]
-         public string Email
-         {
-             get
-             {
-                 return email;
-             }
-             set
-             {
-                 email = value;
-             }
-         }
+        [IsInTable]
+        [DataMember]
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+            }
+        }
 
-         public List<Player> Players
-         {
-             get
-             {
-                 players = new List<Player>();
-                 var playersList = client.ReadPlayers_Team(Id);
-                 foreach (var plInfo in playersList)
-                 {
-                     players.Add(new Player(plInfo));
-                 }
-                 return players;
-             }
-         }
+        [IsInTable]
+        [DataMember]
+        public int Year
+        {
+            get
+            {
+                return year;
+            }
+            set
+            {
+                year = value;
+            }
+        }
 
-         public List<Game> Games
-         {
-             get
-             {
-                 games = new List<Game>();
-                 var gamesList = client.ReadGames_Team(Id);
-                 foreach (var gameInfo in gamesList)
-                 {
-                     games.Add(new Game(gameInfo));
-                 }
-                 return games;
-             }
-         }
-         //public List<Game> Games
-         //{
-         //    get
-         //    {
-         //        var gamesList = new List<Game>();
+        [IsInTable]
+        [DataMember]
+        public string ImagePath
+        {
+            get
+            {
+                return imagePath;
+            }
+            set
+            {
+                imagePath = value;
+            }
+        }
 
-         //        foreach (var game in Game.Items.Values)
-         //        {
-         //            if (game.Teams[0] == this || game.Teams[1] == this)
-         //                gamesList.Add(game);
-         //        }
-         //        return gamesList;
-         //    }
-         //}
+        public List<Player> Players
+        {
+            get
+            {
+                players = new List<Player>();
+                var playersList = client.ReadPlayers_Team(Id);
+                foreach (var plInfo in playersList)
+                {
+                    players.Add(new Player(plInfo));
+                }
+                return players;
+            }
+        }
 
-        //public List<PlayerInTeam> PlayerTeamObjs
-        //{
-        //    get
-        //    {
-        //        var playerTeamList = new List<PlayerInTeam>();
-        //        foreach ( var playerTeam in PlayerInTeam.Items.Values )
-        //            if ( playerTeam.Team == this )
-        //                playerTeamList.Add( playerTeam );
-        //        return playerTeamList;
-        //    }
-        //}
-
-
-        //public List<Player> Players
-        //{
-        //    get
-        //    {
-        //        var teamList = new List<Player>();
-        //        foreach ( var playerTeam in PlayerInTeam.Items.Values )
-        //            if ( playerTeam.Team == this )
-        //                teamList.Add( playerTeam.Player );
-        //        return teamList;
-        //    }
-        //}
-
-        //public override Dictionary<string, string> ConvertInstanceToDictionary()
-        //{
-        //    Dictionary<string, string> selectedProperties;
-        //    Dictionary<string, string> selectedFields;
-        //    Dictionary<string, string> result;
-
-        //    selectedProperties = this.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).Where(prop => prop.GetCustomAttribute<IsInTable>() != null).ToDictionary(prop => prop.Name, prop => prop.GetValue(this).ToString());
-        //    selectedFields = this.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic).Where(f => f.GetCustomAttribute<IsInTable>() != null).ToDictionary(f => f.Name, f => f.GetValue(this).ToString());
-
-        //    if (selectedFields.Count > 0)
-        //    {
-        //        result = selectedProperties.Union(selectedFields).ToDictionary(k => k.Key, v => v.Value);
-        //        return result;
-        //    }
-        //    else return selectedProperties;
-
-        //}
+        public List<Game> Games
+        {
+            get
+            {
+                games = new List<Game>();
+                var gamesList = client.ReadGames_Team(Id);
+                foreach (var gameInfo in gamesList)
+                {
+                    games.Add(new Game(gameInfo));
+                }
+                return games;
+            }
+        }
     }
 }
