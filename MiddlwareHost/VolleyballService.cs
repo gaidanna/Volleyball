@@ -419,7 +419,7 @@ namespace MiddlewareHost
             connection = TableInform.Connection;
             table = new TableInform(tableName.ToString());
 
-            var rowList = table.Table.AsEnumerable().Where(r => r.Field<string>("Name") == serchableName).ToList();
+            var rowList = table.Table.AsEnumerable().Where(r => r.Field<string>("Name").Contains(serchableName.ToUpper())).ToList();
 
             if (rowList.Count > 0)
             {

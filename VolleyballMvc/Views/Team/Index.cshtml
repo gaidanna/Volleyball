@@ -52,7 +52,7 @@
                                     <a class="styledWhite" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender } )">
                                         <div id="SmallLogo">
                                             @{
-                                            string pathToImage = String.Concat("~/", pl.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
+                                            string pathToImage = String.Concat("~/", pl.ImagePath.Replace(@"\", " /").Substring(39).Replace(" ", ""));
 //int number = r.Next(1, 9);
 //string path = "/Content/Images/" + number + ".png";
                                             }

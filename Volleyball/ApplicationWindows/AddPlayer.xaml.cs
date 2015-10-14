@@ -97,7 +97,7 @@ namespace Volleyball
             Player player;
 
             path = imagePath.Text;
-            name = playerName.Text.Trim();
+            name = playerName.Text.Trim().ToUpper();
             playerAmplua = amplua.Text;
 
 
@@ -134,13 +134,13 @@ namespace Volleyball
                 {
                     try
                     {
-                        filepath = "D:\\Projects\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                        filepath = "D:\\Source\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
                         File.Copy(System.IO.Path.GetFullPath(path), filepath);
                         player = new Player(name, number, playerAmplua, isCaptain, league, filepath, age, height);
 
                         if (team == null)
                         {
-                            var plInTeam = new PlayerInTeam(listOfTeams[teamsCombobox.SelectedIndex], player);
+                            var plInTeam = new PlayerInTeam(listOfTeams[teamsCombobox.SelectedIndex], player, DateTime.Now.Year);
                             var playerDict = player.ConvertInstanceToDictionary();
                             var plInTeamDict = plInTeam.ConvertInstanceToDictionary();
 
@@ -187,7 +187,7 @@ namespace Volleyball
             string filepath;
 
             duplicatesList = new List<Player>();
-            name = playerName.Text.Trim();
+            name = playerName.Text.Trim().ToUpper();
             playerAmplua = amplua.Text;
             stringNumber = playerNumber.Text.Trim();
             isCaptain = captainSign.IsChecked.Value;
@@ -224,7 +224,7 @@ namespace Volleyball
 
                 if (duplicatesList.Count == 0 || (duplicatesList.Count == 1 && duplicatesList[0].Id == playerToUpdate.Id))
                 {
-                    filepath = "D:\\Projects\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(path);
+                    filepath = "D:\\Source\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(path);
                     File.Copy(System.IO.Path.GetFullPath(path), filepath);
 
                     index = playersList.IndexOf(playerToUpdate);
@@ -270,13 +270,14 @@ namespace Volleyball
             int height;
             bool succededHeightParse;
             bool succededNumberParse;
+            bool succededAgeParse;
             int age;
 
             Regex regex = new Regex(@"^[\p{L}\p{M}' \.\-]+$");
 
             succededHeightParse = Int32.TryParse(insertedHeight, out height);
             succededNumberParse = Int32.TryParse(insertedNumber, out number);
-            age = (int)insertedAge;
+            succededAgeParse = Int32.TryParse(insertedAge.ToString(), out age);
 
             if (regex.IsMatch(name) && name.Length <= 50 && name.Length >= 2)
             {

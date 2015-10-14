@@ -80,7 +80,7 @@ namespace Volleyball.ApplicationWindows
         {
             if (sampleTeam == null)
             {
-                sampleTeam = new Team(league, team.Text, manager.Text, phone.Text, email.Text, DateTime.Now.Year, imageUrl.Text);
+                sampleTeam = new Team(league, team.Text, manager.Text, phone.Text, email.Text, imageUrl.Text);
             }
             addPlayerWindow = new AddPlayer(sampleTeam, playersList, league);
             bool? res = addPlayerWindow.ShowDialog();
@@ -125,16 +125,16 @@ namespace Volleyball.ApplicationWindows
 
             if (validated)
             {
-                filepath = "D:\\Projects\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                filepath = "D:\\Source\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
                 File.Copy(Path.GetFullPath(path), filepath);
 
-                teamToSave = new Team(league, teamName, managerName, phoneName, emailName, DateTime.Now.Year, filepath);
+                teamToSave = new Team(league, teamName, managerName, phoneName, emailName, filepath);
                 teamDict = teamToSave.ConvertInstanceToDictionary();
                 client.Insert(teamDict, Middleware.VolleyballService.TablesNames.Teams);
 
                 foreach (var player in playersList)
                 {
-                    plInTeam = new PlayerInTeam(teamToSave, player);
+                    plInTeam = new PlayerInTeam(teamToSave, player, DateTime.Now.Year);
 
                     plDict = player.ConvertInstanceToDictionary();
                     plInTeamDict = plInTeam.ConvertInstanceToDictionary();
@@ -156,7 +156,7 @@ namespace Volleyball.ApplicationWindows
                 {
                     if (email.Length > 2 && email.Contains("@"))
                     {
-                        if (league.Length > 0)
+                        if (league != null)
                         {
                             if (phone.Length >= 5 && phone.Length <= 13)
                             {

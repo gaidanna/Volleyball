@@ -94,6 +94,33 @@ position: relative;
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
+.detail {
+    width: 100px;
+    height: 50px;
+    margin: 15px;
+    font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    background-color: rgba(0, 10, 41, 0.5);
+    color: white;
+    font-size: 18px;
+}
+
+#text {
+    width: 744px;
+    height: 35px;
+    font-size: 20px;
+    color: #e6002d;
+}
+
+#searchTools {
+    display: inline-block;
+    width: 1000px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
 
 
 

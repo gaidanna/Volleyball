@@ -4,7 +4,7 @@
 @{
     ViewBag.Title = "Players";
 }
-
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>*@
 <hgroup class="title"></hgroup>
 
 @section css{
@@ -27,8 +27,8 @@
             @if (Model != null)
             {
                 <div class="Players">
-                    <div> 
-                        <form action="SearchResult" >
+                    <div id="searchTools"> 
+                        <form action="SearchResult">
                             <input type="hidden" id="searchedText" name="searchedText" />
                             <input type="text" id="text" />
                             <input type="button" class="detail" title="Search" value="Search" onclick="document.getElementById( 'searchedText' ).value = document.getElementById('text').value; form.submit('');" />
@@ -63,37 +63,16 @@
                 }
                     }
                 </div>
-                <div id="infoPlayer"></div>
+                @*<div id="infoPlayer"></div>*@
 
-                 @*<div id="info">
-                    @Html.Partial("Searchresult", Model)
-                </div>*@
-                                        }
-                                        else
-                                        {
+    <div id="infoPlayer" style="display: none">
+        @{ Html.RenderAction("SearchResult"); }
+    </div>
+            }
+            else
+            {
                 <h1>There are no players. Please, check later.</h1>
             }
         </div>
     </div>
 </article>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.detail').click(function () {
-            $('#infoPlayer').load('~/Views/Player/SearchResult.cshtml');
-        });
-    });
-
-    @*var url = '@Url.Action("SearchResult", "Player")';
-    $('.detail').click(function () {
-        var keyWord = $('#searchedText').val();
-        $('#infoPlayer').load(url, { searchText: keyWord, gender: male });
-    })*@
-    //$(document).ready(function () {
-
-    //    $(".detail").click(function (evt) {
-    //        $("#info").load("/Player/SearchResult",
-    //            { searchedText: searchedText.textContent, gender: ViewBag.gender });
-    //    });
-    //});
-    </script>

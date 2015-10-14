@@ -1,5 +1,4 @@
 ﻿@model VolleyballMvc.Models.PlayersModel
-@using VolleyballMvc.Models
 
 @section css{
     @if (ViewBag.gender == "female")
@@ -16,33 +15,41 @@
 {
     <h1 class="pageTitle">Search Result</h1>
     <div id="content">
-        @foreach (var pl in Model.Players)
+@if (Model.Players.Count > 0)
+{ 
+        foreach (var pl in Model.Players)
         {
-        <div class="UpperLine">
-        </div>
+            <div class="UpperLine">
+            </div>
 
-        <div class="Player">
-            <a class="styled" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender })">
-                <div id="SmallLogo">
-                    @{
-                        string path = "/Content/Images/1.png";
-                    }
-                    <img id="smallImage" src=@path width="50" height="50" />
-                </div>
-                <div id="PlayerName">
-                    @pl.Name
-                </div>
-            </a>
+            <div class="Player">
+                <a class="styled" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender })">
+                    <div id="SmallLogo">
+                        @{
+            string path = "/Content/Images/1.png";
+                        }
+                        <img id="smallImage" src=@path width="50" height="50" />
+                    </div>
+                    <div id="PlayerName">
+                        @pl.Name
+                    </div>
+                </a>
 
-        </div>
-        <div class="LowerLine">
-        </div>
-        <div class="EmptyLine">
-        </div>
+            </div>
+            <div class="LowerLine">
+            </div>
+            <div class="EmptyLine">
+            </div>
         }
-        </div>
+}
+else
+{ 
+<p id="notification">There are no players. Please, try new search.</p>
+}
+    </div>
 }
 else
 {
     <h1 style="text-align:center;">There are no players. Please, try new search.</h1>
-}        
+}
+

@@ -28,8 +28,8 @@ namespace Middleware
         private string phone;
         [DataMember]
         private string email;
-        [DataMember]
-        private int year;
+        //[DataMember]
+        //private int year;
         [DataMember]
         private string imagePath;
 
@@ -47,7 +47,7 @@ namespace Middleware
             return "( Id uniqueidentifier NOT NULL, LEAGUE varchar(50) NOT NULL, NAME varchar(50) NOT NULL, MANAGER varchar(50) NOT NULL, PHONE varchar(50) NOT NULL, EMAIL varchar(50) NOT NULL, PRIMARY KEY (Id) )";
         }
 
-        public Team(string league, string name, string manager, string phone, string email, int year, string imagePath)
+        public Team(string league, string name, string manager, string phone, string email, string imagePath)
             : base()
         {
             this.league = league;
@@ -55,7 +55,7 @@ namespace Middleware
             this.manager = manager;
             this.phone = phone;
             this.email = email;
-            this.year = year;
+            //this.year = year;
             this.imagePath = imagePath;
         }
 
@@ -65,13 +65,13 @@ namespace Middleware
             try
             {
                 this.Id = new Guid(fieldsDict["Id"]);
-                this.league = fieldsDict["LEAGUE"];
-                this.name = fieldsDict["NAME"];
-                this.manager = fieldsDict["MANAGER"];
-                this.phone = fieldsDict["PHONE"];
-                this.email = fieldsDict["EMAIL"];
-                this.year = Convert.ToInt32(fieldsDict["YEAR"]);
-                this.imagePath = fieldsDict["imagePath"];
+                this.league = fieldsDict["League"];
+                this.name = fieldsDict["Name"];
+                this.manager = fieldsDict["Manager"];
+                this.phone = fieldsDict["Phone"];
+                this.email = fieldsDict["Email"];
+                //this.year = Convert.ToInt32(fieldsDict["YEAR"]);
+                this.imagePath = fieldsDict["ImagePath"];
             }
             catch
             { }
@@ -147,19 +147,19 @@ namespace Middleware
             }
         }
 
-        [IsInTable]
-        [DataMember]
-        public int Year
-        {
-            get
-            {
-                return year;
-            }
-            set
-            {
-                year = value;
-            }
-        }
+        //[IsInTable]
+        //[DataMember]
+        //public int Year
+        //{
+        //    get
+        //    {
+        //        return year;
+        //    }
+        //    set
+        //    {
+        //        year = value;
+        //    }
+        //}
 
         [IsInTable]
         [DataMember]

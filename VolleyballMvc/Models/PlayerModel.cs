@@ -15,8 +15,8 @@ namespace VolleyballMvc.Models
         }
         public PlayersModel(List<Player> list)
         {
-            list.Sort((pl1, pl2) => pl1.Name.CompareTo(pl2.Name));
-            Players = list;
+                list.Sort((pl1, pl2) => pl1.Name.CompareTo(pl2.Name));
+                Players = list;
         }
     }
 
@@ -51,7 +51,7 @@ namespace VolleyballMvc.Models
         {
             get
             {
-                return String.Concat("~/", Player.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
+                return String.Concat("~/", Player.ImagePath.Replace(@"\", " /").Substring(39).Replace(" ", ""));
             }
         }
 

@@ -86,29 +86,34 @@ namespace VolleyballMvc.Controllers
         [GenderActionFilter]
         public ActionResult SearchResult(string searchedText, string gender)
         {
-            List<Player> playersList;
-            Middleware.VolleyballService.VolleyballServiceClient client;
+            if (searchedText != null)
+            {
+                List<Player> playersList;
+                Middleware.VolleyballService.VolleyballServiceClient client;
 
-            playersList = new List<Player>();
-            client = new Middleware.VolleyballService.VolleyballServiceClient();
-            var searchedResult = client.FindSerchResults(searchedText, Middleware.VolleyballService.TablesNames.Players);
-            if (!string.IsNullOrEmpty(gender))
-            {
-                ViewBag.gender = gender;
-            }
-            if (searchedResult != null)
-            {
-                foreach (var item in searchedResult)
+                playersList = new List<Player>();
+                client = new Middleware.VolleyballService.VolleyballServiceClient();
+                var searchedResult = client.FindSerchResults(searchedText, Middleware.VolleyballService.TablesNames.Players);
+                if (!string.IsNullOrEmpty(gender))
                 {
-                    playersList.Add(new Player(item));
+                    ViewBag.gender = gender;
                 }
-                
-                return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(playersList));
+                if (searchedResult != null)
+                {
+                    foreach (var item in searchedResult)
+                    {
+                        playersList.Add(new Player(item));
+                    }
+                    return View(new PlayersModel(playersList));
+                    //return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(playersList));
+                }
+                else
+                {
+                    return View(new PlayersModel(playersList));
+                    //return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(null));
+                }
             }
-            else
-            {
-                return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(null));
-            }
+            return View();
         }
     }
 }

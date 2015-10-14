@@ -7,73 +7,65 @@ using System.Threading.Tasks;
 using Middleware;
 using System.Runtime.Serialization;
 using Volleyball.Attributes;
+using System.Windows.Forms;
 
 namespace Middleware
 {
     [DataContract]
     public class PlayerInTeam : Base
     {
-        //private DataRow row;
-        //public static Dictionary<Guid, PlayerInTeam> Items = new Dictionary<Guid, PlayerInTeam>();
-        static PlayerInTeam()
-        {
-            //dataBase = new ExternalDataBase();
-            //TableInform.TryCreateTable( "PlayerInTeams" , GetRowNames );
-        }
+        [DataMember]
+        private int year;
+
+        [IsInTable]
+        [DataMember]
+        private Guid playerId;
+
+        [IsInTable]
+        [DataMember]
+        private Guid teamId;
 
         public static string GetRowNames()
         {
             return "( Id uniqueidentifier NOT NULL, PlayerId uniqueidentifier, TeamId uniqueidentifier, PRIMARY KEY (Id) )";
         }
 
-        public PlayerInTeam( Team team , Player player )
+        public PlayerInTeam( Team team , Player player, int year )
             : base()
         {
-            //Items.Add(Id, this);
-            //row = table.Table.NewRow();
-            teamId = team.Id;
-            playerId = player.Id;
+            this.teamId = team.Id;
+            this.playerId = player.Id;
+            this.year = year;
         }
 
-         [IsInTable]
-        [DataMember]
-        private Guid playerId;
+        public PlayerInTeam(Dictionary<string, string> fieldsDict)
+        {
+            try
+            {
+                this.Id = new Guid(fieldsDict["Id"]);
+                this.playerId = new Guid(fieldsDict["PlayerId"]);
+                this.teamId = new Guid(fieldsDict["TeamId"]);
+                this.year = Convert.ToInt32(fieldsDict["Year"]);
+            }
+            catch
+            { 
+                MessageBox.Show("Something went wrong.");
+            }
+        }
+
 
          [IsInTable]
-        [DataMember]
-        private Guid teamId;
-
-         //[DataMember]
-         //public Team Team
-         //{
-         //    get
-         //    {
-         //        return Team.Items[teamid];
-         //    }
-         //    set
-         //    {
-         //        teamid = value.Id;
-         //    }
-         //}
-
-         //[DataMember]
-         //public Player Player
-         //{
-         //    get
-         //    {
-         //        return Player.Items[playerId];
-         //    }
-         //    set
-         //    {
-         //        playerId = value.Id;
-         //    }
-         //}
-
-        //public new void Save()
-        //{
-        //    Team.Save();
-        //    Player.Save();
-        //    base.Save();
-        //}
+         [DataMember]
+         public int Year
+         {
+             get
+             {
+                 return year;
+             }
+             set
+             {
+                 year = value;
+             }
+         }
     }
 }
