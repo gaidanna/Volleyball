@@ -105,12 +105,6 @@
   <wsdl:message name="IVolleyballService_SaveImage_OutputMessage">
     <wsdl:part name="parameters" element="tns:SaveImageResponse" />
   </wsdl:message>
-  <wsdl:message name="IVolleyballService_ReadPlayerStatisticsInGames_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReadPlayerStatisticsInGames" />
-  </wsdl:message>
-  <wsdl:message name="IVolleyballService_ReadPlayerStatisticsInGames_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReadPlayerStatisticsInGamesResponse" />
-  </wsdl:message>
   <wsdl:portType name="IVolleyballService">
     <wsdl:operation name="Insert">
       <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/Insert" message="tns:IVolleyballService_Insert_InputMessage" />
@@ -175,10 +169,6 @@
     <wsdl:operation name="SaveImage">
       <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/SaveImage" message="tns:IVolleyballService_SaveImage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/SaveImageResponse" message="tns:IVolleyballService_SaveImage_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ReadPlayerStatisticsInGames">
-      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlayerStatisticsInGames" message="tns:IVolleyballService_ReadPlayerStatisticsInGames_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlayerStatisticsInGamesResponse" message="tns:IVolleyballService_ReadPlayerStatisticsInGames_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IVolleyballService" type="tns:IVolleyballService">
@@ -320,15 +310,6 @@
     </wsdl:operation>
     <wsdl:operation name="SaveImage">
       <soap:operation soapAction="http://tempuri.org/IVolleyballService/SaveImage" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ReadPlayerStatisticsInGames">
-      <soap:operation soapAction="http://tempuri.org/IVolleyballService/ReadPlayerStatisticsInGames" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

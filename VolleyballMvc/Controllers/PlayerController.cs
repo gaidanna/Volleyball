@@ -25,7 +25,7 @@ namespace VolleyballMvc.Controllers
 
             playersList = new List<Player>();
             client = new Middleware.VolleyballService.VolleyballServiceClient();
-
+            
             if (!string.IsNullOrEmpty(gender))
             {
                 var result = Enum.Parse(typeof(Middleware.VolleyballService.Gender), gender, true);
@@ -41,46 +41,17 @@ namespace VolleyballMvc.Controllers
                 playersList.Add(new Player(item));
             }
 
-            return View(new PlayersModel(playersList));
+            return View(new PlayerModel(playersList));// new TeamModel() { Users = users } );
         }
 
         [GenderActionFilter]
-        public ActionResult Index(Guid playerId, string gender)
+        public ActionResult Index()
         {
-            Player player;
-            Dictionary<string, string> playerDict;
-            List<Dictionary<string, string>> gamesDict;
-            List<Dictionary<string, string>> teamsDict;
-            List<Game> gamesWithReward;
-            List<Team> teamsList;
             Middleware.VolleyballService.VolleyballServiceClient client;
 
-            gamesWithReward = new List<Game>();
-            teamsList = new List<Team>();
             client = new Middleware.VolleyballService.VolleyballServiceClient();
-            playerDict = client.Read(playerId, Middleware.VolleyballService.TablesNames.Players);
-            gamesDict = client.ReadPlayerStatisticsInGames(playerId, Middleware.VolleyballService.PlayersInfo.BestPlayer);
-            teamsDict = client.ReadTeams_Player(playerId);
-            player = new Player(playerDict);
 
-            if (gamesDict != null)
-            {
-                foreach (var item in gamesDict)
-                {
-                    gamesWithReward.Add(new Game(item));
-                }
-            }
-
-            foreach (var item in teamsDict)
-            {
-                teamsList.Add(new Team(item));
-            }
-            
-            if (!string.IsNullOrEmpty(gender))
-            {
-                ViewBag.gender = gender;
-            }
-            return View(new PlayerInformationModel(player, teamsList, gamesWithReward));
+            return View();
         }
     }
 }

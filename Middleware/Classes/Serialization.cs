@@ -143,7 +143,7 @@ namespace Middleware
 
         public Player ReadPlayer(Guid guid)
         {
-            return new Player("n/a", -1, "a", false, "female", "ss", 0, 0);
+            return new Player("n/a", -1, "a", false, "female");
         }
 
         public void UpdatePlayer(Player player)

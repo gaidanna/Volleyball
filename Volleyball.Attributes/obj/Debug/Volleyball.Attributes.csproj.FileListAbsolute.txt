@@ -32,4 +32,3 @@ D:\Source\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.dll
 D:\Source\Volleyball\Volleyball.Attributes\bin\Debug\Volleyball.Attributes.pdb
 D:\Source\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.dll
 D:\Source\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.pdb
-D:\Projects\Volleyball\Volleyball.Attributes\obj\Debug\Volleyball.Attributes.csprojResolveAssemblyReference.cache

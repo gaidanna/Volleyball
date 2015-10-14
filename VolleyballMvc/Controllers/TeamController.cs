@@ -43,7 +43,8 @@ namespace VolleyballMvc.Controllers
             {
                 teamsList.Add(new Team(item));
             }
-            return View(new TeamsModel(teamsList));
+
+            return View(new TeamModel(teamsList));// new TeamModel() { Users = users } );
         }
 
         [GenderActionFilter]
@@ -56,6 +57,7 @@ namespace VolleyballMvc.Controllers
             Middleware.VolleyballService.VolleyballServiceClient client;
 
             client = new Middleware.VolleyballService.VolleyballServiceClient();
+
             list = new List<Dictionary<string, string>>(client.ReadPlayers_Team(teamId));
             teamDict = client.Read(teamId, Middleware.VolleyballService.TablesNames.Teams);
             team = new Team(teamDict);
@@ -69,7 +71,14 @@ namespace VolleyballMvc.Controllers
             {
                 ViewBag.gender = gender;
             }
-            return View(new TeamInformationModel(playersList, team));
+                return View(new TeamModel(playersList, team));
         }
+
+        //public ActionResult Contact()
+        //{
+        //    //ViewBag.Message = "Your contact page.";
+
+        //    return View();
+        //}
     }
 }
