@@ -45,7 +45,7 @@ namespace VolleyballMvc.Controllers
         }
 
         [GenderActionFilter]
-        public ActionResult Index()
+        public ActionResult Index( string searchedText )
         {
             Middleware.VolleyballService.VolleyballServiceClient client;
 

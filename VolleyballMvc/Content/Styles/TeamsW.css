@@ -14,22 +14,19 @@
     margin-right: auto;
     margin-bottom: 100px;
     min-height: 600px;
-    /*overflow-y: scroll;*/
     background-color:rgba(0, 10, 41, 0.5);
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
 #SmallLogo {
-display:inline;
-position: relative;
-
+    display:inline;
+    position: relative;
 }
 #smallImage  {
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
-    /*margin-right: -50%;*/
     transform: translate(-50%, -50%);
     margin-left: 50px;
 }
@@ -57,11 +54,6 @@ position: relative;
     margin-left: 100px;
 
 }
-/*.GameSchedule {
-    overflow-y: scroll;
-    height: 580px;    
-    width: 1000px;
-}*/
 
 .LowerLine {
     vertical-align: middle;
@@ -70,7 +62,7 @@ position: relative;
     width: 100%;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    border-top: 1px solid #2548c0;
+    border-top: 1px solid #e6002d;
 }
 
 .UpperLine {
@@ -80,7 +72,7 @@ position: relative;
     width: 100%;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    border-bottom: 1px solid #2548c0;
+    border-bottom: 1px solid #e6002d;
 }
 
 .EmptyLine {
@@ -88,7 +80,6 @@ position: relative;
     height: 40px;
     width: 100%;
 }
-
 
 
 

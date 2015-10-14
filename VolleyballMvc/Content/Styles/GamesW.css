@@ -1,29 +1,3 @@
-/*html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}*/
-
 #title {
     margin: 50px 0;
     text-align: center;
@@ -46,7 +20,6 @@ footer, header, hgroup, menu, nav, section {
     padding-bottom: 50px;
     margin-bottom: 100px;
     min-height: 600px;
-    display: block;
     color: white;
     background-color: rgba(0, 10, 41, 0.5);
     width: 1000px;
@@ -55,7 +28,6 @@ footer, header, hgroup, menu, nav, section {
 
 #calendar {
     width: 1000px;
-    /*height:500px;*/
     position: relative;
     float: left;
 }
@@ -72,11 +44,11 @@ blockquote, q {
     quotes: none;
 }
 
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
 
 table {
     border-collapse: collapse;
@@ -87,16 +59,6 @@ table {
 html, body {
     min-height: 100%;
 }
-
-/*body {
-  font: 12px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
-  color: #404040;
-  background: #282537;
-  background-image: -webkit-radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-  background-image: -moz-radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-  background-image: -o-radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-  background-image: radial-gradient(top, circle cover, #3c3b52, #252233 80%);
-}*/
 
 .month-picker {
     margin: 20px auto;
@@ -113,10 +75,10 @@ html, body {
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.7), inset 0 2px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
 }
 
-    .month-picker-fieldset > input {
-        position: absolute;
-        clip: rect(1px, 1px, 1px, 1px);
-    }
+.month-picker-fieldset > input {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+}
 
 .month-picker-label, .month-picker-nav {
     display: inline-block;
@@ -126,15 +88,15 @@ html, body {
     cursor: pointer;
 }
 
-    .month-picker-label.active {
-        background-color: #2548c0;
-        color: #FFFFFF;
-    }
+.month-picker-label.active {
+    background-color: #2548c0;
+    color: #FFFFFF;
+}
 
-    input:focus + .month-picker-label, .month-picker-nav:focus {
-        outline: 2px solid #5e9ed7;
-        outline: 5px auto -webkit-focus-ring-color;
-    }
+input:focus + .month-picker-label, .month-picker-nav:focus {
+    outline: 2px solid #5e9ed7;
+    outline: 5px auto -webkit-focus-ring-color;
+}
 
 .month-picker-label {
     position: relative;
@@ -146,27 +108,27 @@ html, body {
     text-shadow: 0 1px 1px black;
 }
 
-    .month-picker-label, .month-picker-label:before {
-        -webkit-transition: 0.15s ease-out;
-        -moz-transition: 0.15s ease-out;
-        -o-transition: 0.15s ease-out;
-        transition: 0.15s ease-out;
-    }
+.month-picker-label, .month-picker-label:before {
+    -webkit-transition: 0.15s ease-out;
+    -moz-transition: 0.15s ease-out;
+    -o-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+}
 
-        .month-picker-label:before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            bottom: -2px;
-            left: -2px;
-            right: -2px;
-            border: 2px solid;
-            border-color: #e4e0fb #b6b1d1 #b6b1d1;
-            border-radius: 6px;
-            opacity: 0;
-            -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-        }
+ .month-picker-label:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    border: 2px solid;
+    border-color: #e4e0fb #b6b1d1 #b6b1d1;
+    border-radius: 6px;
+    opacity: 0;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
 
 input:checked + .month-picker-label {
     color: white;
@@ -177,9 +139,9 @@ input:checked + .month-picker-label {
     background-image: linear-gradient(to bottom, #302e42, #29253b);
 }
 
-    input:checked + .month-picker-label:before {
-        opacity: 1;
-    }
+input:checked + .month-picker-label:before {
+    opacity: 1;
+}
 
 .month-picker-nav {
     width: 25px;

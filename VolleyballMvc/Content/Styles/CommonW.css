@@ -19,11 +19,13 @@ body > #container {
 }
 
 html { 
-  background: url("../Images/WomenVB1.png"); 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url("../Images/WomenVB1.png"); 
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #footer {
@@ -58,7 +60,7 @@ html {
 }
 
 .menu ul {
-     height: auto;
+    height: auto;
     list-style-type: none;
     padding: 9px;
     overflow: hidden;
@@ -87,9 +89,7 @@ html {
 }
 
 .menu a:hover {
-    color: #bebdbd;
-    /*background-color: #c21152;
-    border-radius: 8px;*/
+    color: #FFFFFF;
 }
 
 #vb {
@@ -97,22 +97,22 @@ html {
     text-shadow: 3px 2px 3px #2b1e1e;
 }
 
-    #vb img {
-        margin-top: 2px;
-    }
+#vb img {
+    margin-top: 2px;
+}
 
 .gender a {
     color: #e5d29d;
 }
 
 .active a {
-background-color: #c21152;
-color: #FFFFFF;
-border-radius: 8px;
+    background-color: #c21152;
+    color: #FFFFFF;
+    border-radius: 8px;
 }
 
 a.styled, a.styled:link, a.styled:visited, a.styled:hover, a.styled:focus, a.styled:active{
-  color:#c21152;
-   text-decoration: none;
+    color:#c21152;
+    text-decoration: none;
 }
 

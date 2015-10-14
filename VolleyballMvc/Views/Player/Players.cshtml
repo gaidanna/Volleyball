@@ -25,7 +25,13 @@
             @if (Model != null)
             {
                 <div class="Players">
-
+                    <div> 
+                        <form action="Index"  >
+                            <input type="hidden" id="searchedText" name="searchedText" />
+                            <input type="text" id="text" />
+                            <input type="button" title="Search" value="Search" onclick="document.getElementById( 'searchedText' ).value = document.getElementById('text').value; form.submit('fsdfsdfsdf');" />
+                        </form>
+                    </div>
                     @{
                 Random r = new Random();
                 foreach (var pl in Model.Players)

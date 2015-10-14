@@ -171,6 +171,48 @@ namespace Middleware
             }
         }
 
+        [IsInTable]
+        [DataMember]
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                age = value;
+            }
+        }
+
+        [IsInTable]
+        [DataMember]
+        public int Height
+        {
+            get
+            {
+                return height;
+            }
+            set
+            {
+                height = value;
+            }
+        }
+
+        [IsInTable]
+        [DataMember]
+        public string ImagePath
+        {
+            get
+            {
+                return imagePath;
+            }
+            set
+            {
+                imagePath = value;
+            }
+        }
+
         public string CaptainTextPresentation
         {
             get

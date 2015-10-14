@@ -14,8 +14,6 @@
     margin-right: auto;
     margin-bottom: 100px;
     min-height: 600px;
-    /*overflow-y: scroll;*/
-
     background-color:rgba(0, 10, 41, 0.5);
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
@@ -30,7 +28,6 @@ position: relative;
     position: absolute;
     top: 50%;
     left: 50%;
-    /*margin-right: -50%;*/
     transform: translate(-50%, -50%);
     margin-left: 50px;
 }
@@ -58,11 +55,6 @@ position: relative;
     margin-left: 100px;
 
 }
-/*.GameSchedule {
-    overflow-y: scroll;
-    height: 580px;    
-    width: 1000px;
-}*/
 
 .LowerLine {
     vertical-align: middle;
