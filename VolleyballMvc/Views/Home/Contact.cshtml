@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact information";
 }
 
 @section css{
@@ -15,48 +15,37 @@
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
+    <h1>@ViewBag.Title</h1>
 </hgroup>
 
-<section class="contact">
-    <header>
-        <h3>Phone</h3>
-    </header>
-    <p>
-        <span class="label">Main:</span>
-        <span>425.555.0100</span>
-    </p>
-    <p>
-        <span class="label">After Hours:</span>
-        <span>425.555.0199</span>
-    </p>
-</section>
+<div id="content">
+    <section class="contact">
+        <header>
+            <h3>Phone</h3>
+        </header>
+        <p>
+            <span class="label">Phone numbers:</span>
+            <div>8 (066) 555 0100</div>
+            <div>8 (099) 557 8100</div>
+            <div>8 (067) 557 6166</div>
+        </p>
+    </section>
 
-<section class="contact">
-    <header>
-        <h3>Email</h3>
-    </header>
-    <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">Marketing:</span>
-        <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">General:</span>
-        <span><a href="mailto:General@example.com">General@example.com</a></span>
-    </p>
-</section>
-
-<section class="contact">
-    <header>
-        <h3>Address</h3>
-    </header>
-    <p>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399
-    </p>
-</section>
+    <section class="contact">
+        <header>
+            <h3>Email</h3>
+        </header>
+        <p>
+            <span class="label">Support:</span>
+            <span><a href="mailto:VolleyballLeague@sport.com">VolleyballLeague@sport.com</a></span>
+        </p>
+        <p>
+            <span class="label">Marketing:</span>
+            <span><a href="mailto:VolleyballMarketing@sport.com">VolleyballMarketing@sport.com</a></span>
+        </p>
+        <p>
+            <span class="label">General:</span>
+            <span><a href="mailto:VolleyballGeneral@sport.com">VolleyballGeneral@sport.com</a></span>
+        </p>
+    </section>
+    </div>
