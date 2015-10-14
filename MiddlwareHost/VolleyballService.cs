@@ -148,45 +148,14 @@ namespace MiddlewareHost
         {
             TableInform table;
             DbConnection connection;
-            //List<DataRow> rows;
             List<Dictionary<string, string>> resultedList;
 
             connection = TableInform.Connection;
             resultedList = new List<Dictionary<string, string>>();
             table = new TableInform(TablesNames.PlayerInGames.ToString());
 
-            //if (playersInfo == PlayersInfo.BestPlayer)
-            //{
-                var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>(playersInfo.ToString()) == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
-                resultedList = ReadByIds(TablesNames.Players, rows);
-                //foreach (var row in rows)
-                //{ 
-                //    //var result = table.ConvertRowToDict(row);
-                //    //resultedList.Add(result);
-                //}
-            //}
-            //else if (playersInfo == PlayersInfo.YellowCard)
-            //{
-            //    var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("YellowCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
-            //    resultedList = ReadByIds(TablesNames.Players, rows);
-            //    //foreach (var row in rows)
-            //    //{
-            //    //    var result = table.ConvertRowToDict(row);
-            //    //    resultedList.Add(result);
-            //    //}
-            //}
-            //else if (playersInfo == PlayersInfo.RedCard)
-            //{
-            //    var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>("RedCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
-            //    resultedList = ReadByIds(TablesNames.Players, rows);
-            //    //foreach (var row in rows)
-            //    //{
-            //    //    var result = table.ConvertRowToDict(row);
-            //    //    resultedList.Add(result);
-            //    //}
-            //}
-
-
+            var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("gameId") == gameId && r.Field<bool>(playersInfo.ToString()) == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
+            resultedList = ReadByIds(TablesNames.Players, rows);
             return resultedList;
         }
         #endregion
@@ -440,62 +409,27 @@ namespace MiddlewareHost
             return result;
         }
 
-        public void SaveImage(byte[] bytes, string file)
+        public List<Dictionary<string, string>> FindSerchResults(string serchableName, TablesNames tableName)
         {
+            TableInform table;
             DbConnection connection;
+            List<Dictionary<string, string>> result;
+
+            result = new List<Dictionary<string, string>>();
             connection = TableInform.Connection;
+            table = new TableInform(tableName.ToString());
 
-            string strQuery = "INSERT INTO FileStreamTest([Name], [Data]) VALUES (@Name, @Data)";
-            SqlCommand command = new SqlCommand(strQuery);
-            var parameter = new System.Data.SqlClient.SqlParameter("@Name",
-                            System.Data.SqlDbType.NVarChar, 100);
-            parameter.Value = file.Substring(file.LastIndexOf('\\') + 1);
-            command.Parameters.Add(parameter);
+            var rowList = table.Table.AsEnumerable().Where(r => r.Field<string>("Name") == serchableName).ToList();
 
-            var parameter2 = new System.Data.SqlClient.SqlParameter("@Data",
-                            System.Data.SqlDbType.VarBinary);
-            parameter2.Value = bytes;
-            command.Parameters.Add(parameter2);
-
-            InsertUpdateData(command);
-
-        }
-
-        private Boolean InsertUpdateData(SqlCommand cmd)
-        {
-            //TableInform table;
-            DbConnection connection;
-            DataRow result;
-
-            //table = new TableInform(tableName.ToString());
-            connection = TableInform.Connection;
-            //result = table.ConvertDictToRow(dictionary);
-
-            //table.Table.Rows.Add(result);
-            //table.Update(new DataRow[] { result });
-
-
-            //String strConnString = System.Configuration.ConfigurationManager
-            //.ConnectionStrings["conString"].ConnectionString;
-            //SqlConnection con = new SqlConnection(strConnString);
-            cmd.CommandType = CommandType.Text;
-            //cmd.Connection = connection;
-            try
+            if (rowList.Count > 0)
             {
-                //connection.Open();
-                cmd.ExecuteNonQuery();
-                return true;
+                foreach (var row in rowList)
+                {
+                    result.Add(table.ConvertRowToDict(row));
+                }
+                return result;
             }
-            catch (Exception ex)
-            {
-                //Response.Write(ex.Message);
-                return false;
-            }
-            finally
-            {
-                //con.Close();
-                //con.Dispose();
-            }
+            return null;
         }
     }
 }

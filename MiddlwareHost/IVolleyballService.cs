@@ -9,7 +9,6 @@ using Middleware;
 
 namespace MiddlewareHost
 {
-    //[ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(IVolleyballService))]
     [ServiceContract]
     public interface IVolleyballService
     {
@@ -59,7 +58,7 @@ namespace MiddlewareHost
         List<Dictionary<string, string>> ReadPlayersInfoInGame(Guid gameId, PlayersInfo playersInfo);
 
         [OperationContract]
-        void SaveImage(byte[] bytes, string file);
+        List<Dictionary<string, string>> FindSerchResults(string serchableName, TablesNames tableName);
 
         [OperationContract]
         List<Dictionary<string, string>> ReadPlayerStatisticsInGames(Guid playerId, PlayersInfo playersInfo);

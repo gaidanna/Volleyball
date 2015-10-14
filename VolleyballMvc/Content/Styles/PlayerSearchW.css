@@ -19,8 +19,8 @@
 }
 
 #SmallLogo {
-display:inline;
-position: relative;
+    display:inline;
+    position: relative;
 
 }
 #smallImage  {
@@ -80,18 +80,6 @@ position: relative;
     vertical-align: middle;
     height: 40px;
     width: 100%;
-}
-
-#info {
-    display: block;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-bottom: 100px;
-    min-height: 600px;
-    color: white;
-    background-color: rgba(0, 10, 41, 0.5);
-    width: 1000px;
-    font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
 

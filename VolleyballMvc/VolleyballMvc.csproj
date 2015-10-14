@@ -267,6 +267,8 @@
     <Content Include="Content\Styles\PlayerProfileW.css" />
     <Content Include="Content\Styles\PlayerProfile.css" />
     <Content Include="Content\Styles\HomeW.css" />
+    <Content Include="Content\Styles\PlayerSearchW.css" />
+    <Content Include="Content\Styles\PlayerSearch.css" />
     <Content Include="Content\Styles\PlayersW.css" />
     <Content Include="Content\Styles\Players.css" />
     <Content Include="Content\Styles\TeamProfile.css" />
@@ -400,6 +402,7 @@
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Player\Index.cshtml" />
     <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Player\SearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

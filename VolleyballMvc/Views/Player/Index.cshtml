@@ -22,10 +22,7 @@
 
         <div id="content">
             <div id="crossfade">
-                @{ 
-                 string path = String.Concat("~/", Model.Player.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
-                <img src="@Url.Content(path)"/>
-                    }
+                <img src="@Url.Content(Model.ImagePath)"/>
             </div>
             <div id="info">
                 <ul class="playerInfo">

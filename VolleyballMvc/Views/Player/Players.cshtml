@@ -11,10 +11,12 @@
     @if (ViewBag.gender == "female")
     {
         <link href="@Url.Content("~/Content/Styles/PlayersW.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/Styles/PlayerSearchW.css")" rel="stylesheet" />
     }
     else
     {
         <link href="@Url.Content("~/Content/Styles/Players.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/Styles/PlayerSearch.css")" rel="stylesheet" />
     }
 }
 
@@ -26,10 +28,10 @@
             {
                 <div class="Players">
                     <div> 
-                        <form action="Index"  >
+                        <form action="SearchResult" >
                             <input type="hidden" id="searchedText" name="searchedText" />
                             <input type="text" id="text" />
-                            <input type="button" title="Search" value="Search" onclick="document.getElementById( 'searchedText' ).value = document.getElementById('text').value; form.submit('fsdfsdfsdf');" />
+                            <input type="button" class="detail" title="Search" value="Search" onclick="document.getElementById( 'searchedText' ).value = document.getElementById('text').value; form.submit('');" />
                         </form>
                     </div>
                     @{
@@ -61,11 +63,37 @@
                 }
                     }
                 </div>
-            }
-            else
-            {
+                <div id="infoPlayer"></div>
+
+                 @*<div id="info">
+                    @Html.Partial("Searchresult", Model)
+                </div>*@
+                                        }
+                                        else
+                                        {
                 <h1>There are no players. Please, check later.</h1>
             }
         </div>
     </div>
 </article>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.detail').click(function () {
+            $('#infoPlayer').load('~/Views/Player/SearchResult.cshtml');
+        });
+    });
+
+    @*var url = '@Url.Action("SearchResult", "Player")';
+    $('.detail').click(function () {
+        var keyWord = $('#searchedText').val();
+        $('#infoPlayer').load(url, { searchText: keyWord, gender: male });
+    })*@
+    //$(document).ready(function () {
+
+    //    $(".detail").click(function (evt) {
+    //        $("#info").load("/Player/SearchResult",
+    //            { searchedText: searchedText.textContent, gender: ViewBag.gender });
+    //    });
+    //});
+    </script>

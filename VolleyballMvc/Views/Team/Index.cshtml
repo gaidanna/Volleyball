@@ -24,8 +24,8 @@
         <div id="activeArea">
             <div id="teamImage">
                 @{
-                    string pathToImage = String.Concat("~/", Model.Team.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
-                    <img id="mainImage" src="@Url.Content(pathToImage)" />
+//string pathToImage = String.Concat("~/", Model.Team.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
+                    <img id="mainImage" src="@Url.Content(Model.ImagePath)" />
                 }
             </div>
 
@@ -52,10 +52,11 @@
                                     <a class="styledWhite" href="@Url.Action("Index", "Player", new { playerId = @pl.Id, gender = @ViewBag.gender } )">
                                         <div id="SmallLogo">
                                             @{
-                                                int number = r.Next(1, 9);
-                                                string path = "/Content/Images/" + number + ".png";
+                                            string pathToImage = String.Concat("~/", pl.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
+//int number = r.Next(1, 9);
+//string path = "/Content/Images/" + number + ".png";
                                             }
-                                            <img id="smallImage" src=@path width="110" height="160" />
+                                            <img id="smallImage" src="@Url.Content(pathToImage)"/>
                                         </div>
                                         <div class="PlayerFullInfo">
                                             <div id="playerNumber">@pl.Number</div>

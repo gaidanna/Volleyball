@@ -47,5 +47,13 @@ namespace VolleyballMvc.Models
             private set;
         }
 
+        public string ImagePath
+        {
+            get
+            {
+                return String.Concat("~/", Player.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
+            }
+        }
+
     }
 }

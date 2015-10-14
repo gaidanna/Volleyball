@@ -154,11 +154,11 @@ namespace Middleware.VolleyballService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGame", ReplyAction="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGameResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> ReadPlayersInfoInGameAsync(System.Guid gameId, Middleware.VolleyballService.PlayersInfo playersInfo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/SaveImage", ReplyAction="http://tempuri.org/IVolleyballService/SaveImageResponse")]
-        void SaveImage(byte[] bytes, string file);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/FindSerchResults", ReplyAction="http://tempuri.org/IVolleyballService/FindSerchResultsResponse")]
+        System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> FindSerchResults(string serchableName, Middleware.VolleyballService.TablesNames tableName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/SaveImage", ReplyAction="http://tempuri.org/IVolleyballService/SaveImageResponse")]
-        System.Threading.Tasks.Task SaveImageAsync(byte[] bytes, string file);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/FindSerchResults", ReplyAction="http://tempuri.org/IVolleyballService/FindSerchResultsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> FindSerchResultsAsync(string serchableName, Middleware.VolleyballService.TablesNames tableName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVolleyballService/ReadPlayerStatisticsInGames", ReplyAction="http://tempuri.org/IVolleyballService/ReadPlayerStatisticsInGamesResponse")]
         System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> ReadPlayerStatisticsInGames(System.Guid playerId, Middleware.VolleyballService.PlayersInfo playersInfo);
@@ -314,12 +314,12 @@ namespace Middleware.VolleyballService {
             return base.Channel.ReadPlayersInfoInGameAsync(gameId, playersInfo);
         }
         
-        public void SaveImage(byte[] bytes, string file) {
-            base.Channel.SaveImage(bytes, file);
+        public System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> FindSerchResults(string serchableName, Middleware.VolleyballService.TablesNames tableName) {
+            return base.Channel.FindSerchResults(serchableName, tableName);
         }
         
-        public System.Threading.Tasks.Task SaveImageAsync(byte[] bytes, string file) {
-            return base.Channel.SaveImageAsync(bytes, file);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>> FindSerchResultsAsync(string serchableName, Middleware.VolleyballService.TablesNames tableName) {
+            return base.Channel.FindSerchResultsAsync(serchableName, tableName);
         }
         
         public System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> ReadPlayerStatisticsInGames(System.Guid playerId, Middleware.VolleyballService.PlayersInfo playersInfo) {

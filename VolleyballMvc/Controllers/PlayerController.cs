@@ -84,13 +84,31 @@ namespace VolleyballMvc.Controllers
         }
 
         [GenderActionFilter]
-        public ActionResult Index2(string searchedText)
+        public ActionResult SearchResult(string searchedText, string gender)
         {
+            List<Player> playersList;
             Middleware.VolleyballService.VolleyballServiceClient client;
 
+            playersList = new List<Player>();
             client = new Middleware.VolleyballService.VolleyballServiceClient();
-
-            return View();
+            var searchedResult = client.FindSerchResults(searchedText, Middleware.VolleyballService.TablesNames.Players);
+            if (!string.IsNullOrEmpty(gender))
+            {
+                ViewBag.gender = gender;
+            }
+            if (searchedResult != null)
+            {
+                foreach (var item in searchedResult)
+                {
+                    playersList.Add(new Player(item));
+                }
+                
+                return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(playersList));
+            }
+            else
+            {
+                return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(null));
+            }
         }
     }
 }

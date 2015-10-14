@@ -99,11 +99,11 @@
   <wsdl:message name="IVolleyballService_ReadPlayersInfoInGame_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReadPlayersInfoInGameResponse" />
   </wsdl:message>
-  <wsdl:message name="IVolleyballService_SaveImage_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveImage" />
+  <wsdl:message name="IVolleyballService_FindSerchResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSerchResults" />
   </wsdl:message>
-  <wsdl:message name="IVolleyballService_SaveImage_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveImageResponse" />
+  <wsdl:message name="IVolleyballService_FindSerchResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSerchResultsResponse" />
   </wsdl:message>
   <wsdl:message name="IVolleyballService_ReadPlayerStatisticsInGames_InputMessage">
     <wsdl:part name="parameters" element="tns:ReadPlayerStatisticsInGames" />
@@ -172,9 +172,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGame" message="tns:IVolleyballService_ReadPlayersInfoInGame_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlayersInfoInGameResponse" message="tns:IVolleyballService_ReadPlayersInfoInGame_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SaveImage">
-      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/SaveImage" message="tns:IVolleyballService_SaveImage_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/SaveImageResponse" message="tns:IVolleyballService_SaveImage_OutputMessage" />
+    <wsdl:operation name="FindSerchResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/FindSerchResults" message="tns:IVolleyballService_FindSerchResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVolleyballService/FindSerchResultsResponse" message="tns:IVolleyballService_FindSerchResults_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ReadPlayerStatisticsInGames">
       <wsdl:input wsaw:Action="http://tempuri.org/IVolleyballService/ReadPlayerStatisticsInGames" message="tns:IVolleyballService_ReadPlayerStatisticsInGames_InputMessage" />
@@ -318,8 +318,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveImage">
-      <soap:operation soapAction="http://tempuri.org/IVolleyballService/SaveImage" style="document" />
+    <wsdl:operation name="FindSerchResults">
+      <soap:operation soapAction="http://tempuri.org/IVolleyballService/FindSerchResults" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

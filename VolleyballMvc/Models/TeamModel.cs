@@ -41,5 +41,13 @@ namespace VolleyballMvc.Models
             get;
             private set;
         }
+
+        public string ImagePath
+        {
+            get
+            {
+                return String.Concat("~/", Team.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
+            }
+        }
     }
 }
