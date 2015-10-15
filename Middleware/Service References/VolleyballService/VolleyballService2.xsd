@@ -222,28 +222,29 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="serchableName" nillable="true" type="xs:string" />
         <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Middleware" minOccurs="0" name="tableName" type="q32:TablesNames" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Middleware" minOccurs="0" name="gender" type="q33:Gender" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="FindSerchResultsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FindSerchResultsResult" nillable="true" type="q33:ArrayOfArrayOfKeyValueOfstringstring" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FindSerchResultsResult" nillable="true" type="q34:ArrayOfArrayOfKeyValueOfstringstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ReadPlayerStatisticsInGames">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="playerId" type="q34:guid" />
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Middleware" minOccurs="0" name="playersInfo" type="q35:PlayersInfo" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="playerId" type="q35:guid" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Middleware" minOccurs="0" name="playersInfo" type="q36:PlayersInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ReadPlayerStatisticsInGamesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReadPlayerStatisticsInGamesResult" nillable="true" type="q36:ArrayOfArrayOfKeyValueOfstringstring" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReadPlayerStatisticsInGamesResult" nillable="true" type="q37:ArrayOfArrayOfKeyValueOfstringstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

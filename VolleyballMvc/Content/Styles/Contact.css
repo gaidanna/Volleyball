@@ -23,8 +23,17 @@ font-family: Tahoma, Geneva, sans-serif;
 }
 
 .contact {
-margin: 100px;
+margin: 50px;
 color: white;
 font-size: 20px;
+}
+
+.header {
+margin: 20px 20px 20px 0;
+color: #80ccff;
+}
+
+a {
+    color: #ffd800;
 }
 

@@ -5,7 +5,7 @@
 @section css{
     @if (ViewBag.gender == "female")
     {
-        <link href="@Url.Content("~/Content/Styles/ContacteW.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/Styles/ContactW.css")" rel="stylesheet" />
     }
     else
     {
@@ -20,7 +20,7 @@
 
 <div id="content">
     <section class="contact">
-        <header>
+        <header class="header">
             <h3>Phone</h3>
         </header>
         <p>
@@ -32,7 +32,7 @@
     </section>
 
     <section class="contact">
-        <header>
+        <header class="header">
             <h3>Email</h3>
         </header>
         <p>

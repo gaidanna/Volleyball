@@ -42,48 +42,41 @@
             }
         </div>
         <div id="info">
+            <div id="results">LAST RESULTS</div>
+
+            @foreach (var gameByDay in Model.Games)
+            {
+                if (gameByDay.Value.Count > 0)
+                {
+                        <div class="GameDate">
+                            @gameByDay.Key.ToString("dd MMM yyyy")
+                        </div>
+                        foreach (var game in gameByDay.Value)
+                        {
+                            <div class="Teams">
+                                @*<a class="styled" href="@Url.Action("Index", "Game", new { gameId = @game.Id, gender = @ViewBag.gender })">*@
+                                    <div class="Team1">@game.Teams[0].Name </div>
+                                    @{
+                            int firstTeamCount = 0;
+                            int secondTeamCount = 0;
+                            var result = game.Score.Replace("(", string.Empty).Replace(")", string.Empty).Replace(";", ", ").Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+
+                            for (int i = 0; i < result.Length - 1; i += 2)
+                            {
+                                if (Convert.ToInt32(result[i]) > Convert.ToInt32(result[i + 1]))
+                                { firstTeamCount++; }
+                                else
+                                { secondTeamCount++; }
+                            }
+                            <div class="Score">@String.Format("{0} : {1}", firstTeamCount, secondTeamCount)</div>
+                                    }
+                                    <div class="Team2">@game.Teams[1].Name</div>
+                                @*</a>*@
+                            </div>
+                        }
+                }
+            }
         </div>
     </div>
 </div>
-@*@section featured {
-        <section class="featured">
-            <div class="content-wrapper">
-                <hgroup class="title">
-                    <h1>@ViewBag.Title.</h1>
-                    <h2>@ViewBag.Message</h2>
-                </hgroup>
-                <p>
-                    To learn more about ASP.NET MVC visit
-                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                    If you have any questions about ASP.NET MVC visit
-                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-                </p>
-            </div>
-        </section>
-    }
-    <h3>We suggest the following:</h3>
-    <ol class="round">
-        <li class="one">
-            <h5>Getting Started</h5>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and that gives you full control over markup
-            for enjoyable, agile development. ASP.NET MVC includes many features that enable
-            fast, TDD-friendly development for creating sophisticated applications that use
-            the latest web standards.
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-        </li>
 
-        <li class="two">
-            <h5>Add NuGet packages and jump-start your coding</h5>
-            NuGet makes it easy to install and update free libraries and tools.
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-        </li>
-
-        <li class="three">
-            <h5>Find Web Hosting</h5>
-            You can easily find a web hosting company that offers the right mix of features
-            and price for your applications.
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-        </li>
-    </ol>*@

@@ -165,7 +165,7 @@ namespace Volleyball.ApplicationWindows
         private void SetTeamsToCombobox( List<Dictionary<string , string>> selectedList , ComboBox cmBox )
         {
             List<string> teamNames;
-            teamNames = selectedList.Select( team => team[ "NAME" ] ).ToList();
+            teamNames = selectedList.Select( team => team[ "Name" ] ).ToList();
 
             cmBox.ItemsSource = teamNames;
         }

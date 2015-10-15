@@ -409,7 +409,7 @@ namespace MiddlewareHost
             return result;
         }
 
-        public List<Dictionary<string, string>> FindSerchResults(string serchableName, TablesNames tableName)
+        public List<Dictionary<string, string>> FindSerchResults(string serchableName, TablesNames tableName, Gender gender)
         {
             TableInform table;
             DbConnection connection;
@@ -425,7 +425,10 @@ namespace MiddlewareHost
             {
                 foreach (var row in rowList)
                 {
-                    result.Add(table.ConvertRowToDict(row));
+                    if (row.Field<string>("League") == gender.ToString())
+                    {
+                        result.Add(table.ConvertRowToDict(row));
+                    }
                 }
                 return result;
             }

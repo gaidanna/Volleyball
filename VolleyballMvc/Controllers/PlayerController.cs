@@ -86,6 +86,11 @@ namespace VolleyballMvc.Controllers
         [GenderActionFilter]
         public ActionResult SearchResult(string searchedText, string gender)
         {
+            if (!string.IsNullOrEmpty(gender))
+            {
+                ViewBag.gender = gender;
+            }
+
             if (searchedText != null)
             {
                 List<Player> playersList;
@@ -93,11 +98,10 @@ namespace VolleyballMvc.Controllers
 
                 playersList = new List<Player>();
                 client = new Middleware.VolleyballService.VolleyballServiceClient();
-                var searchedResult = client.FindSerchResults(searchedText, Middleware.VolleyballService.TablesNames.Players);
-                if (!string.IsNullOrEmpty(gender))
-                {
-                    ViewBag.gender = gender;
-                }
+                 var resultedGender = Enum.Parse(typeof(Middleware.VolleyballService.Gender), gender, true);
+                 var searchedResult = client.FindSerchResults(searchedText, Middleware.VolleyballService.TablesNames.Players, (Middleware.VolleyballService.Gender)resultedGender);
+                
+                
                 if (searchedResult != null)
                 {
                     foreach (var item in searchedResult)
@@ -105,12 +109,10 @@ namespace VolleyballMvc.Controllers
                         playersList.Add(new Player(item));
                     }
                     return View(new PlayersModel(playersList));
-                    //return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(playersList));
                 }
                 else
                 {
                     return View(new PlayersModel(playersList));
-                    //return PartialView("~/Views/Player/SearchResult.cshtml", new PlayersModel(null));
                 }
             }
             return View();

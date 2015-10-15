@@ -20,6 +20,48 @@
     font-family: "open_sansbold","Trebuchet MS",Arial,Helvetica,sans-serif;
 }
 
+#results {
+    margin: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.GameDate {
+    margin-top: 5px;
+    line-height: 25px;
+    border-bottom: 1px solid #e6002d;
+    text-align: center;
+    width: 100%;
+}
+
+.Teams {
+    padding-top: 30px;
+    height: 80px;
+    color: #2548c0;
+    text-transform: uppercase;
+    font-family: "oswaldlight","Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.Team1 {
+    color: #315cf2;
+    width: 100px;
+    float: left;
+    text-align : center;
+}
+
+.Score {
+    color: #315cf2;
+    float: left;
+    width: 50px;
+}
+
+.Team2 {
+    color: #315cf2;
+    text-align : left;
+}
+
 #crossfade {
     width:750px;
     height:500px;

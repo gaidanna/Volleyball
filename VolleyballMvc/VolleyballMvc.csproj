@@ -200,6 +200,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\GameScheduleModel.cs" />
     <Compile Include="Models\GenderActionFilter.cs" />
     <Compile Include="Models\PlayerModel.cs" />
@@ -261,6 +262,7 @@
     <Content Include="Content\Images\thisisv.png" />
     <Content Include="Content\Images\WomenVB1.png" />
     <Content Include="Content\Styles\CommonW.css" />
+    <Content Include="Content\Styles\ContactW.css" />
     <Content Include="Content\Styles\GameCenter.css" />
     <Content Include="Content\Styles\GameCenterW.css" />
     <Content Include="Content\Styles\GamesW.css" />

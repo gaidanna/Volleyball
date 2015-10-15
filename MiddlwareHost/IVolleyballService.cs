@@ -58,7 +58,7 @@ namespace MiddlewareHost
         List<Dictionary<string, string>> ReadPlayersInfoInGame(Guid gameId, PlayersInfo playersInfo);
 
         [OperationContract]
-        List<Dictionary<string, string>> FindSerchResults(string serchableName, TablesNames tableName);
+        List<Dictionary<string, string>> FindSerchResults(string serchableName, TablesNames tableName, Gender gender);
 
         [OperationContract]
         List<Dictionary<string, string>> ReadPlayerStatisticsInGames(Guid playerId, PlayersInfo playersInfo);
