@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Volleyball.ApplicationWindows.AddScore"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Add Score" Height="190" Width="300" Loaded="Window_Loaded">
+        Title="Add Score" Height="190" Width="300" Loaded="Window_Loaded"  Icon="D:\Source\Volleyball\Volleyball\Resources\iconVB.jpg">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="..\Resources\BGImage.jpg"/>
@@ -25,18 +25,18 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Name="TeamOneName" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Margin="10 4 4 4"/>
+                <TextBlock Foreground="White" Grid.Row="0" Name="TeamOneName" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Margin="10 4 4 4"/>
                 <TextBox Grid.Row="1" Name="ScoreTeamOne" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"  Margin="10 4 4 4"/>
             </Grid>
 
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="4 40 4 4" Text=":" VerticalAlignment="Top"/>
+            <TextBlock Foreground="White" Grid.Column="1" HorizontalAlignment="Center" Margin="4 40 4 4" Text=":" VerticalAlignment="Top"/>
 
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Name="TeamTwoName" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Margin="4 4 10 4"/>
+                <TextBlock Grid.Row="0" Foreground="White" Name="TeamTwoName" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Margin="4 4 10 4"/>
                 <TextBox Grid.Row="1" Name="ScoreTeamTwo" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="4 4 10 4"/>
             </Grid>
         </Grid>

@@ -15,15 +15,7 @@ namespace Volleyball
         }
 
         private void Window_Loaded( object sender , RoutedEventArgs e )
-        {
-            //VolleyballServiceClient client = new VolleyballServiceClient();
-            //client.TryCreateTable("Players", Player.GetRowNames);
-            //client.TryCreateTable("Teams", Team.GetRowNames);
-            //client.TryCreateTable("Games", Game.GetRowNames);
-            //client.TryCreateTable("PlayerInGames", PlayerInGame.GetRowNames);
-            //client.TryCreateTable("PlayerInTeams", PlayerInTeam.GetRowNames);
-        }
-
+        { }
         
         private void AddPlayer_Click( object sender , RoutedEventArgs e )
         {
