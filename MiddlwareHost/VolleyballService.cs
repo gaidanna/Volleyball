@@ -13,7 +13,6 @@ namespace MiddlewareHost
 {
     public class VolleyballService : IVolleyballService
     {
-        #region General methods
         public void Insert(Dictionary<string, string> dictionary, TablesNames tableName)
         {
             TableInform table;
@@ -119,28 +118,14 @@ namespace MiddlewareHost
         {
             TableInform table;
             DbConnection connection;
-            //List<DataRow> rows;
             List<Dictionary<string, string>> resultedList;
 
             connection = TableInform.Connection;
             resultedList = new List<Dictionary<string, string>>();
             table = new TableInform(TablesNames.PlayerInGames.ToString());
 
-            //if (playersInfo == PlayersInfo.BestPlayer)
-            //{
             var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("PlayerId") == playerId && r.Field<bool>(playersInfo.ToString()) == true).Select(r => r.Field<Guid>("gameId")).ToList();
             resultedList = ReadByIds(TablesNames.Games, rows);
-            //}
-            //else if (playersInfo == PlayersInfo.YellowCard)
-            //{
-            //    var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("playerId") == playerId && r.Field<bool>("YellowCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
-            //    resultedList = ReadByIds(TablesNames.Players, rows);
-            //}
-            //else if (playersInfo == PlayersInfo.RedCard)
-            //{
-            //    var rows = table.Table.AsEnumerable().Where(r => r.Field<Guid>("playerId") == playerId && r.Field<bool>("RedCard") == true).Select(r => r.Field<Guid>("PlayerId")).ToList();
-            //    resultedList = ReadByIds(TablesNames.Players, rows);
-            //}
             return resultedList;
         }
 
@@ -158,9 +143,7 @@ namespace MiddlewareHost
             resultedList = ReadByIds(TablesNames.Players, rows);
             return resultedList;
         }
-        #endregion
 
-        #region Team+
         public List<Dictionary<string, string>> ReadPlayers_Team(Guid teamId)
         {
             DbConnection connection;
@@ -190,9 +173,7 @@ namespace MiddlewareHost
 
             return resultedList;
         }
-        #endregion
 
-        #region Player+
         public List<Dictionary<string, string>> ReadTeams_Player(Guid playerId)
         {
             DbConnection connection;
@@ -223,9 +204,6 @@ namespace MiddlewareHost
             return resultedList;
         }
 
-        #endregion
-
-        #region
         public List<Dictionary<string, string>> ReadTeams_Game(Guid gameId)
         {
             DbConnection connection;
@@ -255,9 +233,7 @@ namespace MiddlewareHost
 
             return resultedList;
         }
-        #endregion
 
-        //player
         private List<Guid> GetInfoByPlayerId(TablesNames tableName, Guid playerId)
         {
             TableInform table;
@@ -271,7 +247,6 @@ namespace MiddlewareHost
             return res;
         }
 
-        //team
         private List<Guid> GetPlayersByTeamId(TablesNames tableName, Guid teamId)
         {
             TableInform table;
@@ -284,7 +259,6 @@ namespace MiddlewareHost
             return res;
         }
 
-        //team
         private List<Guid> GetGamesByTeamId(TablesNames tableName, Guid teamId)
         {
             TableInform table;
@@ -299,7 +273,6 @@ namespace MiddlewareHost
             return res;
         }
 
-        //game
         private List<Guid> GetPlayersByGameId(TablesNames tableName, Guid gameId)
         {
             TableInform table;
@@ -311,17 +284,18 @@ namespace MiddlewareHost
                        select r.Field<Guid>("PlayerId")).ToList();
             return res;
         }
-        //game
+
         private List<Guid> GetTeamsByGameId(TablesNames tableName, Guid gameId)
         {
             TableInform table;
+            List<Guid> result;
 
             table = new TableInform(tableName.ToString());
 
             var res = (from r in table.Table.AsEnumerable()
                        where r.Field<Guid>("Id") == gameId
                        select r).SingleOrDefault();
-            List<Guid> result = new List<Guid>();
+            result = new List<Guid>();
             result.Add((Guid)res["TeamOneId"]);
             result.Add((Guid)res["TeamTwoId"]);
 
@@ -335,6 +309,7 @@ namespace MiddlewareHost
 
             resultedList = new List<Dictionary<string, string>>();
             table = new TableInform(tableName.ToString());
+
             if (idList.Count > 0)
             {
                 foreach (var id in idList)
@@ -349,11 +324,6 @@ namespace MiddlewareHost
                 return resultedList;
             }
             return null;
-        }
-
-        public void TryCreateTable(string TableName, Func<string> getRowNames)
-        {
-            TableInform.TryCreateTable(TableName, getRowNames);
         }
 
         public bool IsIdentifiedDuplicate(int number, Guid teamId, bool captain)

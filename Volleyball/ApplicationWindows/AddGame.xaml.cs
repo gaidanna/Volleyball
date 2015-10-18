@@ -39,40 +39,18 @@ namespace Volleyball.ApplicationWindows
         {
             client = new VolleyballServiceClient();
             score = new ObservableCollection<Tuple<int , int>>();
-            //scoreTeamTwo = new ObservableCollection<int>();
             TeamsList = new List<Dictionary<string , string>>();
             teamNames = new List<string>();
 
             listviewScore.ItemsSource = score;
-            //listviewScore.ItemsSource = scoreTeamTwo;
-
         }
 
-        //private List<ListBlock> GetListBoxes(ListView listView, string controlName1, string controlName2)
-        //{
-        //    List<ListBox> resultedList = new List<ListBox>();
-        //    foreach (var item in listView.Items)
-        //    {
-        //        var container = listView.ItemContainerGenerator.ContainerFromItem(item);
-        //        var children = GetAllChildren(container);
-        //        //var name = controlName;
-        //        var control1 = (ListBox)children.First(c => c.Name == controlName1);
-        //        var control2 = (ListBox)children.First(c => c.Name == controlName2);
-        //        resultedList.Add(control1);
-        //        resultedList.Add(control2);
-        //    }
-        //    return resultedList;
-        //}
-
         public static ObservableCollection<Tuple<int , int>> score { get; set; }
-        //public static ObservableCollection<int> scoreTeamTwo { get; set; }
 
         public static List<string> TeamNames
         {
             get
-            {
-                return teamNames;
-            }
+            { return teamNames; }
         }
 
         private void SaveButton_Click( object sender , RoutedEventArgs e )
@@ -82,10 +60,8 @@ namespace Volleyball.ApplicationWindows
             string secondReferee;
             string location;
             DateTime date;
-            //Team firstTeam;
             PlayerInGame plInGame;
             Dictionary<string , string> gameDict;
-            //Dictionary<string, string> plInTeamDict;
 
             convertedScore = null;
             mainReferee = mainJudge.Text;
@@ -116,7 +92,9 @@ namespace Volleyball.ApplicationWindows
                 }
             }
             catch
-            { }
+            {
+                MessageBox.Show("Somethind went wrong. Please try again.");
+            }
 
         }
 
@@ -324,7 +302,6 @@ namespace Volleyball.ApplicationWindows
             {
                 var container = listView.ItemContainerGenerator.ContainerFromItem( item );
                 var children = GetAllChildren( container );
-                //var name = controlName;
                 control = ( CheckBox ) children.First( c => c.Name == controlName );
                 resultedList.Add( control );
             }
@@ -343,11 +320,6 @@ namespace Volleyball.ApplicationWindows
                 list.AddRange( GetAllChildren( child ) );
             }
             return list;
-        }
-
-        private void refreshButton_Click( object sender , RoutedEventArgs e )
-        {
-
         }
     }
 }

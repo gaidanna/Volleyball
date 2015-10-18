@@ -31,10 +31,6 @@ namespace Middleware
             SetTables();
         }
 
-
-        public TableInform()
-        { }
-
         public TableInform( string tableName )
         {
             try
@@ -87,12 +83,7 @@ namespace Middleware
                     catch ( Exception ex )
                     {
                         connection.Close();
-                        //DialogResult dr = MessageBox.Show("Connection problem to server" + Environment.NewLine + "Do you want to try again?", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
-
-                        //if (dr == DialogResult.Cancel)
-                        //{
                         connected = false;
-                        //Application.Exit();
                         return null;
                     }
                 }
@@ -210,8 +201,6 @@ namespace Middleware
 
         public int Update( DataRow[] drs )
         {
-            //Table.AcceptChanges();
-            //dataAdapter.Update(Table);
             return dataAdapter.Update( drs );
         }
 
@@ -224,7 +213,6 @@ namespace Middleware
                 row[ key ] = dictionary[ key ];
             }
             return row;
-            //dataTable.Rows.Add(row);
         }
 
         public Dictionary<string , string> ConvertRowToDict( DataRow row )

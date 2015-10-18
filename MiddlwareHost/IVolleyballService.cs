@@ -50,9 +50,6 @@ namespace MiddlewareHost
         
         [OperationContract]
         List<Dictionary<string, string>> FindDuplicatedPlayers(int number, Guid teamId, bool captain);
-        
-        [OperationContract]
-        void TryCreateTable(string table, Func<string> getRowNames);
 
         [OperationContract]
         List<Dictionary<string, string>> ReadPlayersInfoInGame(Guid gameId, PlayersInfo playersInfo);

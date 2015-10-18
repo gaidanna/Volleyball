@@ -38,31 +38,16 @@ namespace Middleware
         {
             //row = table.Table.NewRow();
             id = Guid.NewGuid();
-            //row["Id"] = Id;
-
-            //isSavedInDB = false;
         }
-
-        //public Base(DataRow dr)
-        //{
-        //    row = dr;
-        //    isSavedInDB = true;
-        //}
 
         [IsInTable]
         [DataMember]
         public Guid Id
         {
             get
-            {
-                return id;
-                //return new Guid(row["Id"].ToString());
-            }
+            { return id; }
             set
-            {
-                id = value;
-                //row["Id"] = value;
-            }
+            { id = value; }
         }
 
         public Dictionary<string, string> ConvertInstanceToDictionary()
@@ -80,92 +65,6 @@ namespace Middleware
                 return result;
             }
             else return selectedProperties;
-
         }
-
-        //public static T GetByID(Guid id)
-        //{
-        //    //while (true)
-        //    //{
-        //        try
-        //        {
-
-        //            return (T)Activator.CreateInstance(typeof(T), new object[] { table.Table.Select("ID = '" + id.ToString() + "'")[0] });
-        //        }
-        //        catch 
-        //        {
-        //            return null;
-        //        }
-        //    //}
-        //}
-
-        //public static T[] GetByQuery(string query)
-        //{
-        //    List<T> result = new List<T>();
-        //    List<DataRow> queryRowsResult = new List<DataRow>();
-        //    queryRowsResult.AddRange(table.Table.Select(query));
-
-        //    foreach (DataRow dr in queryRowsResult)
-        //    {
-        //        result.Add((T)Activator.CreateInstance(typeof(T), new object[] { dr }));
-        //    }
-        //    return result.ToArray(); ;
-        //}
-        //public bool SavedInDB
-        //{
-        //    get
-        //    {
-        //        return isSavedInDB;
-        //    }
-        //    set
-        //    {
-        //        isSavedInDB = value;
-        //    }
-        //}
-
-        //public void Save()
-        //{
-        //    if (!SavedInDB)
-        //    {
-        //        isSavedInDB = true;
-        //        table.Table.Rows.Add(row);
-        //    }
-        //    table.Update(row);
-        //}
-
-        //public void Delete()
-        //{
-        //    Items.Remove(Id);
-        //    row.Delete();
-        //    table.Update(row);
-        //}
-
-        //public void Update(Guid Id)
-        //{
-        //    var retrievedRow = Retrieve(Id);
-        //    table.Update(retrievedRow);
-        //    //result[changedProperty] =
-        //    //var r = table.Table.Rows
-
-        //}
-
-        //public static DataRow Retrieve(Guid Id)
-        //{
-        //    DataRow dr = table.Table.AsEnumerable()
-        //       .SingleOrDefault(r => r.Field<Guid>("ID") == Id);
-        //    return dr;
-        //    //string searchExpression = String.Format("ID = {0}", Id);
-        //    //return table.Table.Select(searchExpression);
-        //}
-
-
-        //public virtual void Save()
-        //{ }
-        //public virtual Base<T> Read(Guid id)
-        //{ }
-        //public virtual void Update()
-        //{ }
-        //public virtual void Delete()
-        //{ }
     }
 }
