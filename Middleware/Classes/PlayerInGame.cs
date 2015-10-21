@@ -13,11 +13,11 @@ namespace Middleware
     [DataContract]
     public class PlayerInGame : Base
     {
-        private static VolleyballServiceClient client = new VolleyballServiceClient();
+        private static VolleyballServiceClient client;
 
         static PlayerInGame()
         {
-            //TableInform.TryCreateTable( "PlayerInGames" , GetRowNames );
+            client = new VolleyballServiceClient();
         }
 
         public static string GetRowNames()
@@ -28,8 +28,6 @@ namespace Middleware
         public PlayerInGame(Player player, bool bestPlayer, bool yellowCard, bool redCard, Game game)
             : base()
         {
-            //Items.Add(Id, this);
-            //row = table.Table.NewRow();
             this.gameId = game.Id;
             this.playerId = player.Id;
             this.bestPlayer = bestPlayer;

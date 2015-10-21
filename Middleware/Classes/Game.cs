@@ -15,8 +15,6 @@ namespace Middleware
     [DataContract( IsReference = true )]
     public class Game : Base
     {
-        private static IDataBase dataBase;
-
         [IsInTable]
         [DataMember]
         private Guid teamOneId;
@@ -33,13 +31,10 @@ namespace Middleware
         private string location;
         [DataMember]
         private DateTime date;
-        protected static string table;
         [DataMember]
         private string score;
 
         private static VolleyballServiceClient client = new VolleyballServiceClient();
-
-        //public static Dictionary<Guid, Game> Items = new Dictionary<Guid, Game>();
         private List<Player> players;
         private List<Player> playersInGame;
         private Team[] teams;
@@ -47,7 +42,6 @@ namespace Middleware
         static Game()
         {
             table = MethodBase.GetCurrentMethod().DeclaringType.Name + "s";
-            //TableInform.TryCreateTable(table, GetRowNames);
         }
 
         public static string GetRowNames()
@@ -57,9 +51,6 @@ namespace Middleware
 
         public Game( string league , string mainReferee , string secondReferee , string location , DateTime date , Team teamOne , Team teamTwo , string score )
         {
-            //players = new List<Player>();
-            //teams = new List<Team>();
-            //Items.Add(Id, this);
             this.teamOneId = teamOne.Id;
             this.teamTwoId = teamTwo.Id;
             this.league = league;

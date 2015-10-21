@@ -32,25 +32,14 @@ namespace Middleware
         [DataMember]
         private int height;
 
-        //private bool yellowCard;
-        //private bool redCard;
-        //private bool bestPlayer;
-
         private List<Team> teams;
         private List<Game> games;
-
-        
         public static VolleyballServiceClient client;
-
-        protected static IDataBase dataBase;
-        //public static Dictionary<Guid, Player> Items = new Dictionary<Guid, Player>();
 
         static Player()
         {
             client = new VolleyballServiceClient();
             table = MethodBase.GetCurrentMethod().DeclaringType.Name + "s";
-            //client.TryCreateTable(table, GetRowNames);
-            //TableInform.TryCreateTable(table, GetRowNames);
         }
 
         public static string GetRowNames()
@@ -69,21 +58,7 @@ namespace Middleware
             this.imagePath = imagepath;
             this.age = age;
             this.height = height;
-            //Items.Add(Id, this);
         }
-
-        //public Player(string name, int number, string amplua, bool captain, string league, string image)
-        //    : base()
-        //{
-
-        //    this.name = name;
-        //    this.number = number;
-        //    this.amplua = amplua;
-        //    this.captain = captain;
-        //    this.league = league;
-        //    this.image = image;
-        //    //Items.Add(Id, this);
-        //}
 
         public Player(Dictionary<string, string> fieldsDict)
         {
@@ -256,83 +231,5 @@ namespace Middleware
                 return games;
             }
         }
-
-       
-
-        //public List<PlayerInTeam> PlayerTeamObjs
-        //{
-        //    get
-        //    {
-        //        var playerTeamList = new List<PlayerInTeam>();
-        //        foreach (var teamPlayer in PlayerInTeam.Items.Values)
-        //            if (teamPlayer.Player == this)
-        //                playerTeamList.Add(teamPlayer);
-        //        return playerTeamList;
-        //    }
     }
-
-    //public List<Team> Teams
-    //{
-    //    get
-    //    {
-    //        var teamList = new List<Team>();
-    //        foreach (var teamPlayer in PlayerInTeam.Items.Values)
-    //            if (teamPlayer.Player == this)
-    //                teamList.Add(teamPlayer.Team);
-    //        return teamList;
-    //    }
-    //}
-
-    //public List<Game> Games
-    //{
-    //    get
-    //    {
-    //        var playerGameList = new List<Game>();
-    //        foreach (var playerGame in PlayerInGame.Items.Values)
-    //            if (playerGame.Player == this)
-    //                playerGameList.Add(playerGame.Game);
-    //        return playerGameList;
-    //    }
-    //}
-
-    //public static void SetDataBase(IDataBase db)
-    //{
-    //    dataBase = db;
-    //}
-
-
-
-    //public Player UpdateProperties(string name, string stringNumber, string amplua, bool captainCheckbox)
-    //{ 
-
-    //}
-
-    //[IsTested]
-    //public void Save()
-    //{
-    //    if ( dataBase != null )
-    //    {
-    //        dataBase.CreatePlayer( this );
-    //    }
-    //}
-
-    //[IsTested]
-    //public Player Read()
-    //{
-    //    return dataBase.ReadPlayer( this.Id );
-    //}
-
-    //[IsTested]
-    //public void Update()
-    //{
-    //    dataBase.UpdatePlayer( this );
-    //}
-
-    //[IsTested]
-    //public void Delete()
-    //{
-    //    dataBase.DeletePlayer( this );
-    //    Player.Items.Remove( this.Id );
-    //}
 }
-//}

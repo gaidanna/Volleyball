@@ -10,33 +10,14 @@ using Volleyball.Attributes;
 
 namespace Middleware
 {
-    //[StringLengthValidationClassAttributes]
     [DataContract(IsReference = true)]
-    public abstract class Base //: IConvertToDict
-    //where T : Base<T>
+    public abstract class Base
     {
         private Guid id;
-        //public DataRow row;
-        private bool isSavedInDB;
         public static string table;
-
-        //public static Dictionary<Guid, Base> Items = new Dictionary<Guid, Base>();
-
-        //static Base()
-        //{
-        //    table = table = MethodBase.GetCurrentMethod().DeclaringType.Name + "s";
-        //    //TableInform.TryCreateTable(table, GetRowNames);
-        //    //AddTableRows();
-        //}
-
-        //private static string GetRowNames()
-        //{
-        //    return "( Id uniqueidentifier NOT NULL, PRIMARY KEY (Id) )";
-        //}
 
         public Base()
         {
-            //row = table.Table.NewRow();
             id = Guid.NewGuid();
         }
 

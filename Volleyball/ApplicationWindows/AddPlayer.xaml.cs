@@ -34,7 +34,6 @@ namespace Volleyball
         private byte[] fileData;
         private string filename;
         private OpenFileDialog openFileDlg;
-        //delegate void SavePlayerDelegate(Dictionary<string, string> dictionary, Middleware.VolleyballService.TablesNames tableName);
 
         public AddPlayer()
         {
@@ -175,11 +174,8 @@ namespace Volleyball
             int number;
             bool validated;
             string stringNumber;
-            Player tempPlayer;
             int selectedTeamIndex;
             List<Player> duplicatesList;
-            bool isDuplicated;
-            Player player;
             string path;
             int index;
             int age;
@@ -261,7 +257,6 @@ namespace Volleyball
         {
             ClearInputInfo();
             this.Visibility = Visibility.Hidden;
-            //parentWindow.Visibility = Visibility.Hidden;
         }
 
         private bool ValidatePlayer(string name, string insertedNumber, string amplua, string league, string path, string insertedHeight, object insertedAge)
@@ -324,7 +319,6 @@ namespace Volleyball
             playerNumber.Clear();
             captainSign.IsChecked = false;
             amplua.SelectedIndex = -1;
-            //teamsCombobox.SelectedIndex = -1;
         }
 
         public void SetPlayerInfo(Player player)
@@ -395,7 +389,7 @@ namespace Volleyball
 
         private static bool IsTextAllowed(string text)
         {
-            Regex regex = new Regex("[^0-9]+"); //regex that matches disallowed text
+            Regex regex = new Regex("[^0-9]+");
             return !regex.IsMatch(text);
         }
 

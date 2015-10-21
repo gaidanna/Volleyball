@@ -54,7 +54,6 @@
                         foreach (var game in gameByDay.Value)
                         {
                             <div class="Teams">
-                                @*<a class="styled" href="@Url.Action("Index", "Game", new { gameId = @game.Id, gender = @ViewBag.gender })">*@
                                     <div class="Team1">@game.Teams[0].Name </div>
                                     @{
                             int firstTeamCount = 0;
@@ -71,7 +70,6 @@
                             <div class="Score">@String.Format("{0} : {1}", firstTeamCount, secondTeamCount)</div>
                                     }
                                     <div class="Team2">@game.Teams[1].Name</div>
-                                @*</a>*@
                             </div>
                         }
                 }

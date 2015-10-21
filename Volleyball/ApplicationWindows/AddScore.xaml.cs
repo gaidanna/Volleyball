@@ -41,8 +41,6 @@ namespace Volleyball.ApplicationWindows
             {
                 Tuple<int,int> score = new Tuple<int, int>(scoreOne, scoreTwo);
                 AddGame.score.Add(score);
-                //AddGame.scoreTeamOne.Add(scoreOne);
-                //AddGame.scoreTeamTwo.Add(scoreTwo);
                 this.Visibility = Visibility.Hidden;
             }
             else

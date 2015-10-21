@@ -24,7 +24,6 @@
         <div id="activeArea">
             <div id="teamImage">
                 @{
-//string pathToImage = String.Concat("~/", Model.Team.ImagePath.Replace(@"\", " /").Substring(41).Replace(" ", ""));
                     <img id="mainImage" src="@Url.Content(Model.ImagePath)" />
                 }
             </div>
@@ -53,8 +52,6 @@
                                         <div id="SmallLogo">
                                             @{
                                             string pathToImage = String.Concat("~/", pl.ImagePath.Replace(@"\", " /").Substring(39).Replace(" ", ""));
-//int number = r.Next(1, 9);
-//string path = "/Content/Images/" + number + ".png";
                                             }
                                             <img id="smallImage" src="@Url.Content(pathToImage)"/>
                                         </div>

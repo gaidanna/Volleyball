@@ -19,7 +19,6 @@ namespace Volleyball.ApplicationWindows
         private string league;
         private VolleyballServiceClient client;
         public static ObservableCollection<Player> playersList;
-        //public static List<Player> playersList;
         private DispatcherTimer dispatcherTimer;
         private AddPlayer addPlayerWindow;
         private Team sampleTeam;
@@ -34,14 +33,10 @@ namespace Volleyball.ApplicationWindows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //int[] yearsArray;
-
-            //yearsArray = Enumerable.Range(2010, 50).ToArray();
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
             listBoxPlayers.ItemsSource = playersList;
-            //participationYearInTeam.ItemsSource = yearsArray;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

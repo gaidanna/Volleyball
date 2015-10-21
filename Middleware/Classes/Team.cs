@@ -13,11 +13,9 @@ using Middleware.VolleyballService;
 
 namespace Middleware
 {
-    //[StringLengthValidationClass]
     [DataContract]
     public class Team : Base
     {
-        protected static IDataBase dataBase;
         [DataMember]
         private string name;
         [DataMember]
@@ -28,8 +26,6 @@ namespace Middleware
         private string phone;
         [DataMember]
         private string email;
-        //[DataMember]
-        //private int year;
         [DataMember]
         private string imagePath;
 
@@ -55,7 +51,6 @@ namespace Middleware
             this.manager = manager;
             this.phone = phone;
             this.email = email;
-            //this.year = year;
             this.imagePath = imagePath;
         }
 
@@ -70,7 +65,6 @@ namespace Middleware
                 this.manager = fieldsDict["Manager"];
                 this.phone = fieldsDict["Phone"];
                 this.email = fieldsDict["Email"];
-                //this.year = Convert.ToInt32(fieldsDict["YEAR"]);
                 this.imagePath = fieldsDict["ImagePath"];
             }
             catch
@@ -146,20 +140,6 @@ namespace Middleware
                 email = value;
             }
         }
-
-        //[IsInTable]
-        //[DataMember]
-        //public int Year
-        //{
-        //    get
-        //    {
-        //        return year;
-        //    }
-        //    set
-        //    {
-        //        year = value;
-        //    }
-        //}
 
         [IsInTable]
         [DataMember]
