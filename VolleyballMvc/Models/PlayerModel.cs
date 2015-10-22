@@ -1,6 +1,7 @@
 ﻿using Middleware;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -51,7 +52,7 @@ namespace VolleyballMvc.Models
         {
             get
             {
-                return String.Concat("~/", Player.ImagePath.Replace(@"\", " /").Substring(39).Replace(" ", ""));
+                return String.Concat("~/Content/Images/", Player.ImagePath.Replace(@"\", " /").Replace(" ", ""));
             }
         }
 

@@ -30,10 +30,9 @@ namespace Volleyball
         private Player playerToUpdate;
         private Team team;
         private ObservableCollection<Player> playersList;
-
-        private byte[] fileData;
-        private string filename;
         private OpenFileDialog openFileDlg;
+        private string baseDirectoryPath;
+        private string baseDirectoryToCombine;
 
         public AddPlayer()
         {
@@ -91,6 +90,7 @@ namespace Volleyball
             int selectedTeamIndex;
             bool isDuplicated;
             string filepath;
+           
             int age;
             int height;
             Player player;
@@ -133,9 +133,12 @@ namespace Volleyball
                 {
                     try
                     {
-                        filepath = "D:\\Source\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                        baseDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
+                        baseDirectoryToCombine = baseDirectoryPath.Remove(baseDirectoryPath.Length - 21, 21);
+                        string guidToDB = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                        filepath = baseDirectoryToCombine + "VolleyballMvc\\Content\\Images\\" + guidToDB;
                         File.Copy(System.IO.Path.GetFullPath(path), filepath);
-                        player = new Player(name, number, playerAmplua, isCaptain, league, filepath, age, height);
+                        player = new Player(name, number, playerAmplua, isCaptain, league, guidToDB, age, height);
 
                         if (team == null)
                         {
@@ -220,7 +223,10 @@ namespace Volleyball
 
                 if (duplicatesList.Count == 0 || (duplicatesList.Count == 1 && duplicatesList[0].Id == playerToUpdate.Id))
                 {
-                    filepath = "D:\\Source\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(path);
+                    baseDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
+                    baseDirectoryToCombine = baseDirectoryPath.Remove(baseDirectoryPath.Length - 21, 21);
+                    string guidToDB = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                    filepath = baseDirectoryToCombine + "VolleyballMvc\\Content\\Images\\" + guidToDB;
                     File.Copy(System.IO.Path.GetFullPath(path), filepath);
 
                     index = playersList.IndexOf(playerToUpdate);
@@ -231,7 +237,7 @@ namespace Volleyball
                     playerToUpdate.League = league;
                     playerToUpdate.Height = height;
                     playerToUpdate.Age = age;
-                    playerToUpdate.ImagePath = filepath;
+                    playerToUpdate.ImagePath = guidToDB;
 
                     if (team == null)
                     {
@@ -270,46 +276,51 @@ namespace Volleyball
 
             Regex regex = new Regex(@"^[\p{L}\p{M}' \.\-]+$");
 
-            succededHeightParse = Int32.TryParse(insertedHeight, out height);
-            succededNumberParse = Int32.TryParse(insertedNumber, out number);
-            succededAgeParse = Int32.TryParse(insertedAge.ToString(), out age);
-
-            if (regex.IsMatch(name) && name.Length <= 50 && name.Length >= 2)
+            if (insertedAge != null && insertedHeight != "" && insertedNumber != "")
             {
-                if (succededNumberParse && number > 0 && number <= Int32.MaxValue)
+                succededHeightParse = Int32.TryParse(insertedHeight, out height);
+                succededNumberParse = Int32.TryParse(insertedNumber, out number);
+                succededAgeParse = Int32.TryParse(insertedAge.ToString(), out age);
+
+                if (regex.IsMatch(name) && name.Length <= 50 && name.Length >= 2)
                 {
-                    if (amplua.Length > 0)
+                    if (succededNumberParse && number > 0 && number <= Int32.MaxValue)
                     {
-                        if (league.Length > 0)
+                        if (amplua.Length > 0)
                         {
-                            if (succededHeightParse && height > 100 && height < 250)
+                            if (league.Length > 0)
                             {
-                                if (age != 0)
+                                if (succededHeightParse && height > 100 && height < 250)
                                 {
-                                    if (File.Exists(path))
+                                    if (age != 0)
                                     {
-                                        return true;
+                                        if (File.Exists(path))
+                                        {
+                                            return true;
+                                        }
+                                        else
+                                        { MessageBox.Show("Please check path to image."); }
                                     }
                                     else
-                                    { MessageBox.Show("Please check path to image."); }
+                                    { MessageBox.Show("Please specify age."); }
                                 }
                                 else
-                                { MessageBox.Show("Please specify age."); }
+                                { MessageBox.Show("Please check inserted height."); }
                             }
                             else
-                            { MessageBox.Show("Please check inserted height."); }
+                            { MessageBox.Show("Please select gender."); }
                         }
                         else
-                        { MessageBox.Show("Please select gender."); }
+                        { MessageBox.Show("Please select volleybal position."); }
                     }
                     else
-                    { MessageBox.Show("Please select volleybal position."); }
+                    { MessageBox.Show("Please check inserted number."); }
                 }
                 else
-                { MessageBox.Show("Please check inserted number."); }
+                { MessageBox.Show("Please specify correct name."); }
             }
             else
-            { MessageBox.Show("Please specify correct name."); }
+            { MessageBox.Show("Please fullfill empty lines."); }
             return false;
         }
 
@@ -349,12 +360,14 @@ namespace Volleyball
         {
             league = RadioButtonMale.Content.ToString();
             teamsCombobox.IsEnabled = true;
+            teamsCombobox.SelectedIndex = -1;
         }
 
         private void RadioButtonFemale_Checked(object sender, RoutedEventArgs e)
         {
             league = RadioButtonFemale.Content.ToString();
             teamsCombobox.IsEnabled = true;
+            teamsCombobox.SelectedIndex = -1;
         }
 
         private void teamsCombobox_DropDownOpened(object sender, EventArgs e)

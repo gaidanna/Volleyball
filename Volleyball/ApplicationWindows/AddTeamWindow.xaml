@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Volleyball.ApplicationWindows.AddTeamWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AddTeamWindow" Height="355" Width="565" Loaded="Window_Loaded">
+        Title="AddTeamWindow" Height="355" Width="565" Loaded="Window_Loaded" Icon="../Resources/iconVB.jpg">
 
     <Window.Resources>
 

@@ -23,6 +23,8 @@ namespace Volleyball.ApplicationWindows
         private AddPlayer addPlayerWindow;
         private Team sampleTeam;
         private OpenFileDialog openFileDlg;
+        private string baseDirectoryPath;
+        private string baseDirectoryToCombine;
 
         public AddTeamWindow()
         {
@@ -120,10 +122,13 @@ namespace Volleyball.ApplicationWindows
 
             if (validated)
             {
-                filepath = "D:\\Source\\Volleyball\\VolleyballMvc\\Content\\Images\\" + Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                baseDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
+                baseDirectoryToCombine = baseDirectoryPath.Remove(baseDirectoryPath.Length - 21, 21);
+                string guidToDB = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(openFileDlg.FileName);
+                filepath = baseDirectoryToCombine + "VolleyballMvc\\Content\\Images\\" + guidToDB;
                 File.Copy(Path.GetFullPath(path), filepath);
 
-                teamToSave = new Team(league, teamName, managerName, phoneName, emailName, filepath);
+                teamToSave = new Team(league, teamName, managerName, phoneName, emailName, guidToDB);
                 teamDict = teamToSave.ConvertInstanceToDictionary();
                 client.Insert(teamDict, Middleware.VolleyballService.TablesNames.Teams);
 
@@ -184,10 +189,8 @@ namespace Volleyball.ApplicationWindows
         private void UpdatePlayer_Click(object sender, RoutedEventArgs e)
         {
             Player pl;
-            Dictionary<string, string> result;
 
             pl = (Player)listBoxPlayers.SelectedItem;
-            //result = client.Read( pl.Id , Middleware.VolleyballService.TablesNames.Players );
             addPlayerWindow.SetPlayerInfo(pl);
             bool? res = addPlayerWindow.ShowDialog();
         }
@@ -199,7 +202,7 @@ namespace Volleyball.ApplicationWindows
 
         private static bool IsTextAllowed(string text)
         {
-            Regex regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
+            Regex regex = new Regex("[^0-9.-]+");
             return !regex.IsMatch(text);
         }
 
